@@ -241,6 +241,91 @@ nav a:hover,
     text-align:center;
   }
 }
+/* ==================================================
+   ✅ MOBILE NAVBAR – ROOT FIX (NO HERO OVERLAP)
+================================================== */
+@media(max-width:768px){
+
+  /* TOP BAR */
+  .top-flex{
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+
+  /* BIGGER LOGO */
+  .logo-wrap img{
+    width:95px;          /* 🔥 bigger & brand look */
+    height:auto;
+    transform:none;
+  }
+
+  /* LOCATIONS SIDE BY SIDE */
+  .top-info{
+    flex-direction:row;
+    gap:20px;
+    justify-content:center;
+    font-size:13px;
+  }
+
+  /* NAV WRAPPER */
+  .main-nav{
+    position:relative;   /* 🔥 important */
+    z-index:1000;
+  }
+
+  /* MENU ICON */
+  .menu-btn{
+    display:block;
+    position:absolute;
+    right:15px;
+    top:12px;
+    z-index:1001;
+  }
+
+  /* MOBILE NAV MENU (NOT FULLSCREEN) */
+  nav{
+    position:absolute;          /* 🔥 FIX */
+    top:100%;                   /* 🔥 header kindha */
+    left:0;
+    width:100%;
+    background:#674dad;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding:20px 0;
+    display:none;
+    z-index:1000;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a,
+  .service-btn{
+    font-size:17px;
+    padding:10px 0;
+    width:100%;
+    text-align:center;
+    color:#ffffff;
+  }
+
+  /* DROPDOWN */
+  .dropdown-menu-custom{
+    position:static;
+    background:#5b3fa3;
+    box-shadow:none;
+    width:100%;
+    margin-top:6px;
+  }
+
+  .dropdown-menu-custom a{
+    color:#ffffff;
+    font-size:15px;
+    text-align:center;
+  }
+}
 
 
 
