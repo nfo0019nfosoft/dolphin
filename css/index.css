@@ -152,35 +152,62 @@ nav a,
 }
 
 /* ================= MOBILE VIEW ================= */
+/* ================= MOBILE ONLY FIX ================= */
 @media(max-width:768px){
 
+  /* ---------- TOP BAR ---------- */
   .top-flex{
     flex-direction:column;
     gap:12px;
     text-align:center;
   }
 
+  /* LOGO – BIGGER ONLY IN MOBILE */
   .logo-wrap{
-    margin-left:0;
+    margin-left:0;               /* desktop left untouched */
+    justify-content:center;
   }
 
   .logo-wrap img{
-    width:44px;
-    height:44px;
-    transform:scale(1.5);
+    width:90px;                  /* 🔥 mobile big logo */
+    height:auto;
+    transform:none;              /* remove desktop scale */
   }
 
+  /* LOCATIONS SIDE BY SIDE */
   .top-info{
-    flex-direction:column;
-    gap:6px;
+    flex-direction:row;
+    justify-content:center;
+    gap:18px;
+    font-size:13px;
   }
 
-  nav{
-    flex-direction:column;
+  /* ---------- NAVBAR ---------- */
+  .main-nav{
+    position:relative;           /* 🔥 hero paina overlap stop */
+    z-index:1000;
+  }
+
+  /* HAMBURGER */
+  .menu-btn{
+    display:block;
     position:absolute;
-    top:55px;
+    right:15px;
+    top:12px;
+    z-index:2000;
+  }
+
+  /* MOBILE MENU – HERO KINDHA OPEN */
+  nav{
+    position:absolute;           /* 🔥 fixed / inset remove */
+    top:100%;                    /* main-nav kindha */
+    left:0;
     width:100%;
     background:var(--primary);
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    padding:20px 0;
     display:none;
   }
 
@@ -188,21 +215,38 @@ nav a,
     display:flex;
   }
 
-  .menu-btn{
-    display:block;
-    position:absolute;
-    right:15px;
-    top:12px;
+  nav a,
+  .service-btn{
+    width:100%;
+    text-align:center;
+    padding:10px 0;
+    font-size:16px;
   }
 
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .dropdown-custom{
+    width:100%;
+    text-align:center;
+  }
+
+  /* IMPORTANT: no space when closed */
   .dropdown-menu-custom{
     position:static;
+    display:none;                /* 🔥 gap fix */
+    width:100%;
+    background:#5b3fa3;
     box-shadow:none;
-    background:#674dad;;
+    margin-top:6px;
+  }
+
+  .dropdown-menu-custom.show{
+    display:block;               /* 🔥 only click appudu */
   }
 
   .dropdown-menu-custom a{
-    color:#fff;
+    color:#ffffff;
+    padding:8px 0;
+    font-size:15px;
   }
 }
 /* ===== NAV LINKS HOVER COLOR ===== */
@@ -211,7 +255,6 @@ nav a:hover,
   color:#d55191;
 }
 
-/* ===== DROPDOWN ITEM – CLEAN (DESKTOP + MOBILE) ===== */
 .dropdown-menu-custom a{
   display:block;
   padding:10px 16px;                 /* slim, not bulky */
@@ -225,14 +268,6 @@ nav a:hover,
 .dropdown-menu-custom a:active{
   background:#d55191;
   color:#ffffff;
-}
-
-.service-btn:focus,
-.service-btn:active,
-.service-btn:focus-visible{
-  outline:none;
-  box-shadow:none;
-  background:none;
 }
 
 

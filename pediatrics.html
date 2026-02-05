@@ -18,18 +18,18 @@
 <body>
 
 
+
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="container top-flex">
 
     <a href="index.html" class="logo-wrap">
-      <img src="img/logo.png" alt="">
-     
+      <img src="img/logo.png" alt="Dolphin Hospital">
     </a>
 
     <div class="top-info">
-      <span><i class="fa-solid fa-location-dot"></i> Warangal.Telangana</span>
-      <span><i class="fa-solid fa-location-dot"></i> Karimnagar,Telangana</span>
+      <span><i class="fa-solid fa-location-dot"></i> Warangal, Telangana</span>
+      <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
     </div>
 
     <a href="contact.html" class="btn book-btn">Book Appointment</a>
@@ -46,7 +46,7 @@
       <a href="about.html">About Us</a>
 
       <div class="dropdown-custom">
-        <button class="service-btn" onclick="toggleService()">
+        <button class="service-btn" onclick="toggleService(event)">
           Services <i class="fa-solid fa-chevron-down small-arrow"></i>
         </button>
 
@@ -54,11 +54,11 @@
           <a href="pediatrics.html">Pediatrics</a>
           <a href="maternity.html">Maternity</a>
           <a href="gynecology.html">Gynecology</a>
-        
         </div>
       </div>
-       <a href="warangal.html">Warangal</a>
-        <a href="karimnagar.html">Karimnagar</a>
+
+      <a href="warangal.html">Warangal</a>
+      <a href="karimnagar.html">Karimnagar</a>
       <a href="contact.html">Contact Us</a>
     </nav>
 
@@ -72,13 +72,14 @@
 <script>
   function toggleMenu(){
     document.getElementById("navMenu").classList.toggle("show");
+    document.getElementById("serviceMenu").classList.remove("show");
   }
-  function toggleService(){
+
+  function toggleService(e){
+    e.stopPropagation();
     document.getElementById("serviceMenu").classList.toggle("show");
   }
 </script>
-
-
 
 
 
@@ -255,9 +256,9 @@
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-        <a href="services.html">Pediatrics</a>
-        <a href="services.html">Maternity</a>
-        <a href="services.html">Gynecology</a>
+        <a href="pediatrics.html">Pediatrics</a>
+        <a href="maternity.html">Maternity</a>
+        <a href="gynecology.html">Gynecology</a>
       </div>
     </div>
 
