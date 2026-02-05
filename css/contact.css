@@ -1,6 +1,7 @@
 :root{
   --primary:#674dad;
   --secondary:#14b8a6;
+  --light:#f0fdfa;
   --white:#ffffff;
 }
 
@@ -12,7 +13,9 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
-a{ text-decoration:none; }
+a{
+  text-decoration:none;
+}
 
 /* ================= CONTAINER ================= */
 .container{
@@ -24,9 +27,10 @@ a{ text-decoration:none; }
 
 /* ================= TOP BAR ================= */
 .top-bar{
-  background:#ffffff;
+  background:var(--white);
   border-bottom:1px solid #e5e7eb;
   padding:14px 0;
+  
 }
 
 .top-flex{
@@ -35,25 +39,27 @@ a{ text-decoration:none; }
   justify-content:space-between;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
 .logo-wrap{
   display:flex;
   align-items:center;
   gap:10px;
-  margin-left:80px;
+  margin-left:80px; /* ⭐ LEFT SHIFT */
 }
 
 .logo-wrap img{
-  width:110px;
+  width:110px;               /* bigger */
   height:62px;
   object-fit:contain;
-  transform:scale(1.8);
+  transform:scale(1.8);     /* remove PNG whitespace */
   transform-origin:left center;
+  display:block;
 }
 
-/* TOP INFO */
+/* ================= TOP INFO ================= */
 .top-info{
   display:flex;
+  align-items:center;
   gap:30px;
   font-size:14px;
   color:var(--primary);
@@ -65,6 +71,11 @@ a{ text-decoration:none; }
   padding:10px 24px;
   border-radius:30px;
   font-weight:600;
+  transition:0.3s;
+}
+
+.book-btn:hover{
+  background:#d55191;
 }
 
 /* ================= NAVBAR ================= */
@@ -79,7 +90,6 @@ a{ text-decoration:none; }
   position:relative;
 }
 
-/* DESKTOP NAV */
 nav{
   display:flex;
   justify-content:center;
@@ -97,19 +107,12 @@ nav a,
   cursor:pointer;
 }
 
-nav a:hover,
-.service-btn:hover{
-  color:#d55191;
-}
-
-/* SMALL ARROW */
 .small-arrow{
-  font-size:9px;
+  font-size:10px;
   margin-left:4px;
-  opacity:.85;
 }
 
-/* DROPDOWN */
+/* ================= DROPDOWN ================= */
 .dropdown-custom{
   position:relative;
 }
@@ -125,19 +128,13 @@ nav a:hover,
   opacity:0;
   transform:translateY(10px);
   pointer-events:none;
-  transition:.3s;
+  transition:0.3s;
 }
 
 .dropdown-menu-custom a{
   display:block;
-  padding:10px 16px;
-  font-size:14px;
+  padding:12px 16px;
   color:#0f172a;
-}
-
-.dropdown-menu-custom a:hover{
-  background:#d55191;
-  color:#fff;
 }
 
 .dropdown-menu-custom.show{
@@ -146,7 +143,7 @@ nav a:hover,
   pointer-events:auto;
 }
 
-/* HAMBURGER */
+/* ================= MOBILE MENU ================= */
 .menu-btn{
   display:none;
   color:#fff;
@@ -154,148 +151,64 @@ nav a:hover,
   cursor:pointer;
 }
 
-/* ==================================================
-   🔥 MOBILE ONLY – FINAL & SAFE FIX
-================================================== */
+/* ================= MOBILE VIEW ================= */
+/* ================= MOBILE ONLY FIX ================= */
 @media(max-width:768px){
 
-  /* TOP BAR */
-  .top-flex{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
-  }
-
-  /* LOGO BIGGER */
-  .logo-wrap{
-    margin-left:0;
-  }
-
-  .logo-wrap img{
-    width:70px;
-    height:auto;
-    transform:none;
-  }
-
-  /* LOCATIONS SIDE BY SIDE */
-  .top-info{
-    flex-direction:row;
-    gap:20px;
-    justify-content:center;
-    font-size:13px;
-  }
-
-  /* NAV WRAPPER */
-  .main-nav{
-    position:relative;
-    z-index:1000;
-  }
-
-  /* MENU ICON */
-  .menu-btn{
-    display:block;
-    position:absolute;
-    right:15px;
-    top:12px;
-    z-index:2001;
-  }
-
-  /* FULL SCREEN MOBILE MENU */
-  nav{
-    position:fixed;
-    inset:0;
-    background:#674dad;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:22px;
-    display:none;
-    z-index:2000;
-  }
-
-  nav.show{
-    display:flex;
-  }
-
-  nav a,
-  .service-btn{
-    font-size:18px;
-    padding:12px 0;
-    width:100%;
-    text-align:center;
-    color:#ffffff;
-  }
-
-  /* MOBILE DROPDOWN */
-  .dropdown-menu-custom{
-    position:static;
-    background:#5b3fa3;
-    box-shadow:none;
-    width:100%;
-    margin-top:6px;
-  }
-
-  .dropdown-menu-custom a{
-    color:#ffffff;
-    font-size:16px;
-    text-align:center;
-  }
-}
-/* ==================================================
-   ✅ MOBILE NAVBAR – ROOT FIX (NO HERO OVERLAP)
-================================================== */
-@media(max-width:768px){
-
-  /* TOP BAR */
+  /* ---------- TOP BAR ---------- */
   .top-flex{
     flex-direction:column;
     gap:12px;
     text-align:center;
   }
 
-  /* BIGGER LOGO */
+  /* LOGO – BIGGER ONLY IN MOBILE */
+  .logo-wrap{
+    margin-left:0;               /* desktop left untouched */
+    justify-content:center;
+  }
+
   .logo-wrap img{
-    width:95px;          /* 🔥 bigger & brand look */
+    width:90px;                  /* 🔥 mobile big logo */
     height:auto;
-    transform:none;
+    transform:none;              /* remove desktop scale */
   }
 
   /* LOCATIONS SIDE BY SIDE */
   .top-info{
     flex-direction:row;
-    gap:20px;
     justify-content:center;
+    gap:18px;
     font-size:13px;
   }
 
-  /* NAV WRAPPER */
+  /* ---------- NAVBAR ---------- */
   .main-nav{
-    position:relative;   /* 🔥 important */
+    position:relative;           /* 🔥 hero paina overlap stop */
     z-index:1000;
   }
 
-  /* MENU ICON */
+  /* HAMBURGER */
   .menu-btn{
     display:block;
     position:absolute;
     right:15px;
     top:12px;
-    z-index:1001;
+    z-index:2000;
   }
 
-  /* MOBILE NAV MENU (NOT FULLSCREEN) */
+  /* MOBILE MENU – HERO KINDHA OPEN */
   nav{
-    position:absolute;          /* 🔥 FIX */
-    top:100%;                   /* 🔥 header kindha */
+    position:absolute;           /* 🔥 fixed / inset remove */
+    top:100%;                    /* main-nav kindha */
     left:0;
     width:100%;
-    background:#674dad;
+    background:var(--primary);
     flex-direction:column;
     align-items:center;
-    gap:18px;
+    gap:16px;
     padding:20px 0;
     display:none;
-    z-index:1000;
   }
 
   nav.show{
@@ -304,27 +217,57 @@ nav a:hover,
 
   nav a,
   .service-btn{
-    font-size:17px;
-    padding:10px 0;
     width:100%;
     text-align:center;
-    color:#ffffff;
+    padding:10px 0;
+    font-size:16px;
   }
 
-  /* DROPDOWN */
+  /* ---------- SERVICES DROPDOWN ---------- */
+  .dropdown-custom{
+    width:100%;
+    text-align:center;
+  }
+
+  /* IMPORTANT: no space when closed */
   .dropdown-menu-custom{
     position:static;
+    display:none;                /* 🔥 gap fix */
+    width:100%;
     background:#5b3fa3;
     box-shadow:none;
-    width:100%;
     margin-top:6px;
+  }
+
+  .dropdown-menu-custom.show{
+    display:block;               /* 🔥 only click appudu */
   }
 
   .dropdown-menu-custom a{
     color:#ffffff;
+    padding:8px 0;
     font-size:15px;
-    text-align:center;
   }
+}
+/* ===== NAV LINKS HOVER COLOR ===== */
+nav a:hover,
+.service-btn:hover{
+  color:#d55191;
+}
+
+.dropdown-menu-custom a{
+  display:block;
+  padding:10px 16px;                 /* slim, not bulky */
+  font-size:14px;
+  border-radius:6px;                 /* soft edges */
+  transition:background 0.25s ease, color 0.25s ease;
+}
+
+/* Hover / Tap (Desktop + Mobile) */
+.dropdown-menu-custom a:hover,
+.dropdown-menu-custom a:active{
+  background:#d55191;
+  color:#ffffff;
 }
 
 
