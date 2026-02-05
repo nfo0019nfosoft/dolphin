@@ -199,21 +199,22 @@ nav a,
 
   /* MOBILE MENU – HERO KINDHA OPEN */
   nav{
-    position:absolute;           /* 🔥 fixed / inset remove */
-    top:100%;                    /* main-nav kindha */
-    left:0;
-    width:100%;
-    background:var(--primary);
-    flex-direction:column;
-    align-items:center;
-    gap:16px;
-    padding:20px 0;
-    display:none;
-  }
+  position:relative;    /* ✅ FIX */
+  top:auto;
+  left:0;
+  width:100%;
+  background:var(--primary);
+  flex-direction:column;
+  align-items:center;
+  gap:16px;
+  padding:20px 0;
+  display:none;
+}
 
-  nav.show{
-    display:flex;
-  }
+nav.show{
+  display:flex;         /* menu open ayite content push avtundi */
+}
+
 
   nav a,
   .service-btn{
