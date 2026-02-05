@@ -552,9 +552,11 @@ nav a:hover,
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
-  .hero {
-    height: 50vh; /* 🔽 */
+@media(max-width:768px){
+  .hero{
+    height:auto;
+    min-height:420px;
+    padding:90px 0 60px;
   }
 
   .hero-content h1 {
@@ -565,6 +567,7 @@ nav a:hover,
     font-size: 13px;
   }
 }
+
 
 
 
