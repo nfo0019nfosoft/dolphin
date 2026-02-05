@@ -269,6 +269,27 @@ nav a:hover,
   background:#d55191;
   color:#ffffff;
 }
+/* ===== MOBILE NAVBAR OVERLAP FINAL FIX ===== */
+@media(max-width:768px){
+
+  /* navbar normal flow lo undali */
+  .main-nav{
+    position:relative !important;
+    top:auto !important;
+  }
+
+  /* mobile menu content ni push cheyyali */
+  nav{
+    position:relative !important;
+  }
+
+  /* hero vh issue stop */
+  .hero{
+    height:auto !important;
+    min-height:420px;
+    padding:90px 0 60px;
+  }
+}
 
 
 
