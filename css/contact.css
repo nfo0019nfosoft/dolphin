@@ -1,7 +1,6 @@
 :root{
   --primary:#674dad;
   --secondary:#14b8a6;
-  --light:#f0fdfa;
   --white:#ffffff;
 }
 
@@ -13,9 +12,7 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
-a{
-  text-decoration:none;
-}
+a{ text-decoration:none; }
 
 /* ================= CONTAINER ================= */
 .container{
@@ -27,10 +24,9 @@ a{
 
 /* ================= TOP BAR ================= */
 .top-bar{
-  background:var(--white);
+  background:#ffffff;
   border-bottom:1px solid #e5e7eb;
   padding:14px 0;
-  
 }
 
 .top-flex{
@@ -39,27 +35,25 @@ a{
   justify-content:space-between;
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 .logo-wrap{
   display:flex;
   align-items:center;
   gap:10px;
-  margin-left:80px; /* ⭐ LEFT SHIFT */
+  margin-left:80px;
 }
 
 .logo-wrap img{
-  width:110px;               /* bigger */
+  width:110px;
   height:62px;
   object-fit:contain;
-  transform:scale(1.8);     /* remove PNG whitespace */
+  transform:scale(1.8);
   transform-origin:left center;
-  display:block;
 }
 
-/* ================= TOP INFO ================= */
+/* TOP INFO */
 .top-info{
   display:flex;
-  align-items:center;
   gap:30px;
   font-size:14px;
   color:var(--primary);
@@ -71,17 +65,12 @@ a{
   padding:10px 24px;
   border-radius:30px;
   font-weight:600;
-  transition:0.3s;
-}
-
-.book-btn:hover{
-  background:#d55191;
 }
 
 /* ================= NAVBAR ================= */
 .main-nav{
   background:var(--primary);
-  position:sticky;
+  position:sticky;      /* DESKTOP SAME */
   top:0;
   z-index:999;
 }
@@ -90,6 +79,7 @@ a{
   position:relative;
 }
 
+/* DESKTOP NAV */
 nav{
   display:flex;
   justify-content:center;
@@ -107,12 +97,12 @@ nav a,
   cursor:pointer;
 }
 
-.small-arrow{
-  font-size:10px;
-  margin-left:4px;
+nav a:hover,
+.service-btn:hover{
+  color:#d55191;
 }
 
-/* ================= DROPDOWN ================= */
+/* DROPDOWN */
 .dropdown-custom{
   position:relative;
 }
@@ -133,8 +123,14 @@ nav a,
 
 .dropdown-menu-custom a{
   display:block;
-  padding:12px 16px;
+  padding:10px 16px;
+  font-size:14px;
   color:#0f172a;
+}
+
+.dropdown-menu-custom a:hover{
+  background:#d55191;
+  color:#fff;
 }
 
 .dropdown-menu-custom.show{
@@ -143,7 +139,7 @@ nav a,
   pointer-events:auto;
 }
 
-/* ================= MOBILE MENU ================= */
+/* HAMBURGER */
 .menu-btn{
   display:none;
   color:#fff;
@@ -151,9 +147,12 @@ nav a,
   cursor:pointer;
 }
 
-/* ================= MOBILE VIEW ================= */
+/* ==================================================
+   MOBILE ONLY (DESKTOP EM MARCHALEDU)
+================================================== */
 @media(max-width:768px){
 
+  /* TOP BAR STACK */
   .top-flex{
     flex-direction:column;
     gap:12px;
@@ -175,58 +174,59 @@ nav a,
     gap:6px;
   }
 
-  nav{
-    flex-direction:column;
+  /* SHOW MENU ICON */
+  .menu-btn{
+    display:block;
     position:absolute;
-    top:55px;
+    right:15px;
+    top:12px;
+    z-index:1001;
+  }
+
+  /* MOBILE NAV MENU */
+  nav{
+    position:fixed;              /* 🔥 hero ki separate */
+    top:60px;                    /* 🔥 main-nav height kindha */
+    left:0;
     width:100%;
     background:var(--primary);
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    padding:20px 0;
     display:none;
+    z-index:1000;
   }
 
   nav.show{
     display:flex;
   }
 
-  .menu-btn{
+  nav a,
+  .service-btn{
+    width:100%;
+    padding:10px 0;
+    text-align:center;
     display:block;
-    position:absolute;
-    right:15px;
-    top:12px;
   }
 
+  /* MOBILE DROPDOWN */
   .dropdown-menu-custom{
     position:static;
     box-shadow:none;
-    background:#674dad;;
+    background:#674dad;
+    width:100%;
   }
 
   .dropdown-menu-custom a{
     color:#fff;
+    text-align:center;
   }
 }
-/* ===== NAV LINKS HOVER COLOR ===== */
-nav a:hover,
-.service-btn:hover{
-  color:#d55191;
+.small-arrow{
+  font-size:10px;      /* 🔽 small size */
+  margin-left:4px;
 }
-
-/* ===== DROPDOWN ITEM – CLEAN (DESKTOP + MOBILE) ===== */
-.dropdown-menu-custom a{
-  display:block;
-  padding:10px 16px;                 /* slim, not bulky */
-  font-size:14px;
-  border-radius:6px;                 /* soft edges */
-  transition:background 0.25s ease, color 0.25s ease;
-}
-
-/* Hover / Tap (Desktop + Mobile) */
-.dropdown-menu-custom a:hover,
-.dropdown-menu-custom a:active{
-  background:#d55191;
-  color:#ffffff;
-}
-
 
 
 
