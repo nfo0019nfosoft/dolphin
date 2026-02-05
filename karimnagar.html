@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dolphin Hospital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/karimnagar.css">
+  <link rel="icon" type="image/png" href="img/fav.png">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container top-flex">
+
+    <a href="index.html" class="logo-wrap">
+      <img src="img/logo.png" alt="">
+     
+    </a>
+
+    <div class="top-info">
+     <span><i class="fa-solid fa-location-dot"></i> Warangal.Telangana</span>
+      <span><i class="fa-solid fa-location-dot"></i> Karimnagar,Telangana</span>
+    </div>
+
+    <a href="contact.html" class="btn book-btn">Book Appointment</a>
+
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="main-nav">
+  <div class="container nav-center">
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown-custom">
+        <button class="service-btn" onclick="toggleService()">
+          Services <i class="fa-solid fa-chevron-down small-arrow"></i>
+        </button>
+
+        <div class="dropdown-menu-custom" id="serviceMenu">
+          <a href="pediatrics.html">Pediatrics</a>
+          <a href="maternity.html">Maternity</a>
+          <a href="gynecology.html">Gynecology</a>
+        
+        </div>
+      </div>
+       <a href="warangal.html">Warangal</a>
+        <a href="karimnagar.html">Karimnagar</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+  function toggleService(){
+    document.getElementById("serviceMenu").classList.toggle("show");
+  }
+</script>
+
+
+
+
+
+
+
+
+
+<section class="main-slider">
+  <div class="main-slider-track">
+
+    <!-- SLIDE 1 : PEDIATRICS -->
+    <div class="main-slide active">
+      <img src="img/abt.png" alt="Pediatrics Care">
+      <div class="main-slide-content">
+        <h1>Pediatrics Care</h1>
+        <p>
+          Specialized medical care for infants, children and adolescents
+          with experienced pediatric specialists.
+        </p>
+
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 : MATERNITY -->
+    <div class="main-slide">
+      <img src="img/herobg.png" alt="Maternity Care">
+      <div class="main-slide-content">
+        <h1>Maternity Care</h1>
+        <p>
+          Complete maternity services including prenatal, delivery and
+          postnatal care in a safe and supportive environment.
+        </p>
+
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 : GYNECOLOGY -->
+    <div class="main-slide">
+      <img src="img/abtt.png" alt="Gynecology Care">
+      <div class="main-slide-content">
+        <h1>Gynecology Services</h1>
+        <p>
+          Advanced gynecological treatments with modern technology and
+          personalized care for women at every stage of life.
+        </p>
+
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll(".main-slide");
+  let currentIndex = 0;
+
+  function runSlider(){
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[currentIndex].classList.add("active");
+    currentIndex = (currentIndex + 1) % slides.length;
+  }
+
+  runSlider();
+  setInterval(runSlider, 4500); // smooth infinite loop
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="hospital-wrapper">
+
+  <section class="about-section">
+    <div class="container">
+
+      <div class="about-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="about-content">
+          <h2>ABOUT OUR HOSPITAL</h2>
+
+         <p>
+            Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of women and children. With a strong commitment to medical excellence, compassionate service, and patient safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+
+Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Health Services, delivering personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s wellness.Our team of experienced doctors, nurses, and healthcare professionals work together to offer ethical, transparent, and patient-centred care.
+          </p>
+
+          <a href="about.html" class="about-btn">Know More</a>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="about-image">
+          <img src="img/abt.png" alt="About Hospital">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section class="services-ref">
+
+  <h2 class="services-title">OUR SPECIALITIES</h2>
+
+  <div class="services-img">
+    <img src="img/abtt.png" alt="Hospital Services">
+  </div>
+
+  <div class="speciality-cards">
+
+    <div class="speciality-card">
+      <div class="speciality-icon">
+        <i class="fa-solid fa-baby"></i>
+      </div>
+      <h4>PEDIATRICS</h4>
+      <p>
+        Comprehensive medical care for infants, children and adolescents
+        with expert pediatricians.
+      </p>
+      <a href="pediatrics.html" class="speciality-btn">Know More</a>
+    </div>
+
+    <div class="speciality-card">
+      <div class="speciality-icon">
+        <i class="fa-solid fa-person-pregnant"></i>
+      </div>
+      <h4>MATERNITY</h4>
+      <p>
+        Complete maternity services from pregnancy to delivery and
+        postnatal care in a safe environment.
+      </p>
+      <a href="maternity.html" class="speciality-btn">Know More</a>
+    </div>
+
+    <div class="speciality-card">
+      <div class="speciality-icon">
+        <i class="fa-solid fa-stethoscope"></i>
+      </div>
+      <h4>GYNECOLOGY</h4>
+      <p>
+        Advanced gynecological treatments with modern technology
+        and personalized women’s care.
+      </p>
+      <a href="gynecology.html" class="speciality-btn">Know More</a>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="vector-header">
+  <div class="vector-lines">
+    <!-- <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span> -->
+  </div>
+
+  <div class="vector-content">
+    
+    <h2>PEDIATRICS SERVICES</h2>
+    <p>“Caring for little lives with gentle hands and big hearts.”</p>
+  </div>
+
+  <div class="vector-cut"></div>
+</section>
+
+
+
+
+
+
+<section class="home-services">
+  <div class="site-container">
+
+    
+
+    <div class="home-services-grid">
+
+      <!-- 1 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Antenatal Care">
+        <h3>Antenatal Care</h3>
+        <p>
+          Complete prenatal care including regular checkups, scans, and health
+          monitoring to ensure a safe and healthy pregnancy journey.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <!-- 2 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="High Risk Pregnancy">
+        <h3>High-Risk Pregnancy Care</h3>
+        <p>
+          Specialized monitoring and treatment for high-risk pregnancies with
+          advanced diagnostics and expert obstetric care.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <!-- 3 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Delivery Services">
+        <h3>Normal & Cesarean Delivery</h3>
+        <p>
+          Safe and well-equipped delivery services with experienced doctors,
+          nurses, and emergency support systems.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <!-- 4 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Postnatal Care">
+        <h3>Postnatal Care</h3>
+        <p>
+          Comprehensive post-delivery care focusing on mother’s recovery,
+          newborn health, and emotional well-being.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <!-- 5 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Lactation Support">
+        <h3>Breastfeeding Support</h3>
+        <p>
+          Expert lactation guidance to help mothers initiate and maintain
+          successful breastfeeding with confidence.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <!-- 6 -->
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Gynecology Care">
+        <h3>Gynecology Care</h3>
+        <p>
+          Complete women’s health services including menstrual care, hormonal
+          treatment, preventive screening, and fertility support.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section class="vector-header">
+  <div class="vector-lines">
+    <!-- <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span> -->
+  </div>
+
+  <div class="vector-content">
+    
+    <h2>MATERNITY SERVICES</h2>
+    <p>“Supporting every mother, nurturing every new beginning.”</p>
+  </div>
+
+  <div class="vector-cut"></div>
+</section>
+
+
+
+
+<section class="home-services">
+  <div class="site-container">
+
+
+
+    <div class="home-services-grid">
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Antenatal Care">
+        <h3>Antenatal Care</h3>
+        <p>
+          Comprehensive prenatal care with regular checkups, scans, and
+          monitoring to ensure healthy pregnancy progress and early
+          identification of risks.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="High Risk Pregnancy">
+        <h3>High-Risk Pregnancy Care</h3>
+        <p>
+          Specialized care for high-risk pregnancies including diabetes,
+          hypertension, and multiple pregnancies with expert monitoring.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Delivery Services">
+        <h3>Normal & Cesarean Delivery</h3>
+        <p>
+          Safe and well-equipped delivery services with experienced doctors,
+          modern labor rooms, and emergency readiness.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Labour Care">
+        <h3>Labour & Pain Management</h3>
+        <p>
+          Personalized labour care with pain management techniques to ensure
+          comfort, safety, and positive birthing experience.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Postnatal Care">
+        <h3>Postnatal Care</h3>
+        <p>
+          Complete post-delivery care focusing on mother’s recovery, newborn
+          care guidance, and emotional well-being.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Lactation Support">
+        <h3>Breastfeeding Support</h3>
+        <p>
+          Expert lactation guidance to help mothers initiate and maintain
+          successful breastfeeding with confidence.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="vector-header">
+  <div class="vector-lines">
+    <!-- <span class="line l1"></span>
+    <span class="line l2"></span>
+    <span class="line l3"></span> -->
+  </div>
+
+  <div class="vector-content">
+    
+    <h2>GYNECOLOGY SERVICES</h2>
+    <p>“Caring for women’s health at every stage of life.”</p>
+  </div>
+
+  <div class="vector-cut"></div>
+</section>
+
+
+
+
+
+
+<section class="home-services">
+  <div class="site-container">
+
+    <div class="home-services-grid">
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="General Gynecology">
+        <h3>General Gynecology Care</h3>
+        <p>
+          Complete gynecological care for women including diagnosis and
+          treatment of common reproductive health concerns.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Menstrual Disorders">
+        <h3>Menstrual Disorder Management</h3>
+        <p>
+          Treatment for irregular periods, heavy bleeding, painful cycles,
+          and hormonal-related menstrual issues.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="PCOS Care">
+        <h3>PCOS & Hormonal Care</h3>
+        <p>
+          Specialized care for PCOS, thyroid issues, and hormonal imbalances
+          with lifestyle and medical management.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Fertility Care">
+        <h3>Fertility & Pre-Conception Care</h3>
+        <p>
+          Fertility assessments, ovulation tracking, and pre-pregnancy
+          counseling to support healthy conception.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Preventive Screening">
+        <h3>Preventive Women’s Health</h3>
+        <p>
+          Routine screenings including cervical health, breast exams, and
+          preventive gynecological checkups.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+      <div class="home-service-card">
+        <img src="img/abt.png" alt="Menopause Care">
+        <h3>Menopause Care</h3>
+        <p>
+          Supportive care during menopause with symptom management,
+          hormonal evaluation, and lifestyle guidance.
+        </p>
+        <a href="#" class="know-more">Know More</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="our-purpose">
+
+  <h2 class="purpose-heading">
+    OUR MISSSION & VISSION
+  </h2>
+
+  <p class="purpose-intro">
+    Our purpose is driven by compassion, trust, and a commitment to
+    delivering high-quality healthcare for women and children at
+    every stage of life.
+  </p>
+
+  <div class="purpose-panels">
+
+    <!-- MISSION -->
+    <div class="purpose-panel mission">
+      <span class="panel-tag">OUR MISSION</span>
+      <div class="icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <h3>Care with Compassion</h3>
+      <p>
+        To deliver ethical, compassionate, and high-quality healthcare
+        for women and children by combining expert medical care with
+        advanced technology and a patient-first approach.
+      </p>
+    </div>
+
+    <!-- VISION -->
+    <div class="purpose-panel vision">
+      <span class="panel-tag">OUR VISION</span>
+      <div class="icon">
+        <i class="fa-solid fa-eye"></i>
+      </div>
+      <h3>Excellence in Every Life</h3>
+      <p>
+        To be a trusted center of excellence in women and child healthcare,
+        known for innovation, safety, empathy, and lifelong commitment
+        to patient well-being.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<section class="facility-section">
+  <div class="container">
+
+    <h2 class="facility-title zoom-in">OUR FACILITIES</h2>
+    <p class="facility-sub zoom-in">
+      Designed to support safe, reliable and comfortable healthcare.
+    </p>
+
+    <div class="facility-container">
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div>
+        <h3>Expert Doctors</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div>
+        <h3>24/7 Emergency</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div>
+        <h3>ICU Care</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-microscope"></i></div>
+        <h3>Diagnostics</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-vials"></i></div>
+        <h3>Laboratory</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-capsules"></i></div>
+        <h3>Pharmacy</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div>
+        <h3>Maternity Care</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-baby"></i></div>
+        <h3>Neonatal Care</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
+        <h3>Cardiac Care</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div>
+        <h3>Digital X-Ray</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3>Patient Safety</h3>
+      </div>
+
+      <div class="facility-card zoom-in">
+        <div class="icon-circle"><i class="fa-solid fa-hospital"></i></div>
+        <h3>Modern Rooms</h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="highlights-section">
+  <div class="container">
+
+    <h2 class="highlights-title">OUR HIGHLIGHTS</h2>
+    <p class="highlights-sub">
+      Each number tells a story of care, trust, and excellence.
+    </p>
+
+    <div class="highlights-container">
+
+      <div class="highlight-card zoom-in">
+        <span class="top-line"></span>
+        <h3 class="count" data-target="12">0</h3>
+        <p>Experience</p>
+      </div>
+
+      <div class="highlight-card zoom-in">
+        <span class="top-line"></span>
+        <h3 class="count" data-target="25000">0</h3>
+        <p>Patients Treated</p>
+      </div>
+
+      <div class="highlight-card zoom-in">
+        <span class="top-line"></span>
+        <h3 class="count" data-target="15000">0</h3>
+        <p>Happy Patients</p>
+      </div>
+
+      <div class="highlight-card zoom-in">
+        <span class="top-line"></span>
+        <h3 class="count" data-target="100">0</h3>
+        <p>Trusted Care</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<script>
+const counters = document.querySelectorAll('.count');
+
+counters.forEach(counter => {
+  const target = +counter.getAttribute('data-target');
+  let current = 0;
+  const increment = target / 80;
+
+  const updateCounter = () => {
+    if (current < target) {
+      current += increment;
+      counter.innerText =
+        Math.ceil(current) + (target === 100 ? '%' : '+');
+      requestAnimationFrame(updateCounter);
+    } else {
+      counter.innerText =
+        target + (target === 100 ? '%' : '+');
+    }
+  };
+
+  updateCounter();
+});
+</script>
+
+
+
+
+
+<section class="gallery-section">
+  <div class="container">
+
+    <h2 class="gallery-title">OUR HOSPITAL GALLERY</h2>
+
+    <div class="gallery-wrapper">
+      <div class="gallery-track">
+
+        <!-- 1 to 10 -->
+        <img src="img/abt.png" alt="Gallery 1">
+        <img src="img/abt.png" alt="Gallery 2">
+        <img src="img/abt.png" alt="Gallery 3">
+        <img src="img/abt.png" alt="Gallery 4">
+        <img src="img/abt.png" alt="Gallery 5">
+        <img src="img/abt.png" alt="Gallery 6">
+        <img src="img/abt.png" alt="Gallery 7">
+        <img src="img/abt.png" alt="Gallery 8">
+        <img src="img/abt.png" alt="Gallery 9">
+        <img src="img/abt.png" alt="Gallery 10">
+
+        <!-- repeat for smooth loop -->
+        <img src="img/abt.png" alt="Gallery repeat">
+        <img src="img/abt.png" alt="Gallery repeat">
+        <img src="img/abt.png" alt="Gallery repeat">
+        <img src="img/abt.png" alt="Gallery repeat">
+        <img src="img/abt.png" alt="Gallery repeat">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="contact-modern">
+
+  <div class="contact-wrapper">
+
+    <!-- LEFT : CONTACT INFO -->
+    <div class="contact-info-box animate-left">
+
+      <h3>Contact Information</h3>
+      <p class="info-desc">
+        We’re here to support you. Reach out for appointments, consultations,
+        or emergency assistance.
+      </p>
+
+      <div class="info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+          <h4>Address</h4>
+          <p class="address-text">
+            Dolphin Hospital,<br>
+           Karimnagar,
+            Telangana – 505001
+          </p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-phone"></i>
+        <div>
+          <h4>Phone</h4>
+          <p><a href="tel:07314650010">+0731 4650010</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <i class="fa-solid fa-envelope"></i>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:info@dolphinhospital.com">info@dolphinhospital.com</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT : FORM -->
+    <div class="contact-form-box animate-right">
+
+      <h3>Send Us a Message</h3>
+
+      <form>
+        <div class="form-row">
+          <input type="text" placeholder="Full Name">
+          <input type="email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row">
+          <input type="text" placeholder="Phone Number">
+          <select>
+            <option>Select Service</option>
+            
+            <option>Pediatrics</option>
+            <option>Maternity</option>
+             <option>Gynecology</option>
+             
+          </select>
+        </div>
+
+        <textarea placeholder="Your Message"></textarea>
+
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="container footer-grid">
+
+    <!-- COL 1 -->
+    <div class="footer-col">
+      <div class="footer-logo footer-anim">
+        <img src="img/logo.png" alt="Dolphin Hospital">
+      </div>
+      <p class="footer-anim">
+        Trusted healthcare with advanced technology and compassionate care.
+      </p>
+    </div>
+
+    <!-- COL 2 -->
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <div class="footer-anim">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a> 
+        <a href="services.html">Services</a>
+        <a href="warangal.html">Warangal</a>
+        <a href="karimnagar.html">Karimnagar</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- COL 3 -->
+    <div class="footer-col">
+      <h4>SERVICES</h4>
+      <div class="footer-anim">
+        <a href="services.html">Pediatrics</a>
+        <a href="services.html">Maternity</a>
+        <a href="services.html">Gynecology</a>
+      </div>
+    </div>
+
+    <!-- COL 4 -->
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+
+      <div class="footer-anim footer-address">
+        <p><strong>Karimnagar Branch</strong></p>
+        <p><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      </div>
+
+      <div class="footer-anim footer-address">
+        <p><strong>Warangal Branch</strong></p>
+        <p><i class="fa-solid fa-location-dot"></i> Warangal, Telangana</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98123 45678</p>
+      </div>
+
+      <div class="social footer-anim">
+        <span>FOLLOW US</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Dolphin Hospital. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919876543210" class="float-btn whatsapp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="tel:+919876543210" class="float-btn phone">
+  <i class="fa-solid fa-phone"></i>
+</a>
+
+<script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".footer-anim").forEach(el => {
+      el.classList.add("show");
+    });
+  });
+</script>

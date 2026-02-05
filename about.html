@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dolphin Hospital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="icon" type="image/png" href="img/fav.png">
+</head>
+<body>
+
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container top-flex">
+
+    <a href="index.html" class="logo-wrap">
+      <img src="img/logo.png" alt="">
+     
+    </a>
+
+    <div class="top-info">
+     <span><i class="fa-solid fa-location-dot"></i> Warangal.Telangana</span>
+      <span><i class="fa-solid fa-location-dot"></i> Karimnagar,Telangana</span>
+    </div>
+
+    <a href="contact.html" class="btn book-btn">Book Appointment</a>
+
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="main-nav">
+  <div class="container nav-center">
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+
+      <div class="dropdown-custom">
+        <button class="service-btn" onclick="toggleService()">
+          Services <i class="fa-solid fa-chevron-down small-arrow"></i>
+        </button>
+
+        <div class="dropdown-menu-custom" id="serviceMenu">
+          <a href="pediatrics.html">Pediatrics</a>
+          <a href="maternity.html">Maternity</a>
+          <a href="gynecology.html">Gynecology</a>
+        
+        </div>
+      </div>
+       <a href="warangal.html">Warangal</a>
+        <a href="karimnagar.html">Karimnagar</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+  </div>
+</header>
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+  function toggleService(){
+    document.getElementById("serviceMenu").classList.toggle("show");
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  <section class="hero">
+  <div class="hero-bg"></div>
+
+  <div class="hero-content">
+    <h1>ABOUT US</h1>
+    <p>Home <span>›</span> About Us</p>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+  <div class="hospital-wrapper">
+
+  <section class="about-section">
+    <div class="container">
+
+      <div class="about-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="about-content">
+          <h2>ABOUT OUR HOSPITAL</h2>
+          <p>
+            Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of women and children. With a strong commitment to medical excellence, compassionate service, and patient safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+
+Our hospital specializes in Pediatrics, Maternity, Gynecology, Neonatal and Women’s Health Services, delivering personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s wellness.We are equipped with modern medical technology, advanced diagnostic facilities, and well-designed patient care units, ensuring accurate diagnosis and effective treatment. Our team of experienced doctors, nurses, and healthcare professionals work together to offer ethical, transparent, and patient-centred care.
+          </p>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div class="about-image">
+          <img src="img/abt.png" alt="Hospital">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section class="why-section">
+  <div class="container">
+
+    <h2 class="why-title">WHY CHOOSE US</h2>
+
+    <div class="why-container">
+
+      <div class="why-card">
+        <i class="fas fa-user-doctor"></i>
+        <h3>EXPERT DOCTORS</h3>
+        <p>Qualified specialists delivering reliable medical care.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-hospital"></i>
+        <h3>MODERN FACILITY</h3>
+        <p>Advanced infrastructure with updated medical technology.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-heart-pulse"></i>
+        <h3>PATIENT CARE</h3>
+        <p>Compassionate, ethical, and patient-focused treatment.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-clock"></i>
+        <h3>24/7 SUPPORT</h3>
+        <p>Continuous medical assistance and emergency services.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="care-section">
+  <div class="container">
+
+    <h2 class="care-title">OUR CARE APPROACH</h2>
+
+    <div class="care-container">
+
+      <div class="care-item">
+        <span class="care-step">01</span>
+        <h3>LISTEN & UNDERSTAND</h3>
+        <p>
+          We begin by carefully understanding patient concerns,
+          medical history, and expectations.
+        </p>
+      </div>
+
+      <div class="care-item">
+        <span class="care-step">02</span>
+        <h3>ACCURATE DIAGNOSIS</h3>
+        <p>
+          Our doctors use clinical expertise and modern tools
+          to ensure precise diagnosis.
+        </p>
+      </div>
+
+      <div class="care-item">
+        <span class="care-step">03</span>
+        <h3>PERSONALISED TREATMENT</h3>
+        <p>
+          Treatment plans are customised based on individual
+          patient needs and safety.
+        </p>
+      </div>
+
+      <div class="care-item">
+        <span class="care-step">04</span>
+        <h3>CONTINUOUS SUPPORT</h3>
+        <p>
+          We provide follow-up care and guidance to support
+          long-term recovery.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+  <div class="container footer-grid">
+
+    <!-- COL 1 -->
+    <div class="footer-col">
+      <div class="footer-logo footer-anim">
+        <img src="img/logo.png" alt="Dolphin Hospital">
+      </div>
+      <p class="footer-anim">
+        Trusted healthcare with advanced technology and compassionate care.
+      </p>
+    </div>
+
+    <!-- COL 2 -->
+    <div class="footer-col">
+      <h4>QUICK LINKS</h4>
+      <div class="footer-anim">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a> 
+        <a href="services.html">Services</a>
+        <a href="warangal.html">Warangal</a>
+        <a href="karimnagar.html">Karimnagar</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+
+    <!-- COL 3 -->
+    <div class="footer-col">
+      <h4>SERVICES</h4>
+      <div class="footer-anim">
+        <a href="services.html">Pediatrics</a>
+        <a href="services.html">Maternity</a>
+        <a href="services.html">Gynecology</a>
+      </div>
+    </div>
+
+    <!-- COL 4 -->
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+
+      <div class="footer-anim footer-address">
+        <p><strong>Karimnagar Branch</strong></p>
+        <p><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      </div>
+
+      <div class="footer-anim footer-address">
+        <p><strong>Warangal Branch</strong></p>
+        <p><i class="fa-solid fa-location-dot"></i> Warangal, Telangana</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98123 45678</p>
+      </div>
+
+      <div class="social footer-anim">
+        <span>FOLLOW US</span>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Dolphin Hospital. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/919876543210" class="float-btn whatsapp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="tel:+919876543210" class="float-btn phone">
+  <i class="fa-solid fa-phone"></i>
+</a>
+
+<script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".footer-anim").forEach(el => {
+      el.classList.add("show");
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
