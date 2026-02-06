@@ -776,35 +776,3 @@ nav a:hover,
   }
 }
 
-
-
-
-
-/* ================= MOBILE OVERLAP FIX ================= */
-@media (max-width: 768px) {
-  
-  /* 1. Navbar ni normal flow loki techevvadam */
-  .main-nav {
-    position: relative !important; /* Deenivalla content kindhaki push avthundi */
-    top: 0 !important;
-    z-index: 1000;
-  }
-
-  /* 2. Hero Section ki padding add cheyadam */
-  .hero {
-    height: auto !important; 
-    min-height: 400px;
-    padding-top: 20px !important; /* Navbar ki hero ki madhya gap isthundi */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  /* 3. Hero content overlap kakunda gap ivvadam */
-  .hero-content {
-    margin-top: 0; 
-    padding: 0 15px;
-  }
-}
-
-

@@ -561,138 +561,117 @@
 
 
 
-  <section class="our-purpose">
+<section class="our-purpose">
 
-    <h2 class="purpose-heading">
-      OUR MISSSION & VISSION
-    </h2>
+  <h2 class="purpose-heading">
+    OUR MISSSION & VISSION
+  </h2>
 
-    <p class="purpose-intro">
-      Our purpose is driven by compassion, trust, and a commitment to
-      delivering high-quality healthcare for women and children at
-      every stage of life.
+  <p class="purpose-intro">
+    Our purpose is driven by compassion, trust, and a commitment to
+    delivering high-quality healthcare for women and children at
+    every stage of life.
+  </p>
+
+  <div class="purpose-panels">
+
+    <!-- MISSION -->
+    <div class="purpose-panel mission">
+      <span class="panel-tag">OUR MISSION</span>
+      <div class="icon">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+      </div>
+      <h3>Care with Compassion</h3>
+      <p>
+        To deliver ethical, compassionate, and high-quality healthcare
+        for women and children by combining expert medical care with
+        advanced technology and a patient-first approach.
+      </p>
+    </div>
+
+    <!-- VISION -->
+    <div class="purpose-panel vision">
+      <span class="panel-tag">OUR VISION</span>
+      <div class="icon">
+        <i class="fa-solid fa-eye"></i>
+      </div>
+      <h3>Excellence in Every Life</h3>
+      <p>
+        To be a trusted center of excellence in women and child healthcare,
+        known for innovation, safety, empathy, and lifelong commitment
+        to patient well-being.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold:0.25 });
+
+document.querySelectorAll(".purpose-panel, .purpose-heading")
+  .forEach(el => observer.observe(el));
+</script>
+
+
+
+
+
+
+
+
+
+
+<section class="facility-section">
+  <div class="container">
+
+    <h2 class="facility-title">OUR FACILITIES</h2>
+    <p class="facility-sub">
+      Designed to support safe, reliable and comfortable healthcare.
     </p>
 
-    <div class="purpose-panels">
+    <div class="facility-container">
 
-      <!-- MISSION -->
-      <div class="purpose-panel mission">
-        <span class="panel-tag">OUR MISSION</span>
-        <div class="icon">
-          <i class="fa-solid fa-hand-holding-heart"></i>
-        </div>
-        <h3>Care with Compassion</h3>
-        <p>
-          To deliver ethical, compassionate, and high-quality healthcare
-          for women and children by combining expert medical care with
-          advanced technology and a patient-first approach.
-        </p>
-      </div>
+      <!-- Row 1 (LEFT) -->
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div><h3>Expert Doctors</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div><h3>24/7 Emergency</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div><h3>ICU Care</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-microscope"></i></div><h3>Diagnostics</h3></div>
 
-      <!-- VISION -->
-      <div class="purpose-panel vision">
-        <span class="panel-tag">OUR VISION</span>
-        <div class="icon">
-          <i class="fa-solid fa-eye"></i>
-        </div>
-        <h3>Excellence in Every Life</h3>
-        <p>
-          To be a trusted center of excellence in women and child healthcare,
-          known for innovation, safety, empathy, and lifelong commitment
-          to patient well-being.
-        </p>
-      </div>
+      <!-- Row 2 (RIGHT) -->
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-vials"></i></div><h3>Laboratory</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-capsules"></i></div><h3>Pharmacy</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div><h3>Maternity Care</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-baby"></i></div><h3>Neonatal Care</h3></div>
+
+      <!-- Row 3 (LEFT) -->
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div><h3>Cardiac Care</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div><h3>Digital X-Ray</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div><h3>Patient Safety</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-hospital"></i></div><h3>Modern Rooms</h3></div>
 
     </div>
 
-  </section>
+  </div>
+</section>
+<script>
+const facilityObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
 
-
-
-
-
-
-
-
-
-
-  <section class="facility-section">
-    <div class="container">
-
-      <h2 class="facility-title zoom-in">OUR FACILITIES</h2>
-      <p class="facility-sub zoom-in">
-        Designed to support safe, reliable and comfortable healthcare.
-      </p>
-
-      <div class="facility-container">
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div>
-          <h3>Expert Doctors</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div>
-          <h3>24/7 Emergency</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div>
-          <h3>ICU Care</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-microscope"></i></div>
-          <h3>Diagnostics</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-vials"></i></div>
-          <h3>Laboratory</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-capsules"></i></div>
-          <h3>Pharmacy</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div>
-          <h3>Maternity Care</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-baby"></i></div>
-          <h3>Neonatal Care</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
-          <h3>Cardiac Care</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div>
-          <h3>Digital X-Ray</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div>
-          <h3>Patient Safety</h3>
-        </div>
-
-        <div class="facility-card zoom-in">
-          <div class="icon-circle"><i class="fa-solid fa-hospital"></i></div>
-          <h3>Modern Rooms</h3>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
+document.querySelectorAll(".facility-card, .facility-title")
+  .forEach(el=>facilityObserver.observe(el));
+</script>
 
 
 

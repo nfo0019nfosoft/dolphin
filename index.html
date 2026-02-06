@@ -610,8 +610,18 @@ Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Hea
   </div>
 
 </section>
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold:0.25 });
 
-
+document.querySelectorAll(".purpose-panel, .purpose-heading")
+  .forEach(el => observer.observe(el));
+</script>
 
 
 
@@ -625,81 +635,47 @@ Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Hea
 <section class="facility-section">
   <div class="container">
 
-    <h2 class="facility-title zoom-in">OUR FACILITIES</h2>
-    <p class="facility-sub zoom-in">
+    <h2 class="facility-title">OUR FACILITIES</h2>
+    <p class="facility-sub">
       Designed to support safe, reliable and comfortable healthcare.
     </p>
 
     <div class="facility-container">
 
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div>
-        <h3>Expert Doctors</h3>
-      </div>
+      <!-- Row 1 (LEFT) -->
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div><h3>Expert Doctors</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div><h3>24/7 Emergency</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div><h3>ICU Care</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-microscope"></i></div><h3>Diagnostics</h3></div>
 
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div>
-        <h3>24/7 Emergency</h3>
-      </div>
+      <!-- Row 2 (RIGHT) -->
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-vials"></i></div><h3>Laboratory</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-capsules"></i></div><h3>Pharmacy</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div><h3>Maternity Care</h3></div>
+      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-baby"></i></div><h3>Neonatal Care</h3></div>
 
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div>
-        <h3>ICU Care</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-microscope"></i></div>
-        <h3>Diagnostics</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-vials"></i></div>
-        <h3>Laboratory</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-capsules"></i></div>
-        <h3>Pharmacy</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div>
-        <h3>Maternity Care</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-baby"></i></div>
-        <h3>Neonatal Care</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
-        <h3>Cardiac Care</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div>
-        <h3>Digital X-Ray</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div>
-        <h3>Patient Safety</h3>
-      </div>
-
-      <div class="facility-card zoom-in">
-        <div class="icon-circle"><i class="fa-solid fa-hospital"></i></div>
-        <h3>Modern Rooms</h3>
-      </div>
+      <!-- Row 3 (LEFT) -->
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div><h3>Cardiac Care</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div><h3>Digital X-Ray</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div><h3>Patient Safety</h3></div>
+      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-hospital"></i></div><h3>Modern Rooms</h3></div>
 
     </div>
 
   </div>
 </section>
+<script>
+const facilityObserver = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
 
-
-  
-
+document.querySelectorAll(".facility-card, .facility-title")
+  .forEach(el=>facilityObserver.observe(el));
+</script>
 
 
 
