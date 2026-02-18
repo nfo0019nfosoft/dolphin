@@ -5,7 +5,7 @@
   --white:#ffffff;
 }
 
-/* ================= GLOBAL ================= */
+/* GLOBAL */
 *{
   margin:0;
   padding:0;
@@ -17,7 +17,6 @@ a{
   text-decoration:none;
 }
 
-/* ================= CONTAINER ================= */
 .container{
   max-width:1200px;
   width:100%;
@@ -25,38 +24,35 @@ a{
   padding:0 15px;
 }
 
-/* ================= TOP BAR ================= */
+/* TOP BAR */
 .top-bar{
   background:var(--white);
   border-bottom:1px solid #e5e7eb;
   padding:14px 0;
-  
 }
 
 .top-flex{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  flex-wrap:wrap;
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 .logo-wrap{
   display:flex;
   align-items:center;
   gap:10px;
-  margin-left:80px; /* ⭐ LEFT SHIFT */
 }
 
 .logo-wrap img{
-  width:110px;               /* bigger */
+  width:110px;
   height:62px;
   object-fit:contain;
-  transform:scale(1.8);     /* remove PNG whitespace */
-  transform-origin:left center;
   display:block;
 }
 
-/* ================= TOP INFO ================= */
+/* TOP INFO */
 .top-info{
   display:flex;
   align-items:center;
@@ -78,18 +74,19 @@ a{
   background:#d55191;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 .main-nav{
   background:var(--primary);
-  position:sticky;
-  top:0;
+  position:relative;
   z-index:999;
+  min-height:55px;
 }
 
 .nav-center{
   position:relative;
 }
 
+/* NAV LINKS */
 nav{
   display:flex;
   justify-content:center;
@@ -112,7 +109,7 @@ nav a,
   margin-left:4px;
 }
 
-/* ================= DROPDOWN ================= */
+/* DROPDOWN */
 .dropdown-custom{
   position:relative;
 }
@@ -143,64 +140,41 @@ nav a,
   pointer-events:auto;
 }
 
-/* ================= MOBILE MENU ================= */
+/* MENU BUTTON */
 .menu-btn{
   display:none;
-  color:#fff;
-  font-size:26px;
-  cursor:pointer;
 }
 
-/* ================= MOBILE VIEW ================= */
-/* ================= MOBILE ONLY FIX ================= */
+/* MOBILE */
 @media(max-width:768px){
 
-  /* ---------- TOP BAR ---------- */
   .top-flex{
     flex-direction:column;
-    gap:12px;
+    gap:10px;
     text-align:center;
   }
 
-  /* LOGO – BIGGER ONLY IN MOBILE */
-  .logo-wrap{
-    margin-left:0;               /* desktop left untouched */
-    justify-content:center;
-  }
-
-  .logo-wrap img{
-    width:90px;                  /* 🔥 mobile big logo */
-    height:auto;
-    transform:none;              /* remove desktop scale */
-  }
-
-  /* LOCATIONS SIDE BY SIDE */
   .top-info{
-    flex-direction:row;
-    justify-content:center;
-    gap:18px;
+    gap:15px;
     font-size:13px;
   }
 
-  /* ---------- NAVBAR ---------- */
-  .main-nav{
-    position:relative;           /* 🔥 hero paina overlap stop */
-    z-index:1000;
-  }
-
-  /* HAMBURGER */
+  /* FIXED POSITION */
   .menu-btn{
     display:block;
     position:absolute;
     right:15px;
-    top:12px;
+    top:12px;   /* 🔥 fixed top */
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
     z-index:2000;
   }
 
-  /* MOBILE MENU – HERO KINDHA OPEN */
+  /* MOBILE NAV */
   nav{
-    position:absolute;           /* 🔥 fixed / inset remove */
-    top:100%;                    /* main-nav kindha */
+    position:absolute;
+    top:100%;
     left:0;
     width:100%;
     background:var(--primary);
@@ -223,24 +197,26 @@ nav a,
     font-size:16px;
   }
 
-  /* ---------- SERVICES DROPDOWN ---------- */
+  /* MOBILE DROPDOWN */
   .dropdown-custom{
     width:100%;
     text-align:center;
   }
 
-  /* IMPORTANT: no space when closed */
   .dropdown-menu-custom{
     position:static;
-    display:none;                /* 🔥 gap fix */
+    display:none;
     width:100%;
     background:#5b3fa3;
     box-shadow:none;
     margin-top:6px;
+    opacity:1;
+    transform:none;
+    pointer-events:auto;
   }
 
   .dropdown-menu-custom.show{
-    display:block;               /* 🔥 only click appudu */
+    display:block;
   }
 
   .dropdown-menu-custom a{
@@ -249,23 +225,14 @@ nav a,
     font-size:15px;
   }
 }
-/* ===== NAV LINKS HOVER COLOR ===== */
+
+/* HOVER */
 nav a:hover,
 .service-btn:hover{
   color:#d55191;
 }
 
-.dropdown-menu-custom a{
-  display:block;
-  padding:10px 16px;                 /* slim, not bulky */
-  font-size:14px;
-  border-radius:6px;                 /* soft edges */
-  transition:background 0.25s ease, color 0.25s ease;
-}
-
-/* Hover / Tap (Desktop + Mobile) */
-.dropdown-menu-custom a:hover,
-.dropdown-menu-custom a:active{
+.dropdown-menu-custom a:hover{
   background:#d55191;
   color:#ffffff;
 }
@@ -781,7 +748,51 @@ nav a:hover,
   }
 }
 
+/* ===== HEADING ANIMATION (RIGHT TO CENTER) ===== */
+.why-title{
+  opacity:0;
+  animation:slideRight 1s ease forwards;
+}
 
+@keyframes slideRight{
+  from{
+    opacity:0;
+    transform:translateX(80px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+
+/* ===== CARDS ANIMATION (DOWN + LEFT) ===== */
+.why-card{
+  background:#ffffff;
+  padding:32px 22px;
+  border-radius:14px;
+  text-align:center;
+
+  opacity:0;
+  animation:downLeft 1.1s ease forwards;
+}
+
+/* Stagger effect */
+.why-card:nth-child(1){ animation-delay:.2s; }
+.why-card:nth-child(2){ animation-delay:.4s; }
+.why-card:nth-child(3){ animation-delay:.6s; }
+.why-card:nth-child(4){ animation-delay:.8s; }
+
+@keyframes downLeft{
+  from{
+    opacity:0;
+    transform:translate(-40px, 45px);
+  }
+  to{
+    opacity:1;
+    transform:translate(0,0);
+  }
+}
 
 
 
@@ -789,10 +800,11 @@ nav a:hover,
 
 /* ================= CARE APPROACH ================= */
 .care-section {
-  padding: 80px 0;              /* ❌ no % padding */
+  padding: 80px 0;
   background: #ffffff;
 }
 
+/* HEADING */
 .care-title {
   text-align: center;
   font-size: 28px;
@@ -800,6 +812,10 @@ nav a:hover,
   text-transform: uppercase;
   color: #d55191;
   margin-bottom: 55px;
+
+  /* ZOOM ANIMATION */
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
 }
 
 /* GRID */
@@ -816,8 +832,8 @@ nav a:hover,
   border-radius: 16px;
   border: 1px solid rgba(15,118,110,0.25);
   background: #ffffff;
-  animation: slideUp 1.1s ease;
   transition: 0.3s ease;
+  opacity: 0;
 }
 
 /* STEP BADGE */
@@ -854,19 +870,58 @@ nav a:hover,
   box-shadow: 0 10px 30px rgba(15,118,110,0.35);
 }
 
-/* ================= ANIMATION ================= */
-@keyframes slideUp {
+/* ================= ANIMATIONS ================= */
+
+/* Heading Zoom */
+@keyframes zoomIn {
   from {
     opacity: 0;
-    transform: translateY(45px);
+    transform: scale(0.7);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
-/* ================= TABLET (MINIMIZE FIX) ================= */
+/* Card Animations */
+.care-item:nth-child(1){
+  animation: fromLeft 1s ease forwards;
+}
+
+.care-item:nth-child(2){
+  animation: fromTop 1s ease forwards;
+}
+
+.care-item:nth-child(3){
+  animation: fromBottom 1s ease forwards;
+}
+
+.care-item:nth-child(4){
+  animation: fromRight 1s ease forwards;
+}
+
+@keyframes fromLeft {
+  from { opacity:0; transform:translateX(-60px); }
+  to { opacity:1; transform:translateX(0); }
+}
+
+@keyframes fromTop {
+  from { opacity:0; transform:translateY(-60px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes fromBottom {
+  from { opacity:0; transform:translateY(60px); }
+  to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes fromRight {
+  from { opacity:0; transform:translateX(60px); }
+  to { opacity:1; transform:translateX(0); }
+}
+
+/* ================= TABLET ================= */
 @media (max-width: 1100px) {
 
   .care-container {
