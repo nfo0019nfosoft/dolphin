@@ -275,9 +275,6 @@
 
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -303,14 +300,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* పైకి జరపడానికి */
-      padding: 20px 0; /* ప్యాడింగ్ తగ్గించాను */
+      justify-content: flex-start;
+      padding: 20px 0;
     }
 
-    /* Header */
     .spec-header {
       text-align: center;
-      margin-bottom: 0px; /* ఇక్కడ స్పేస్ పూర్తిగా తగ్గించాను */
+      margin-bottom: 0px;
       z-index: 5;
     }
     .spec-header h2 {
@@ -338,23 +334,14 @@
     }
     .divider-icon svg { width: 22px; height: 22px; fill: #fff; }
 
-    /* Orbit Stage */
     .orbit-stage {
       position: relative;
       width: 900px;
       height: 500px;
-      margin-top: -30px; /* హెడర్ వైపుకి జరపడానికి నెగటివ్ మార్జిన్ వాడాను */
+      margin-top: -30px;
     }
 
-    .orbit-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    /* Center Content */
+    /* Center Card */
     .center-card {
       position: absolute;
       width: 240px;
@@ -388,7 +375,6 @@
     }
     .learn-btn:hover { background: #9c27b0; color: #fff; }
 
-    /* Circular Nodes */
     .spec-node {
       position: absolute;
       display: flex;
@@ -424,10 +410,8 @@
       width: 100px;
     }
 
-
     @media (max-width: 900px) {
       .orbit-stage { width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; margin-top: 20px; }
-      .orbit-svg, .selection-dot { display: none; }
       .center-card { position: relative; left: auto; top: auto; transform: none; margin-bottom: 30px; }
       .spec-node { position: relative !important; left: auto !important; top: auto !important; transform: none !important; }
     }
@@ -446,17 +430,11 @@
   </div>
 
   <div class="orbit-stage" id="stage">
-    <svg class="orbit-svg" viewBox="0 0 900 500">
-      <path id="curvePath" d="M 150 250 Q 450 600 750 250" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-    </svg>
-
     <div class="center-card" id="centerCard">
       <h3 id="cTitle">Maternity & Birthing</h3>
       <p id="cDesc">Maternity or pregnancy is the natural phenomenon during which one or more babies develop inside the womb.</p>
       <a href="#" class="learn-btn">Learn More</a>
     </div>
-
-    <div class="selection-dot" id="selDot"></div>
 
     <div class="spec-node active" data-id="0" data-title="Maternity & Birthing" data-desc="Maternity or pregnancy is the natural phenomenon during which one or more babies develop.">
       <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/4140/4140048.png"></div>
@@ -499,40 +477,33 @@
 <script>
   AOS.init();
   const nodes = document.querySelectorAll('.spec-node');
-  const selDot = document.getElementById('selDot');
   const cTitle = document.getElementById('cTitle');
   const cDesc = document.getElementById('cDesc');
   const card = document.getElementById('centerCard');
-const positions = [
-  {x: 140, y: 260},  // left (Maternity)
-  {x: 210, y: 370},  // fetal medicine
-  {x: 330, y: 440},  // gynecology
-  {x: 450, y: 460},  // bottom center
-  {x: 570, y: 440},  // newborn
-  {x: 690, y: 370},  // PICU
-  {x: 760, y: 260}   // pediatrics
-];
+
+  const positions = [
+    {x: 140, y: 260},
+    {x: 210, y: 370},
+    {x: 330, y: 440},
+    {x: 450, y: 460},
+    {x: 570, y: 440},
+    {x: 690, y: 370},
+    {x: 760, y: 260}
+  ];
+
   function initLayout() {
     if(window.innerWidth > 900) {
       nodes.forEach((node, idx) => {
         node.style.left = positions[idx].x + 'px';
         node.style.top = positions[idx].y + 'px';
-        if(node.classList.contains('active')) updateDot(idx);
       });
     }
-  }
-
-  function updateDot(idx) {
-    const target = positions[idx];
-    selDot.style.left = (target.x + 45) + 'px';
-    selDot.style.top = (target.y - 5) + 'px';
   }
 
   nodes.forEach((node, idx) => {
     node.addEventListener('click', () => {
       nodes.forEach(n => n.classList.remove('active'));
       node.classList.add('active');
-      updateDot(idx);
       card.style.opacity = '0';
       setTimeout(() => {
         cTitle.innerHTML = node.dataset.title;
