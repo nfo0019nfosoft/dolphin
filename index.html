@@ -14,13 +14,22 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/index.css">
   <link rel="icon" type="image/png" href="img/fav.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed 1 second
+    once: true,     // scroll chesinappudu okasari matrame animation avthundi
+  });
+</script>
 </head>
 <body>
 
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="container top-flex">
+  <div class="top-container top-flex">
 
     <a href="index.html" class="logo-wrap">
       <img src="img/logo.png" alt="Dolphin Hospital">
@@ -38,23 +47,24 @@
 
 <!-- NAVBAR -->
 <header class="main-nav">
-  <div class="container nav-center">
+  <div class="nav-container nav-center">
 
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
 
-      <div class="dropdown-custom">
-        <button class="service-btn" onclick="toggleService(event)">
-          Services <i class="fa-solid fa-chevron-down small-arrow"></i>
-        </button>
+     <div class="dropdown-custom">
+  <button class="service-btn" onclick="toggleService(event)">
+    Services <i class="fa-solid fa-chevron-down small-arrow"></i>
+  </button>
 
-        <div class="dropdown-menu-custom" id="serviceMenu">
-          <a href="pediatrics.html">Pediatrics</a>
-          <a href="maternity.html">Maternity</a>
-          <a href="gynecology.html">Gynecology</a>
-        </div>
-      </div>
+  <div class="dropdown-menu-custom" id="serviceMenu">
+    <a href="gynecology.html">Gynecology</a>
+    <a href="pediatrics.html">Obstetrics</a>
+    <a href="maternity.html">Neonatalogy</a>
+    <a href="gynecology.html">Pediatrics</a>
+  </div>
+</div>
 
       <a href="warangal.html">Warangal</a>
       <a href="karimnagar.html">Karimnagar</a>
@@ -81,6 +91,35 @@
 </script>
 
 
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+
+  function toggleService(e){
+    // Mobile devices lo click chesinapudu toggle avvadaniki
+    if(window.innerWidth <= 768) {
+      e.stopPropagation();
+      document.getElementById("serviceMenu").classList.toggle("show");
+    }
+  }
+
+  // Ekkadaina bayata click chesthe dropdown close avvadaniki
+  window.onclick = function(event) {
+    if (!event.target.matches('.service-btn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-menu-custom");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+
+
+
 
 
 
@@ -88,48 +127,56 @@
 <section class="main-slider">
   <div class="main-slider-track">
 
-    <!-- SLIDE 1 : PEDIATRICS -->
+    <!-- SLIDE 1 : GYNECOLOGY -->
     <div class="main-slide active">
-      <img src="img/abt.png" alt="Pediatrics Care">
-      <div class="main-slide-content">
-        <h1>Pediatrics Care</h1>
-        <p>
-          Specialized medical care for infants, children and adolescents
-          with experienced pediatric specialists.
-        </p>
-
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 2 : MATERNITY -->
-    <div class="main-slide">
-      <img src="img/herobg.png" alt="Maternity Care">
-      <div class="main-slide-content">
-        <h1>Maternity Care</h1>
-        <p>
-          Complete maternity services including prenatal, delivery and
-          postnatal care in a safe and supportive environment.
-        </p>
-
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 3 : GYNECOLOGY -->
-    <div class="main-slide">
       <img src="img/abtt.png" alt="Gynecology Care">
       <div class="main-slide-content">
-        <h1>Gynecology Services</h1>
+        <h1>Gynecology</h1>
         <p>
-          Advanced gynecological treatments with modern technology and
-          personalized care for women at every stage of life.
+          Advanced care for women’s health with modern treatments.
         </p>
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
 
+    <!-- SLIDE 2 : OBSTETRICS -->
+    <div class="main-slide">
+      <img src="img/herobg.png" alt="Obstetrics Care">
+      <div class="main-slide-content">
+        <h1>Obstetrics</h1>
+        <p>
+          Complete pregnancy care from checkups to safe delivery.
+        </p>
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 : NEONATOLOGY -->
+    <div class="main-slide">
+      <img src="img/abt.png" alt="Neonatology Care">
+      <div class="main-slide-content">
+        <h1>Neonatology</h1>
+        <p>
+          Expert care for newborns and premature babies.
+        </p>
+        <a href="contact.html" class="hero-cta-btn">
+          Book Appointment
+        </a>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 : PEDIATRICS -->
+    <div class="main-slide">
+      <img src="img/herobg.png" alt="Pediatrics Care">
+      <div class="main-slide-content">
+        <h1>Pediatrics</h1>
+        <p>
+          Trusted care for your child’s growth and health.
+        </p>
         <a href="contact.html" class="hero-cta-btn">
           Book Appointment
         </a>
@@ -150,7 +197,71 @@
   }
 
   runSlider();
-  setInterval(runSlider, 4500); // smooth infinite loop
+  setInterval(runSlider, 4500);
+</script>
+
+
+
+
+
+
+
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-container">
+
+      <div class="about-content" data-aos="fade-right">
+        <span class="sub-title">Expert Care for Mothers & Children</span>
+        <h2>ABOUT OUR HOSPITAL</h2>
+        <div class="heading-line"></div>
+
+        <p>
+          Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of women and children. With a strong commitment to medical excellence, compassionate service, and patient safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+        </p>
+        
+        <p>
+          Our hospital specializes in  Gynecology,Obstetrics,Neonatalogy,Pediatrics and Women’s Health Services, delivering personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s wellness.
+          We are equipped with modern medical technology, advanced diagnostic facilities, ensuring accurate diagnosis and effective treatment.
+        </p>
+
+        <a href="about.html" class="about-btn">
+          Know More <span>&rarr;</span>
+        </a>
+      </div>
+
+      <div class="about-image-side" data-aos="fade-left">
+        <div class="image-main-wrapper">
+          <div class="shape-bg"></div>
+          
+          <img src="img/abt.png" alt="About Hospital" class="img-fluid main-abt-img">
+          
+          <div class="floating-card">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <div>
+              <h4>24/7</h4>
+              <p>Emergency Care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // AOS Initialization
+  AOS.init({
+    // Global settings:
+    duration: 1000,     // Animation speed (1 second)
+    easing: 'ease-in-out', // Smooth movement
+    once: true,         // Scroll chesinappudu okasari matrame animate avthundi
+    mirror: false,      // Reverse scroll chesinappudu animation repeat avvadhu
+    offset: 120,        // Element screen loki vachina entha distance tharvatha start avvali
+    anchorPlacement: 'top-bottom', 
+  });
 </script>
 
 
@@ -167,96 +278,422 @@
 
 
 
-<div class="hospital-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Specialties - Compact Layout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <section class="about-section">
-    <div class="container">
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #7b1fa2 0%, #4a0072 45%, #880e4f 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-      <div class="about-container">
+    .spec-section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* పైకి జరపడానికి */
+      padding: 20px 0; /* ప్యాడింగ్ తగ్గించాను */
+    }
 
-        <!-- LEFT CONTENT -->
-        <div class="about-content">
-          <h2>ABOUT OUR HOSPITAL</h2>
+    /* Header */
+    .spec-header {
+      text-align: center;
+      margin-bottom: 0px; /* ఇక్కడ స్పేస్ పూర్తిగా తగ్గించాను */
+      z-index: 5;
+    }
+    .spec-header h2 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .divider-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .divider-row::before, .divider-row::after {
+      content: '';
+      width: 60px; height: 1.5px;
+      background: rgba(255,255,255,0.3);
+    }
+    .divider-icon {
+      width: 45px; height: 45px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .divider-icon svg { width: 22px; height: 22px; fill: #fff; }
 
-          <p>
-            Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of women and children. With a strong commitment to medical excellence, compassionate service, and patient safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+    /* Orbit Stage */
+    .orbit-stage {
+      position: relative;
+      width: 900px;
+      height: 500px;
+      margin-top: -30px; /* హెడర్ వైపుకి జరపడానికి నెగటివ్ మార్జిన్ వాడాను */
+    }
 
-Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Health Services, delivering personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s wellness.Our team of experienced doctors, nurses, and healthcare professionals work together to offer ethical, transparent, and patient-centred care.
-          </p>
+    .orbit-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-          <a href="about.html" class="about-btn">Know More</a>
-        </div>
+    /* Center Content */
+    .center-card {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      left: 50%;
+      top: 40%; 
+      transform: translate(-50%, -50%);
+      background: rgba(255, 218, 230, 0.95);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      z-index: 10;
+      transition: all 0.3s ease;
+    }
+    .center-card h3 { font-size: 1.1rem; color: #6a1b9a; margin-bottom: 8px; font-weight: 800; }
+    .center-card p { font-size: 0.75rem; color: #444; line-height: 1.5; margin-bottom: 15px; }
+    .learn-btn {
+      padding: 6px 18px;
+      border: 1.5px solid #9c27b0;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #7b1fa2;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .learn-btn:hover { background: #9c27b0; color: #fff; }
 
-        <!-- RIGHT IMAGE -->
-        <div class="about-image">
-          <img src="img/abt.png" alt="About Hospital">
-        </div>
+    /* Circular Nodes */
+    .spec-node {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      z-index: 8;
+      transform: translate(-50%, -50%);
+      width: 100px;
+    }
+    .node-circ {
+      width: 75px; height: 75px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border: 3px solid transparent;
+    }
+    .spec-node.active .node-circ {
+      border-color: #f48fb1;
+      transform: scale(1.1);
+    }
+    .node-circ img { width: 40px; height: 40px; object-fit: contain; }
+    
+    .node-label {
+      margin-top: 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      white-space: normal;
+      width: 100px;
+    }
 
+
+    @media (max-width: 900px) {
+      .orbit-stage { width: 100%; height: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; margin-top: 20px; }
+      .orbit-svg, .selection-dot { display: none; }
+      .center-card { position: relative; left: auto; top: auto; transform: none; margin-bottom: 30px; }
+      .spec-node { position: relative !important; left: auto !important; top: auto !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="spec-section">
+  <div class="spec-header" data-aos="fade-down">
+    <h2>Our Specialties</h2>
+    <div class="divider-row">
+      <div class="divider-icon">
+        <svg viewBox="0 0 64 64"><path d="M32 56S8 38 8 22a12 12 0 0 1 24 0 12 12 0 0 1 24 0c0 16-24 34-24 34z"/></svg>
       </div>
-
     </div>
-  </section>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-<section class="services-ref">
-
-  <h2 class="services-title">OUR SPECIALITIES</h2>
-
-  <div class="services-img">
-    <img src="img/abtt.png" alt="Hospital Services">
   </div>
 
-  <div class="speciality-cards">
+  <div class="orbit-stage" id="stage">
+    <svg class="orbit-svg" viewBox="0 0 900 500">
+      <path id="curvePath" d="M 150 250 Q 450 600 750 250" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    </svg>
 
-    <div class="speciality-card">
-      <div class="speciality-icon">
-        <i class="fa-solid fa-baby"></i>
-      </div>
-      <h4>PEDIATRICS</h4>
-      <p>
-        Comprehensive medical care for infants, children and adolescents
-        with expert pediatricians.
-      </p>
-      <a href="pediatrics.html" class="speciality-btn">Know More</a>
+    <div class="center-card" id="centerCard">
+      <h3 id="cTitle">Maternity & Birthing</h3>
+      <p id="cDesc">Maternity or pregnancy is the natural phenomenon during which one or more babies develop inside the womb.</p>
+      <a href="#" class="learn-btn">Learn More</a>
     </div>
 
-    <div class="speciality-card">
-      <div class="speciality-icon">
-        <i class="fa-solid fa-person-pregnant"></i>
-      </div>
-      <h4>MATERNITY</h4>
-      <p>
-        Complete maternity services from pregnancy to delivery and
-        postnatal care in a safe environment.
-      </p>
-      <a href="maternity.html" class="speciality-btn">Know More</a>
+    <div class="selection-dot" id="selDot"></div>
+
+    <div class="spec-node active" data-id="0" data-title="Maternity & Birthing" data-desc="Maternity or pregnancy is the natural phenomenon during which one or more babies develop.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/4140/4140048.png"></div>
+      <span class="node-label">Maternity & Birthing</span>
     </div>
 
-    <div class="speciality-card">
-      <div class="speciality-icon">
-        <i class="fa-solid fa-stethoscope"></i>
-      </div>
-      <h4>GYNECOLOGY</h4>
-      <p>
-        Advanced gynecological treatments with modern technology
-        and personalized women’s care.
-      </p>
-      <a href="gynecology.html" class="speciality-btn">Know More</a>
+    <div class="spec-node" data-id="1" data-title="Fetal Medicine" data-desc="Fetal medicine focuses on the health and development of the baby before birth.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/3063/3063176.png"></div>
+      <span class="node-label">Fetal Medicine</span>
     </div>
 
+    <div class="spec-node" data-id="2" data-title="Gynecology" data-desc="Comprehensive care for female reproductive health and wellness.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/6195/6195697.png"></div>
+      <span class="node-label">Gynecology</span>
+    </div>
+
+    <div class="spec-node" data-id="3" data-title="Laparoscopy Surgeries" data-desc="Minimally invasive surgical procedures for faster recovery.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/3774/3774299.png"></div>
+      <span class="node-label">Laparoscopy Surgeries</span>
+    </div>
+
+    <div class="spec-node" data-id="4" data-title="Newborn Care" data-desc="Specialized medical care and attention for newborn infants.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/8388/8388402.png"></div>
+      <span class="node-label">Newborn Care</span>
+    </div>
+
+    <div class="spec-node" data-id="5" data-title="PICU" data-desc="Pediatric Intensive Care Unit for critical care of children.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/2966/2966278.png"></div>
+      <span class="node-label">PICU</span>
+    </div>
+
+    <div class="spec-node" data-id="6" data-title="Pediatrics" data-desc="Expert medical care for infants, children, and adolescents.">
+      <div class="node-circ"><img src="https://cdn-icons-png.flaticon.com/128/2966/2966327.png"></div>
+      <span class="node-label">Pediatrics</span>
+    </div>
   </div>
-
 </section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+  const nodes = document.querySelectorAll('.spec-node');
+  const selDot = document.getElementById('selDot');
+  const cTitle = document.getElementById('cTitle');
+  const cDesc = document.getElementById('cDesc');
+  const card = document.getElementById('centerCard');
+const positions = [
+  {x: 140, y: 260},  // left (Maternity)
+  {x: 210, y: 370},  // fetal medicine
+  {x: 330, y: 440},  // gynecology
+  {x: 450, y: 460},  // bottom center
+  {x: 570, y: 440},  // newborn
+  {x: 690, y: 370},  // PICU
+  {x: 760, y: 260}   // pediatrics
+];
+  function initLayout() {
+    if(window.innerWidth > 900) {
+      nodes.forEach((node, idx) => {
+        node.style.left = positions[idx].x + 'px';
+        node.style.top = positions[idx].y + 'px';
+        if(node.classList.contains('active')) updateDot(idx);
+      });
+    }
+  }
+
+  function updateDot(idx) {
+    const target = positions[idx];
+    selDot.style.left = (target.x + 45) + 'px';
+    selDot.style.top = (target.y - 5) + 'px';
+  }
+
+  nodes.forEach((node, idx) => {
+    node.addEventListener('click', () => {
+      nodes.forEach(n => n.classList.remove('active'));
+      node.classList.add('active');
+      updateDot(idx);
+      card.style.opacity = '0';
+      setTimeout(() => {
+        cTitle.innerHTML = node.dataset.title;
+        cDesc.innerText = node.dataset.desc;
+        card.style.opacity = '1';
+      }, 200);
+    });
+  });
+
+  window.addEventListener('resize', initLayout);
+  initLayout();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<section class="doctors-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <h2 class="premium-title">Meet Our Expert Consultants</h2>
+      <p class="intro-text">
+        At <strong>Dolphin Hospital for Women and Child</strong>, we have consultants with specialities like Obstetrics and Gynaecology and Neonatalogy and  Pediatrics with world-class medical care.
+      </p>
+      <h3 class="category-title">Our Obstetrics and Gynecology Doctors</h3>
+    </div>
+
+    <div class="doctor-grid">
+      <div class="doctor-card" data-aos="fade-up">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr B Radhika</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Gynecologist & Obstetrician</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, MD (OBG)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Whitefield, Hyderabad</p>
+            </div>
+            <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr Varalakshmi K S</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Obstetrician & Gynecologist</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, DGO</p>
+              <p><i class="fa-solid fa-location-dot"></i> Whitefield, Hyderabad</p>
+            </div>
+          <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr Sindhuri Gorantla</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Obstetrician & Gynecologist</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, MS (OBG)</p>
+              <p><i class="fa-solid fa-location-dot"></i> Hyderabad</p>
+            </div>
+        <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr Bhargavi Reddy</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Laparoscopic Surgeon</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, MD</p>
+              <p><i class="fa-solid fa-location-dot"></i> Whitefield, Hyderabad</p>
+            </div>
+           <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr T Raghu Thejaswi</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Obstetrician & Gynecologist</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, MS</p>
+              <p><i class="fa-solid fa-location-dot"></i> Whitefield, Hyderabad</p>
+            </div>
+          <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="doctor-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="card-inner">
+          <div class="doctor-img">
+            <img src="img/abt.png" alt="Doctor">
+          </div>
+          <div class="doctor-info">
+            <h4 class="dr-name">Dr Punnamaraju L</h4>
+            <p class="designation">Senior Consultant</p>
+            <p class="specialty">Gynecologist & Obstetrician</p>
+            <div class="meta-data">
+              <p><i class="fa-solid fa-stethoscope"></i> MBBS, DNB</p>
+              <p><i class="fa-solid fa-location-dot"></i> Hyderabad</p>
+            </div>
+            <a href="contact.html" class="btn-appointment">Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -564,6 +1001,313 @@ Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Hea
 
 
 
+<section class="mc-care">
+  <div class="mc-container">
+
+    <!-- LEFT -->
+    <div class="mc-left">
+      <div class="mc-img-wrap">
+      
+        <img src="img/mother.png" alt="">
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="mc-right">
+
+      <h2 class="mc-title">Our Advanced Mother & Child Care Services</h2>
+      <p class="mc-desc">
+        We deliver advanced, compassionate and specialized care for mothers and children.
+      </p>
+
+      <!-- Tabs -->
+      <div class="mc-tabs">
+        <button class="mc-tab active" onclick="switchMcTab('women')">Women</button>
+        <button class="mc-tab" onclick="switchMcTab('child')">Child</button>
+      </div>
+
+      <!-- WOMEN -->
+      <div id="women" class="mc-content active">
+        <div class="mc-grid">
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/uterus.png"><p>Gynecology</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/pregnant.png"><p>Obstetrics</p></div>
+          <div class="mc-card"><img src="https://cdn-icons-png.flaticon.com/256/11013/11013485.png"><p>Fertility</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/baby.png"><p>Pregnancy Delivery</p></div>
+          <div class="mc-card"><img src="img/high.png"><p>High-risk Pregnancy</p></div>
+          <div class="mc-card"><img src="https://cdn-icons-png.freepik.com/256/4850/4850913.png"><p>Colposcopies</p></div>
+        </div>
+      </div>
+
+      <!-- CHILD -->
+      <div id="child" class="mc-content">
+        <div class="mc-grid">
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/baby.png"><p>Newborn Care</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/stethoscope.png"><p>Pediatrics</p></div>
+          <div class="mc-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqpeBPTRzPPsnkFcYDsztuDPjXui6aIRMvA&s"><p>Vaccination</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/milk-bottle.png"><p>Nutrition</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/brain.png"><p>Development</p></div>
+          <div class="mc-card"><img src="https://img.icons8.com/color/96/hospital-room.png"><p>NICU</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+  function switchMcTab(tabName) {
+  document.querySelectorAll(".mc-tab").forEach(btn => btn.classList.remove("active"));
+  document.querySelectorAll(".mc-content").forEach(c => c.classList.remove("active"));
+
+  document.querySelector(`[onclick="switchMcTab('${tabName}')"]`).classList.add("active");
+  document.getElementById(tabName).classList.add("active");
+}
+</script>
+
+
+
+
+
+
+
+<section class="journey-section">
+
+  <div class="journey-container">
+
+    <!-- LEFT -->
+    <div class="left">
+
+      <p class="tag">Step by Step</p>
+      <h2>Your Care Journey at Dolphin Hospital: In 4 Steps</h2>
+      <p class="sub">
+        From consultation to recovery — we ensure complete care for mother and child.
+      </p>
+
+      <div class="steps">
+
+        <div class="step">
+          <span>01</span>
+          <div class="step-content">
+            <h4>Consultation with Specialist</h4>
+            <p>Meet our pediatric, obstetric, or neonatal expert for complete guidance and clarity.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span>02</span>
+          <div class="step-content">
+            <h4>Diagnosis & Plan</h4>
+            <p>We perform tests and create a personalized care plan tailored to your needs.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span>03</span>
+          <div class="step-content">
+            <h4>Treatment & Monitoring</h4>
+            <p>Advanced treatment with continuous monitoring to ensure safety and best outcomes.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span>04</span>
+          <div class="step-content">
+            <h4>Recovery & Support</h4>
+            <p>Ongoing care and support to ensure long-term health and well-being for patients.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="journey-card">
+
+        <p class="big-text">
+          At Dolphin Hospital, we don’t just provide treatment. We ensure compassionate care for every mother and child.
+        </p>
+
+        <p class="small-text">
+          Whether it's pregnancy care, newborn support, or pediatric treatment, our experts guide you at every step with care and trust.
+        </p>
+
+        <a href="contact.html" class="btn">Book Appointment</a>
+
+        <img src="img/step.png" class="doctr-img" alt="doctor">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="fertility-banner-section">
+    <div class="f-wrapper">
+        
+        <div class="f-hero-card" data-aos="fade-up">
+            <div class="f-grid-layout">
+                <div class="f-text-area">
+                    <p class="f-top-subtitle">What is Assisted Reproductive Technology?</p>
+                    <h1 class="f-main-heading">Nurturing Parenthood,<br>One Step Closer</h1>
+                    
+                    <div class="f-matter">
+                        <p>Assisted Reproductive Technology (ART) refers to medical procedures that help individuals or couples conceive when natural conception is difficult or impossible. ART involves manipulating eggs, sperm, or embryos outside the human body and transferring embryos into the uterus to achieve pregnancy.</p>
+                        <p>Assisted reproductive technology can help with both male and female infertility, repeated pregnancy loss, or some genetic problems. Common treatments include IVF, IUI, ICSI, donor programs, freezing eggs, sperm, or embryos, and genetic testing before pregnancy.</p>
+                    </div>
+
+                    <div class="f-actions">
+                        <a href="contact.html" class="f-btn f-btn-solid">Book Appointment</a>
+                        <a href="contact.html" class="f-btn f-btn-border">Read More</a>
+                    </div>
+
+                    <div class="f-footer-stats">
+                        <div class="f-stat"><i class="fa-solid fa-star"></i> 20+ Years of Expertise</div>
+                        <div class="f-stat"><i class="fa-solid fa-users"></i> 10,000+ Successful Cases</div>
+                        <div class="f-stat"><i class="fa-solid fa-heart"></i> Personalized Fertility Plans</div>
+                    </div>
+                </div>
+
+                <div class="f-image-area">
+                    <img src="img/couple.png" alt="Couple">
+                </div>
+            </div>
+        </div>
+
+        <div class="f-side-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="f-facility-img">
+                <img src="img/abt.png" alt="Our Facility">
+            </div>
+            <div class="f-contact-box-container">
+                <a href="tel:+917299974701" class="f-contact-card">
+                    <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                    <span>+91 98765 43210</span>
+                </a>
+                <a href="tel:+919429690040" class="f-contact-card">
+                    <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+                    <span>+91 98765 43210</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ once: true });</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="abt-main-wrapper">
+    <div class="abt-container">
+        <div class="abt-row">
+            <div class="abt-content" data-aos="fade-right" data-aos-duration="1000">
+                <span class="abt-tagline">How ART Changes the Fertility Journey.</span>
+                <h2 class="abt-heading">Benefits That Bring You Closer to Parenthood</h2>
+                
+                <ul class="abt-points">
+                    <li><i class="fa-solid fa-puzzle-piece"></i> Provides solutions for infertility in men, women, and couples.</li>
+                    <li><i class="fa-solid fa-snowflake"></i> Offers fertility preservation options through cryopreservation.</li>
+                    <li><i class="fa-solid fa-dna"></i> Allows genetic screening for healthier pregnancies.</li>
+                    <li><i class="fa-solid fa-chart-line"></i> Increases pregnancy and live birth rates.</li>
+                    <li><i class="fa-solid fa-bullseye"></i> ART increases the success rate of conception by up to 60% for many couples.</li>
+                </ul>
+            </div>
+            <div class="abt-image" data-aos="fade-left" data-aos-duration="1000">
+                <img src="img/abt.png" alt="Fertility Benefits">
+            </div>
+        </div>
+
+        <div class="abt-row abt-reverse">
+            <div class="abt-content" data-aos="fade-left" data-aos-duration="1000">
+                <p class="abt-desc-top">Before beginning Assisted Reproductive Technology (ART), our fertility specialists in Chennai perform a complete hormonal and ultrasound evaluation.</p>
+                <h2 class="abt-heading">Considerations That Matter in Parenthood</h2>
+                
+                <ul class="abt-points">
+                    <li><i class="fa-solid fa-layer-group"></i> Higher likelihood of multiple pregnancies.</li>
+                    <li><i class="fa-solid fa-stethoscope"></i> Risk of Ovarian Hyperstimulation Syndrome (OHSS) in women undergoing stimulation.</li>
+                    <li><i class="fa-solid fa-heart-pulse"></i> Emotional and financial challenges during treatment.</li>
+                    <li><i class="fa-solid fa-arrow-up-right-dots"></i> Success rates vary depending on age, fertility factors, and ART technique used.</li>
+                </ul>
+                <a href="#" class="abt-btn">Fertility Evaluation</a>
+            </div>
+            <div class="abt-image" data-aos="fade-right" data-aos-duration="1000">
+                <img src="img/abt.png" alt="Parenthood Considerations">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ once: true });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <section class="our-purpose">
 
@@ -622,6 +1366,108 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll(".purpose-panel, .purpose-heading")
   .forEach(el => observer.observe(el));
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="tx-wcu-section">
+    <div class="tx-wcu-overlay"></div>
+    <div class="tx-wcu-container">
+        
+        <div class="tx-wcu-header" data-aos="fade-up">
+            <h2 class="tx-wcu-main-title">Why Choose Us?</h2>
+            <p class="tx-wcu-sub-text">
+                At Dolphin Hospitals, we are redefining healthcare by combining clinical excellence, advanced technology and patient-first values. With a strong presence across the region, we have become one of the most trusted names for holistic, world-class healthcare.
+            </p>
+        </div>
+
+        <div class="tx-wcu-grid">
+            
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">2</h3>
+                    <h4 class="tx-wcu-label">Locations</h4>
+                    <p class="tx-wcu-desc">Delivering advanced, accessible care across the city.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Location Pin">
+                </div>
+            </div>
+
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">500+</h3>
+                    <h4 class="tx-wcu-label">Beds</h4>
+                    <p class="tx-wcu-desc">Modern facilities designed for comprehensive treatment.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3063/3063176.png" alt="Hospital Bed">
+                </div>
+            </div>
+
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">100K+</h3>
+                    <h4 class="tx-wcu-label">Happy Patients</h4>
+                    <p class="tx-wcu-desc">A legacy of trust, healing and personalized care for families.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                   <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png" alt="Happy Clients">
+                </div>
+            </div>
+
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">30K+</h3>
+                    <h4 class="tx-wcu-label">Successful Surgeries</h4>
+                    <p class="tx-wcu-desc">Expertise in complex, robotic and minimally invasive procedures.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                  <img src="https://cdn-icons-png.flaticon.com/512/9821/9821838.png" style="width: 75px; height:75px;">
+                </div>
+            </div>
+
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">5K+</h3>
+                    <h4 class="tx-wcu-label">International Patients</h4>
+                    <p class="tx-wcu-desc">A trusted destination for patients from around the world.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/814/814513.png" alt="Global Patients">
+                </div>
+            </div>
+
+            <div class="tx-wcu-card" data-aos="zoom-in" data-aos-delay="600">
+                <div class="tx-wcu-card-content">
+                    <h3 class="tx-wcu-num">200+</h3>
+                    <h4 class="tx-wcu-label">Doctors</h4>
+                    <p class="tx-wcu-desc">Experienced doctors dedicated to personalized and expert care.</p>
+                </div>
+                <div class="tx-wcu-icon-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3774/3774299.png" alt="Doctor Specialist">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
 
 
 
@@ -796,6 +1642,164 @@ counters.forEach(counter => {
 
 
 
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<section class="dph-about-section">
+    <div class="dph-container">
+        <div class="dph-main-flex">
+            
+            <div class="dph-content-side">
+                <span class="dph-sub-tag">Our Success Stories</span>
+                <h2 class="dph-heading">Where Hope Met Science - And Lives Changed Forever Best IVF Doctor Near Me</h2>
+                
+                <p class="dph-para">At Dolphin Hospital, every success story is more than just a result; it's a journey of strength, trust, and transformation.</p>
+                <p class="dph-para">Over the last three decades, we've been privileged to guide 15,000+ couples from fear and doubt to joy and parenthood.</p>
+                
+                <div class="dph-slider-box">
+                    <div class="dph-review-card">
+                        <i class="fa-solid fa-quote-right dph-quote"></i>
+                        <p class="dph-review-text" id="dph-text">“Review loading...”</p>
+                        
+                        <div class="dph-user">
+                            <img src="" alt="User" id="dph-img" class="dph-avatar">
+                            <div class="dph-meta">
+                                <h4 id="dph-name">Name</h4>
+                                <span id="dph-city">City</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dph-nav">
+                        <button class="dph-btn" onclick="dphPrev()"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="dph-btn" onclick="dphNext()"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dph-image-side">
+                <div class="dph-img-container">
+                    <img src="img/abt.png" alt="Doctors" class="dph-abt-img">
+                    
+                    <div class="dph-google-box">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                        <div class="dph-rating">
+                            <p>Reviews <span>★★★★★</span></p>
+                            <strong>4.7</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    // 6 Different Reviews (Bangalore, Hyderabad, etc.)
+    const dphData = [
+        { name: "Neha", city: "Bangalore", text: "We came here with low AMH and zero hope. Today, we're holding our baby girl. Dolphin Hospital didn't just treat us — they walked with us.", img: "https://i.pravatar.cc/100?u=11" },
+        { name: "Saritha", city: "Hyderabad", text: "Exceptional care! The doctors are very professional. After 4 years of struggle, we finally conceived here.", img: "https://i.pravatar.cc/100?u=12" },
+        { name: "Rajesh", city: "Chennai", text: "The Neonatal care is world-class. My twin boys were in safe hands. Forever grateful to Dolphin Hospital.", img: "https://i.pravatar.cc/100?u=13" },
+        { name: "Priya", city: "Karimangar", text: "The hospitality and medical expertise are unmatched. They made our journey to parenthood stress-free.", img: "https://i.pravatar.cc/100?u=14" },
+        { name: "Anjali", city: "Warangal", text: "Very supportive staff. Every doubt was cleared with patience. Highly recommend for fertility issues.", img: "https://i.pravatar.cc/100?u=15" },
+        { name: "Kavya", city: "Vijayawada", text: "They treat patients like family. The technology and doctors here are the best we have seen.", img: "https://i.pravatar.cc/100?u=16" }
+    ];
+
+    let dphIdx = 0;
+    function dphUpdate() {
+        const item = dphData[dphIdx];
+        document.getElementById('dph-text').innerText = `“${item.text}”`;
+        document.getElementById('dph-name').innerText = item.name;
+        document.getElementById('dph-city').innerText = item.city;
+        document.getElementById('dph-img').src = item.img;
+    }
+    function dphNext() { dphIdx = (dphIdx + 1) % dphData.length; dphUpdate(); }
+    function dphPrev() { dphIdx = (dphIdx - 1 + dphData.length) % dphData.length; dphUpdate(); }
+    dphUpdate();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="hospitals-location">
+  <div class="hos-container">
+    <div class="section-header">
+      <h2 class="location-title">Our Woman & Child Hospitals in Telangana</h2>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-card" onclick="openFullImage('img/abtt.png')">
+        <div class="image-box">
+          <img src="img/abtt.png" alt="Karimnagar Hospital">
+          <div class="location-label">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Karimnagar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="location-card" onclick="openFullImage('img/herobg.png')">
+        <div class="image-box">
+          <img src="img/herobg.png" alt="Warangal Hospital">
+          <div class="location-label">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Warangal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="fullImageOverlay" class="full-screen-viewer" onclick="closeFullImage()">
+  <span class="close-btn">&times;</span>
+  <img id="fullVisual" src="" alt="Full View">
+</div>
+<script>
+  function openFullImage(src) {
+  const overlay = document.getElementById('fullImageOverlay');
+  const fullImg = document.getElementById('fullVisual');
+  
+  fullImg.src = src;
+  overlay.style.display = 'flex';
+  
+  // Disable scrolling when full screen is open
+  document.body.style.overflow = 'hidden';
+}
+
+function closeFullImage() {
+  const overlay = document.getElementById('fullImageOverlay');
+  overlay.style.display = 'none';
+  
+  // Re-enable scrolling
+  document.body.style.overflow = 'auto';
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
 <section class="contact-modern">
 
   <!-- BRANCH INFO -->
@@ -821,7 +1825,7 @@ counters.forEach(counter => {
         <i class="fa-solid fa-phone"></i>
         <div>
           <h4>Phone</h4>
-          <p><a href="tel:+919812345678">+91 6309173007</a></p>
+          <p><a href="tel:+919812345678">+91 63091 73007</a></p>
         </div>
       </div>
 
@@ -851,7 +1855,7 @@ counters.forEach(counter => {
         <i class="fa-solid fa-phone"></i>
         <div>
           <h4>Phone</h4>
-          <p><a href="tel:+919876543210">+91  8977760911</a></p>
+          <p><a href="tel:+919876543210">+91  89777 60911</a></p>
         </div>
       </div>
 
@@ -869,8 +1873,8 @@ counters.forEach(counter => {
 
   </div>
   
+<!-- 
 
-  <!-- CONTACT FORM -->
   <div class="contact-form-box animate-up">
     <h3>Send Us a Message</h3>
 
@@ -884,9 +1888,10 @@ counters.forEach(counter => {
         <input type="text" placeholder="Phone Number">
         <select>
           <option>Select Service</option>
-          <option>Pediatrics</option>
           <option>Gynecology</option>
-          <option>Maternity</option>
+          <option>Obstetrics</option>
+          <option>Neonatalogy</option>
+          <option>Pediatrics</option>
         </select>
       </div>
 
@@ -898,7 +1903,7 @@ counters.forEach(counter => {
     </form>
   </div>
 
-  <!-- MAPS -->
+
   <div class="map-wrapper">
   
 
@@ -910,12 +1915,28 @@ counters.forEach(counter => {
       <iframe src="https://www.google.com/maps?q=Dolphin%20Hospital%20Karimnagar&output=embed"></iframe>
     </div>
 
-  </div>
+  </div> -->
 
 </section>
 
 
+<section class="appointment-banner">
+  <div class=".appo-container">
+    <div class="banner-wrapper">
+      <div class="banner-img">
+        <img src="img/book.png" alt="Doctor Consultation">
+      </div>
 
+      <div class="banner-content">
+        <h2 class="banner-title">Prioritize Women and Child Care</h2>
+        <p class="banner-text">
+          Schedule Your Appointment for Convenient and Caring Health Services With Our Experts
+        </p>
+        <a href="contact.html" class="btn-book">Book an Appointment</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
