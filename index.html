@@ -415,13 +415,14 @@
       .center-card { position: relative; left: auto; top: auto; transform: none; margin-bottom: 30px; }
       .spec-node { position: relative !important; left: auto !important; top: auto !important; transform: none !important; }
     }
+    
   </style>
 </head>
 <body>
 
 <section class="spec-section">
   <div class="spec-header" data-aos="fade-down">
-    <h2>Our Specialties</h2>
+    <h2>OUR SPECIALTIES</h2>
     <div class="divider-row">
       <div class="divider-icon">
         <svg viewBox="0 0 64 64"><path d="M32 56S8 38 8 22a12 12 0 0 1 24 0 12 12 0 0 1 24 0c0 16-24 34-24 34z"/></svg>
@@ -480,16 +481,15 @@
   const cTitle = document.getElementById('cTitle');
   const cDesc = document.getElementById('cDesc');
   const card = document.getElementById('centerCard');
-
-  const positions = [
-    {x: 140, y: 260},
-    {x: 210, y: 370},
-    {x: 330, y: 440},
-    {x: 450, y: 460},
-    {x: 570, y: 440},
-    {x: 690, y: 370},
-    {x: 760, y: 260}
-  ];
+const positions = [
+  {x: 180, y: 230},
+  {x: 230, y: 340},
+  {x: 330, y: 410},
+  {x: 450, y: 430},
+  {x: 570, y: 410},
+  {x: 680, y: 340},
+  {x: 700, y: 230}
+];
 
   function initLayout() {
     if(window.innerWidth > 900) {
