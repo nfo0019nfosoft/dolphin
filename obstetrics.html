@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> About Us - Dolphin Hospital</title>
+  <title>Obstetrics - Dolphin Hospital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap -->
@@ -12,7 +12,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/gynecology.css">
   <link rel="icon" type="image/png" href="img/fav.png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -124,17 +124,12 @@
 
 
 
-
-
-
-
-
   <section class="hero">
   <div class="hero-bg"></div>
 
   <div class="hero-content">
-    <h1>ABOUT US</h1>
-    <p>Home <span>›</span> About Us</p>
+    <h1>OBSTETRICS</h1>
+    <p>Home <span>›</span> Services <span>›</span>Obstetrics</p>
   </div>
 </section>
 
@@ -143,204 +138,119 @@
 
 
 
+<section class="service-box-section">
+  <div class="site-container">
 
-
-
-
-
-
-
-
-
-<section class="about-section">
-  <div class="container">
-    <div class="about-container">
-
-      <div class="about-content" data-aos="fade-right">
-        <span class="sub-title">Expert Care for Mothers & Children</span>
-        <h2>ABOUT OUR HOSPITAL</h2>
-        <div class="heading-line"></div>
-
+    <!-- SERVICE 1 -->
+    <div class="service-row">
+      <div class="service-content">
+        <h3>GENERAL OBSTETRIC CARE</h3>
         <p>
-          Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of women and children. With a strong commitment to medical excellence, compassionate service, and patient safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+          Our general pediatric care services provide comprehensive medical
+          support for infants, children, and adolescents. We focus on routine
+          health checkups, early diagnosis, and effective treatment of common
+          childhood illnesses such as fever, infections, allergies, and growth
+          concerns. Our pediatricians ensure personalized care in a warm,
+          child-friendly environment that promotes overall physical and
+          emotional well-being.
         </p>
-        
-        <p>
-          Our hospital specializes in  Gynecology,Obstetrics,Neonatalogy,Pediatrics and Women’s Health Services, delivering personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s wellness.
-          We are equipped with modern medical technology, advanced diagnostic facilities, ensuring accurate diagnosis and effective treatment.
-        </p>
-
-        <a href="about.html" class="about-btn">
-          Know More <span>&rarr;</span>
-        </a>
       </div>
-
-      <div class="about-image-side" data-aos="fade-left">
-        <div class="image-main-wrapper">
-          <div class="shape-bg"></div>
-          
-          <img src="img/abt.png" alt="About Hospital" class="img-fluid main-abt-img">
-          
-          <div class="floating-card">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <div>
-              <h4>24/7</h4>
-              <p>Emergency Care</p>
-            </div>
-          </div>
-        </div>
+      <div class="service-image">
+        <img src="img/abt.png" alt="Pediatric Care">
       </div>
-
-    </div>
-  </div>
-</section>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-  // AOS Initialization
-  AOS.init({
-    // Global settings:
-    duration: 1000,     // Animation speed (1 second)
-    easing: 'ease-in-out', // Smooth movement
-    once: true,         // Scroll chesinappudu okasari matrame animate avthundi
-    mirror: false,      // Reverse scroll chesinappudu animation repeat avvadhu
-    offset: 120,        // Element screen loki vachina entha distance tharvatha start avvali
-    anchorPlacement: 'top-bottom', 
-  });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section class="our-purpose">
-
-  <h2 class="purpose-heading">
-    OUR MISSSION & VISSION
-  </h2>
-
-  <p class="purpose-intro">
-    Our purpose is driven by compassion, trust, and a commitment to
-    delivering high-quality healthcare for women and children at
-    every stage of life.
-  </p>
-
-  <div class="purpose-panels">
-
-    <!-- MISSION -->
-    <div class="purpose-panel mission">
-      <span class="panel-tag">OUR MISSION</span>
-      <div class="icon">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-      </div>
-      <h3>Care with Compassion</h3>
-      <p>
-        To deliver ethical, compassionate, and high-quality healthcare
-        for women and children by combining expert medical care with
-        advanced technology and a patient-first approach.
-      </p>
     </div>
 
-    <!-- VISION -->
-    <div class="purpose-panel vision">
-      <span class="panel-tag">OUR VISION</span>
-      <div class="icon">
-        <i class="fa-solid fa-eye"></i>
+    <!-- SERVICE 2 -->
+    <div class="service-row reverse">
+      <div class="service-content">
+        <h3>NEONATAL CARE</h3>
+        <p>
+          Our neonatal care unit is dedicated to providing specialized medical
+          care for newborn babies, including premature and low-birth-weight
+          infants. With advanced monitoring systems and experienced neonatal
+          specialists, we ensure constant observation, temperature regulation,
+          nutritional support, and timely medical intervention during the most
+          critical early days of life.
+        </p>
       </div>
-      <h3>Excellence in Every Life</h3>
-      <p>
-        To be a trusted center of excellence in women and child healthcare,
-        known for innovation, safety, empathy, and lifelong commitment
-        to patient well-being.
-      </p>
+      <div class="service-image">
+        <img src="img/abt.png" alt="Neonatal Care">
+      </div>
     </div>
 
-  </div>
-
-</section>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold:0.25 });
-
-document.querySelectorAll(".purpose-panel, .purpose-heading")
-  .forEach(el => observer.observe(el));
-</script>
-
-
-
-
-
-
-
-
-
-<section class="care-section">
-  <div class="container">
-
-    <h2 class="care-title">OUR CARE APPROACH</h2>
-
-    <div class="care-container">
-
-      <div class="care-item">
-        <span class="care-step">01</span>
-        <h3>LISTEN & UNDERSTAND</h3>
+    <!-- SERVICE 3 -->
+    <div class="service-row">
+      <div class="service-content">
+        <h3>IMMUNIZATION SERVICES</h3>
         <p>
-          We begin by carefully understanding patient concerns,
-          medical history, and expectations.
+          We offer complete immunization services following nationally and
+          internationally recommended vaccination schedules. Our vaccination
+          programs help protect children from serious and preventable diseases
+          while strengthening their immune system. Parents are guided with
+          proper counseling, reminders, and post-vaccination care for maximum
+          safety and effectiveness.
         </p>
       </div>
+      <div class="service-image">
+        <img src="img/abt.png" alt="Immunization Services">
+      </div>
+    </div>
 
-      <div class="care-item">
-        <span class="care-step">02</span>
-        <h3>ACCURATE DIAGNOSIS</h3>
+    <!-- SERVICE 4 -->
+    <div class="service-row reverse">
+      <div class="service-content">
+        <h3>CHILD GROWTH & DEVELOPMENT</h3>
         <p>
-          Our doctors use clinical expertise and modern tools
-          to ensure precise diagnosis.
+          Monitoring a child’s growth and development is essential for long-term
+          health. Our specialists regularly assess physical growth, cognitive
+          development, speech, and emotional behavior to identify potential
+          delays at an early stage. Early intervention and parental guidance
+          help ensure children achieve healthy developmental milestones.
         </p>
       </div>
+      <div class="service-image">
+        <img src="img/abt.png" alt="Child Development">
+      </div>
+    </div>
 
-      <div class="care-item">
-        <span class="care-step">03</span>
-        <h3>PERSONALISED TREATMENT</h3>
+    <!-- SERVICE 5 -->
+    <div class="service-row">
+      <div class="service-content">
+        <h3>NUTRITION & DIET COUNSELLING</h3>
         <p>
-          Treatment plans are customised based on individual
-          patient needs and safety.
+          Proper nutrition plays a vital role in a child’s growth and immunity.
+          Our nutrition and diet counselling services provide personalized diet
+          plans based on age, growth needs, and medical conditions. We guide
+          parents on healthy eating habits, balanced diets, and nutritional
+          support to promote strong immunity and optimal development.
         </p>
       </div>
+      <div class="service-image">
+        <img src="img/abt.png" alt="Nutrition Counselling">
+      </div>
+    </div>
 
-      <div class="care-item">
-        <span class="care-step">04</span>
-        <h3>CONTINUOUS SUPPORT</h3>
+    <!-- SERVICE 6 -->
+    <div class="service-row reverse">
+      <div class="service-content">
+        <h3>PAEDIATRIC EMERGENCY CARE</h3>
         <p>
-          We provide follow-up care and guidance to support
-          long-term recovery.
+          Our pediatric emergency care services operate round-the-clock to
+          provide immediate medical attention during critical situations.
+          Equipped with trained pediatric specialists and child-friendly
+          emergency facilities, we ensure rapid diagnosis and prompt treatment
+          for injuries, breathing problems, infections, and other emergencies,
+          offering reassurance to both children and parents.
         </p>
       </div>
-
+      <div class="service-image">
+        <img src="img/abt.png" alt="Pediatric Emergency Care">
+      </div>
     </div>
 
   </div>
 </section>
+
 
 
 
@@ -382,7 +292,7 @@ document.querySelectorAll(".purpose-panel, .purpose-heading")
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-         <a href="gynecology.html">Gynecology</a>
+        <a href="gynecology.html">Gynecology</a>
     <a href="obstetrics.html">Obstetrics</a>
     <a href="neonatalogy.html">Neonatalogy</a>
     <a href="pediatrics.html">Pediatrics</a>

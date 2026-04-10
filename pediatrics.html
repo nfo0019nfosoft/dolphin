@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dolphin Hospital</title>
+  <title>Pediatrics - Dolphin Hospital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap -->
@@ -12,16 +12,24 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/pediatrics.css">
+  <link rel="stylesheet" href="css/gynecology.css">
   <link rel="icon" type="image/png" href="img/fav.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed 1 second
+    once: true,     // scroll chesinappudu okasari matrame animation avthundi
+  });
+</script>
 </head>
 <body>
 
 
-
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="container top-flex">
+  <div class="top-container top-flex">
 
     <a href="index.html" class="logo-wrap">
       <img src="img/logo.png" alt="Dolphin Hospital">
@@ -32,30 +40,31 @@
       <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
     </div>
 
-    <a href="contact.html" class="btn book-btn">Book Appointment</a>
+   <a href="contact.html" class="book-btn">Book Appointment</a>
 
   </div>
 </div>
 
 <!-- NAVBAR -->
 <header class="main-nav">
-  <div class="container nav-center">
+  <div class="nav-container nav-center">
 
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
 
-      <div class="dropdown-custom">
-        <button class="service-btn" onclick="toggleService(event)">
-          Services <i class="fa-solid fa-chevron-down small-arrow"></i>
-        </button>
+     <div class="dropdown-custom">
+  <button class="service-btn" onclick="toggleService(event)">
+    Services <i class="fa-solid fa-chevron-down small-arrow"></i>
+  </button>
 
-        <div class="dropdown-menu-custom" id="serviceMenu">
-          <a href="pediatrics.html">Pediatrics</a>
-          <a href="maternity.html">Maternity</a>
-          <a href="gynecology.html">Gynecology</a>
-        </div>
-      </div>
+  <div class="dropdown-menu-custom" id="serviceMenu">
+    <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
+  </div>
+</div>
 
       <a href="warangal.html">Warangal</a>
       <a href="karimnagar.html">Karimnagar</a>
@@ -81,6 +90,33 @@
   }
 </script>
 
+
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+
+  function toggleService(e){
+    // Mobile devices lo click chesinapudu toggle avvadaniki
+    if(window.innerWidth <= 768) {
+      e.stopPropagation();
+      document.getElementById("serviceMenu").classList.toggle("show");
+    }
+  }
+
+  // Ekkadaina bayata click chesthe dropdown close avvadaniki
+  window.onclick = function(event) {
+    if (!event.target.matches('.service-btn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-menu-custom");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
 
 
 
@@ -256,9 +292,10 @@
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-        <a href="pediatrics.html">Pediatrics</a>
-        <a href="maternity.html">Maternity</a>
         <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
       </div>
     </div>
 

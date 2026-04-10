@@ -5,6 +5,10 @@
   --white:#ffffff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* GLOBAL */
 *{
   margin:0;
@@ -17,7 +21,7 @@ a{
   text-decoration:none;
 }
 
-.container{
+.top-container{
   max-width:1200px;
   width:100%;
   margin:0 auto;
@@ -62,7 +66,7 @@ a{
 }
 
 .book-btn{
-  background:var(--primary);
+  background:#674dad;
   color:#fff;
   padding:10px 24px;
   border-radius:30px;
@@ -80,6 +84,9 @@ a{
   position:relative;
   z-index:999;
   min-height:55px;
+    position: sticky;   
+  top: 0;           
+
 }
 
 .nav-center{
@@ -91,7 +98,7 @@ nav{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:40px;
+  gap:30px;
   padding:15px 0;
 }
 
@@ -166,6 +173,8 @@ nav a,
     right:15px;
     top:12px;   /* 🔥 fixed top */
     font-size:26px;
+      left:60%;
+     transform:translateX(-50%);
     color:#fff;
     cursor:pointer;
     z-index:2000;
@@ -173,15 +182,19 @@ nav a,
 
   /* MOBILE NAV */
   nav{
-    position:absolute;
-    top:100%;
+   position:absolute;   /* ✅ ONLY this */
+    top:0;
     left:0;
     width:100%;
+
     background:var(--primary);
+    z-index:1500;
+
     flex-direction:column;
     align-items:center;
     gap:16px;
-    padding:20px 0;
+
+    padding:70px 0 20px;
     display:none;
   }
 
@@ -193,7 +206,8 @@ nav a,
   .service-btn{
     width:100%;
     text-align:center;
-    padding:10px 0;
+  
+    padding:3px 0;
     font-size:16px;
   }
 
@@ -237,11 +251,28 @@ nav a:hover,
   color:#ffffff;
 }
 
+/* DESKTOP HOVER EFFECT */
+@media(min-width: 769px) {
+  .dropdown-custom:hover .dropdown-menu-custom {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block; /* Safety for visibility */
+  }
 
+  /* Dropdown paina mouse unnapudu adi maayapokunda gap cover chestundi */
+  .dropdown-custom {
+    padding-bottom: 10px; 
+    margin-bottom: -10px;
+  }
+}
 
-
-
-
+/* Mobile lo toggle button click chesinapudu matrame ravali kabatti idi */
+@media(max-width: 768px) {
+  .dropdown-menu-custom.show {
+    display: block !important;
+  }
+}
 
 
 
@@ -271,13 +302,13 @@ nav a:hover,
   padding-bottom:40px;
 }
 
-/* HEADINGS – CONSTANT */
+/* HEADINGS */
 .footer-col h4{
   font-weight:600;
   margin-bottom:15px;
 }
 
-/* ZOOM ANIMATION (CONTENT ONLY) */
+/* ANIMATION */
 .footer-anim{
   opacity:0;
   transform:scale(0.9);
@@ -308,9 +339,8 @@ nav a:hover,
   margin-bottom:12px;
 }
 
-/* 🔹 ONLY CHANGE: LOGO SIZE */
 .footer-logo img{
-  width:240px;           /* increased from 45px */
+  width:240px;
   height:auto;
   object-fit:contain;
 }
@@ -344,7 +374,36 @@ nav a:hover,
   transform:scale(1.15);
 }
 
-/* COPYRIGHT */
+/* ================= ADDRESS FIX ================= */
+
+.footer-address{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.footer-address p{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  margin:0;
+  line-height:1.5;
+  font-size:14px;
+}
+
+/* ICON ALIGN */
+.footer-address p i{
+  margin-top:3px;
+  flex-shrink:0;
+}
+
+/* TEXT WRAP CLEAN */
+.footer-address p{
+  word-break:normal;
+}
+
+/* ================= COPYRIGHT ================= */
+
 .copyright{
   background:#4a2f87;
   text-align:center;
@@ -368,14 +427,14 @@ nav a:hover,
   z-index:9999;
 }
 
-/* WhatsApp – pulse */
+/* WhatsApp */
 .whatsapp{
   bottom:90px;
   background:#25D366;
   animation:pulse 2s infinite;
 }
 
-/* Phone – gentle float */
+/* Phone */
 .phone{
   bottom:20px;
   background:#25D366;
@@ -396,45 +455,54 @@ nav a:hover,
 }
 
 /* ================= MOBILE ================= */
+
 @media(max-width:768px){
+
+  /* LEFT ALIGN EVERYTHING */
   .footer{
-    text-align:center;
+    text-align:left;
   }
 
   .footer-grid{
     grid-template-columns:1fr;
+    gap:25px;
   }
 
+  /* LOGO LEFT */
   .footer-logo{
-    justify-content:center;
+    justify-content:flex-start;
   }
 
   .footer-logo img{
-    width:70px;     /* mobile balance */
+    width:120px;
   }
 
+  /* SOCIAL LEFT */
   .social-icons{
-    justify-content:center;
+    justify-content:flex-start;
   }
-}
-/* FOOTER ADDRESS SPACING */
-.footer-address{
-  margin-bottom:14px;
-}
 
-.footer-address p{
-  margin-bottom:6px;
-  font-size:14px;
-}
-
-/* MOBILE TUNING */
-@media(max-width:768px){
+  /* ADDRESS */
   .footer-address{
-    margin-bottom:18px;
+    gap:8px;
   }
+
+  .footer-address p{
+    font-size:13px;
+  }
+
+}
+/* HIDE PHONE IN DESKTOP */
+.phone{
+  display:none;
 }
 
-
+/* MOBILE ONLY SHOW PHONE */
+@media(max-width:768px){
+  .phone{
+    display:flex;
+  }
+}
 
 
 

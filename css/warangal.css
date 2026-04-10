@@ -1798,6 +1798,7 @@ nav a:hover,
 .contact-info-box h3 {
   font-size: 28px;
   color: #d55191;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
@@ -1831,6 +1832,7 @@ nav a:hover,
 
 .info-item h4 {
   color: #d55191;
+  font-weight: 700;
   margin-bottom: 4px;
   font-size: 15px;
 }
@@ -1853,6 +1855,7 @@ nav a:hover,
 .contact-form-box h3 {
   font-size: 28px;
   color: #d55191;
+  font-weight: 700;
   margin-bottom: 25px;
 }
 

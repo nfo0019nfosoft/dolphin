@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dolphin Hospital</title>
+  <title>Neonatology - Dolphin Hospital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap -->
@@ -12,15 +12,24 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/maternity.css">
+  <link rel="stylesheet" href="css/gynecology.css">
   <link rel="icon" type="image/png" href="img/fav.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, // animation speed 1 second
+    once: true,     // scroll chesinappudu okasari matrame animation avthundi
+  });
+</script>
 </head>
 <body>
 
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="container top-flex">
+  <div class="top-container top-flex">
 
     <a href="index.html" class="logo-wrap">
       <img src="img/logo.png" alt="Dolphin Hospital">
@@ -31,30 +40,31 @@
       <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
     </div>
 
-    <a href="contact.html" class="btn book-btn">Book Appointment</a>
+   <a href="contact.html" class="book-btn">Book Appointment</a>
 
   </div>
 </div>
 
 <!-- NAVBAR -->
 <header class="main-nav">
-  <div class="container nav-center">
+  <div class="nav-container nav-center">
 
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
 
-      <div class="dropdown-custom">
-        <button class="service-btn" onclick="toggleService(event)">
-          Services <i class="fa-solid fa-chevron-down small-arrow"></i>
-        </button>
+     <div class="dropdown-custom">
+  <button class="service-btn" onclick="toggleService(event)">
+    Services <i class="fa-solid fa-chevron-down small-arrow"></i>
+  </button>
 
-        <div class="dropdown-menu-custom" id="serviceMenu">
-          <a href="pediatrics.html">Pediatrics</a>
-          <a href="maternity.html">Maternity</a>
-          <a href="gynecology.html">Gynecology</a>
-        </div>
-      </div>
+  <div class="dropdown-menu-custom" id="serviceMenu">
+    <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
+  </div>
+</div>
 
       <a href="warangal.html">Warangal</a>
       <a href="karimnagar.html">Karimnagar</a>
@@ -81,6 +91,34 @@
 </script>
 
 
+<script>
+  function toggleMenu(){
+    document.getElementById("navMenu").classList.toggle("show");
+  }
+
+  function toggleService(e){
+    // Mobile devices lo click chesinapudu toggle avvadaniki
+    if(window.innerWidth <= 768) {
+      e.stopPropagation();
+      document.getElementById("serviceMenu").classList.toggle("show");
+    }
+  }
+
+  // Ekkadaina bayata click chesthe dropdown close avvadaniki
+  window.onclick = function(event) {
+    if (!event.target.matches('.service-btn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-menu-custom");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+
+
 
 
 
@@ -90,15 +128,10 @@
   <div class="hero-bg"></div>
 
   <div class="hero-content">
-    <h1>MATERNITY</h1>
-    <p>Home <span>›</span> Services <span>›</span>Maternity</p>
+    <h1>PEDIATRICS</h1>
+    <p>Home <span>›</span> Services <span>›</span>Pediatrics</p>
   </div>
 </section>
-
-
-
-
-
 
 
 
@@ -111,113 +144,112 @@
     <!-- SERVICE 1 -->
     <div class="service-row">
       <div class="service-content">
-        <h3>ANTENATAL CARE (PRENATAL CARE)</h3>
+        <h3>GENERAL PEDIATRIC CARE</h3>
         <p>
-          Our antenatal care services provide comprehensive medical support
-          throughout pregnancy to ensure the health and safety of both mother
-          and baby. Regular checkups, ultrasound scans, blood tests, and
-          monitoring of fetal growth help detect potential risks early.
-          Personalized guidance on nutrition, lifestyle, and pregnancy care
-          is provided to ensure a smooth and healthy pregnancy journey.
+          Our general pediatric care services provide comprehensive medical
+          support for infants, children, and adolescents. We focus on routine
+          health checkups, early diagnosis, and effective treatment of common
+          childhood illnesses such as fever, infections, allergies, and growth
+          concerns. Our pediatricians ensure personalized care in a warm,
+          child-friendly environment that promotes overall physical and
+          emotional well-being.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="Antenatal Care">
+        <img src="img/abt.png" alt="Pediatric Care">
       </div>
     </div>
 
     <!-- SERVICE 2 -->
     <div class="service-row reverse">
       <div class="service-content">
-        <h3>HIGH-RISK PREGNANCY CARE</h3>
+        <h3>NEONATAL CARE</h3>
         <p>
-          We offer specialized care for high-risk pregnancies with conditions
-          such as diabetes, hypertension, multiple pregnancies, or previous
-          pregnancy complications. Our experienced obstetric team ensures
-          continuous monitoring, advanced diagnostics, and timely medical
-          interventions to minimize risks and promote positive outcomes for
-          both mother and baby.
+          Our neonatal care unit is dedicated to providing specialized medical
+          care for newborn babies, including premature and low-birth-weight
+          infants. With advanced monitoring systems and experienced neonatal
+          specialists, we ensure constant observation, temperature regulation,
+          nutritional support, and timely medical intervention during the most
+          critical early days of life.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="High Risk Pregnancy Care">
+        <img src="img/abt.png" alt="Neonatal Care">
       </div>
     </div>
 
     <!-- SERVICE 3 -->
     <div class="service-row">
       <div class="service-content">
-        <h3>NORMAL & CESAREAN DELIVERY</h3>
+        <h3>IMMUNIZATION SERVICES</h3>
         <p>
-          Our maternity unit supports both normal vaginal deliveries and
-          cesarean sections in a safe, hygienic, and well-equipped environment.
-          Skilled obstetricians, anesthetists, and nursing staff work together
-          to ensure smooth labor, pain management, and emergency readiness,
-          prioritizing the comfort and safety of the mother and newborn.
+          We offer complete immunization services following nationally and
+          internationally recommended vaccination schedules. Our vaccination
+          programs help protect children from serious and preventable diseases
+          while strengthening their immune system. Parents are guided with
+          proper counseling, reminders, and post-vaccination care for maximum
+          safety and effectiveness.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="Delivery Services">
+        <img src="img/abt.png" alt="Immunization Services">
       </div>
     </div>
 
     <!-- SERVICE 4 -->
     <div class="service-row reverse">
       <div class="service-content">
-        <h3>LABOUR PAIN MANAGEMENT</h3>
+        <h3>CHILD GROWTH & DEVELOPMENT</h3>
         <p>
-          We provide effective labour pain management options tailored to the
-          needs of each mother. From breathing techniques and supportive care
-          to medical pain relief methods, our team ensures a comfortable and
-          reassuring birthing experience while closely monitoring the progress
-          of labor.
+          Monitoring a child’s growth and development is essential for long-term
+          health. Our specialists regularly assess physical growth, cognitive
+          development, speech, and emotional behavior to identify potential
+          delays at an early stage. Early intervention and parental guidance
+          help ensure children achieve healthy developmental milestones.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="Labour Pain Management">
+        <img src="img/abt.png" alt="Child Development">
       </div>
     </div>
 
     <!-- SERVICE 5 -->
     <div class="service-row">
       <div class="service-content">
-        <h3>POSTNATAL CARE</h3>
+        <h3>NUTRITION & DIET COUNSELLING</h3>
         <p>
-          Postnatal care focuses on the physical and emotional recovery of the
-          mother after childbirth. Our services include monitoring maternal
-          health, wound care, breastfeeding support, newborn care guidance,
-          and emotional well-being support to help mothers transition smoothly
-          into motherhood.
+          Proper nutrition plays a vital role in a child’s growth and immunity.
+          Our nutrition and diet counselling services provide personalized diet
+          plans based on age, growth needs, and medical conditions. We guide
+          parents on healthy eating habits, balanced diets, and nutritional
+          support to promote strong immunity and optimal development.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="Postnatal Care">
+        <img src="img/abt.png" alt="Nutrition Counselling">
       </div>
     </div>
 
     <!-- SERVICE 6 -->
     <div class="service-row reverse">
       <div class="service-content">
-        <h3>BREASTFEEDING & LACTATION SUPPORT</h3>
+        <h3>PAEDIATRIC EMERGENCY CARE</h3>
         <p>
-          Our lactation support services help new mothers initiate and maintain
-          successful breastfeeding. Certified lactation consultants provide
-          guidance on proper feeding techniques, positioning, milk supply
-          management, and solutions to common breastfeeding challenges, ensuring
-          optimal nutrition and bonding for mother and baby.
+          Our pediatric emergency care services operate round-the-clock to
+          provide immediate medical attention during critical situations.
+          Equipped with trained pediatric specialists and child-friendly
+          emergency facilities, we ensure rapid diagnosis and prompt treatment
+          for injuries, breathing problems, infections, and other emergencies,
+          offering reassurance to both children and parents.
         </p>
       </div>
       <div class="service-image">
-        <img src="img/abt.png" alt="Lactation Support">
+        <img src="img/abt.png" alt="Pediatric Emergency Care">
       </div>
     </div>
 
   </div>
 </section>
-
-
-
-
 
 
 
@@ -260,9 +292,10 @@
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-        <a href="pediatrics.html">Pediatrics</a>
-        <a href="maternity.html">Maternity</a>
         <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
       </div>
     </div>
 

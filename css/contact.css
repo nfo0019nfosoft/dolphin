@@ -5,6 +5,10 @@
   --white:#ffffff;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* GLOBAL */
 *{
   margin:0;
@@ -17,7 +21,7 @@ a{
   text-decoration:none;
 }
 
-.container{
+.top-container{
   max-width:1200px;
   width:100%;
   margin:0 auto;
@@ -62,7 +66,7 @@ a{
 }
 
 .book-btn{
-  background:var(--primary);
+  background:#674dad;
   color:#fff;
   padding:10px 24px;
   border-radius:30px;
@@ -80,6 +84,9 @@ a{
   position:relative;
   z-index:999;
   min-height:55px;
+    position: sticky;   
+  top: 0;           
+
 }
 
 .nav-center{
@@ -91,8 +98,8 @@ nav{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:40px;
-  padding:15px 0;
+  gap:30px;
+  padding:10px 0;
 }
 
 nav a,
@@ -166,6 +173,8 @@ nav a,
     right:15px;
     top:12px;   /* 🔥 fixed top */
     font-size:26px;
+      left:60%;
+     transform:translateX(-50%);
     color:#fff;
     cursor:pointer;
     z-index:2000;
@@ -173,15 +182,19 @@ nav a,
 
   /* MOBILE NAV */
   nav{
-    position:absolute;
-    top:100%;
+   position:absolute;   /* ✅ ONLY this */
+    top:0;
     left:0;
     width:100%;
+
     background:var(--primary);
+    z-index:1500;
+
     flex-direction:column;
     align-items:center;
     gap:16px;
-    padding:20px 0;
+
+    padding:70px 0 20px;
     display:none;
   }
 
@@ -193,7 +206,8 @@ nav a,
   .service-btn{
     width:100%;
     text-align:center;
-    padding:10px 0;
+  
+    padding:3px 0;
     font-size:16px;
   }
 
@@ -237,73 +251,258 @@ nav a:hover,
   color:#ffffff;
 }
 
+/* DESKTOP HOVER EFFECT */
+@media(min-width: 769px) {
+  .dropdown-custom:hover .dropdown-menu-custom {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    display: block; /* Safety for visibility */
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================
-   FINAL MOBILE FIX — NAVBAR & HERO OVERLAP SOLUTION
-   (Paste this at the VERY END of your CSS file)
-   ========================================================= */
-
-/* ---------- NAVBAR SAFETY ---------- */
-.top-bar,
-.main-nav{
-  position: relative !important;
-  z-index: 9999;
+  /* Dropdown paina mouse unnapudu adi maayapokunda gap cover chestundi */
+  .dropdown-custom {
+    padding-bottom: 10px; 
+    margin-bottom: -10px;
+  }
 }
 
-/* ---------- HERO BASE FIX ---------- */
-.hero,
-.hero-section,
-.banner,
-.slider{
-  position: relative !important;
-  z-index: 1 !important;
+/* Mobile lo toggle button click chesinapudu matrame ravali kabatti idi */
+@media(max-width: 768px) {
+  .dropdown-menu-custom.show {
+    display: block !important;
+  }
 }
 
-/* ---------- MOBILE HERO FIX (MOST IMPORTANT) ---------- */
-@media (max-width: 768px){
 
-  /* STOP vh ISSUE */
-  .hero{
-    height: auto !important;      /* 🔥 vh OFF */
-    min-height: 420px;            /* controlled height */
-    padding: 90px 0 60px;         /* navbar space respected */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+.footer{
+  background:#674dad;
+  color:#ffffff;
+  padding:60px 0 0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  padding-bottom:40px;
+}
+
+/* HEADINGS */
+.footer-col h4{
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+/* ANIMATION */
+.footer-anim{
+  opacity:0;
+  transform:scale(0.9);
+  transition:all 0.6s ease;
+}
+
+.footer-anim.show{
+  opacity:1;
+  transform:scale(1);
+}
+
+/* LINKS */
+.footer-col a{
+  display:block;
+  color:white;
+  margin-bottom:8px;
+}
+
+.footer-col a:hover{
+  color:#d55191;
+}
+
+/* LOGO */
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.footer-logo img{
+  width:240px;
+  height:auto;
+  object-fit:contain;
+}
+
+/* SOCIAL */
+.social span{
+  display:block;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.social-icons{
+  display:flex;
+  gap:12px;
+}
+
+.social-icons a{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  transition:0.3s ease;
+}
+
+.social-icons a:hover{
+  background:#14b8a6;
+  transform:scale(1.15);
+}
+
+/* ================= ADDRESS FIX ================= */
+
+.footer-address{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.footer-address p{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  margin:0;
+  line-height:1.5;
+  font-size:14px;
+}
+
+/* ICON ALIGN */
+.footer-address p i{
+  margin-top:3px;
+  flex-shrink:0;
+}
+
+/* TEXT WRAP CLEAN */
+.footer-address p{
+  word-break:normal;
+}
+
+/* ================= COPYRIGHT ================= */
+
+.copyright{
+  background:#4a2f87;
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+}
+
+/* ================= FLOATING BUTTONS ================= */
+
+.float-btn{
+  position:fixed;
+  right:20px;
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  color:white;
+  z-index:9999;
+}
+
+/* WhatsApp */
+.whatsapp{
+  bottom:90px;
+  background:#25D366;
+  animation:pulse 2s infinite;
+}
+
+/* Phone */
+.phone{
+  bottom:20px;
+  background:#25D366;
+  animation:float 2.5s infinite;
+}
+
+/* Animations */
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+  100%{transform:translateY(0)}
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+  /* LEFT ALIGN EVERYTHING */
+  .footer{
+    text-align:left;
   }
 
-  /* Background stays inside hero */
-  .hero-bg{
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:25px;
   }
 
-  /* Hero content above bg */
-  .hero-content{
-    position: relative;
-    z-index: 2;
+  /* LOGO LEFT */
+  .footer-logo{
+    justify-content:flex-start;
   }
 
-  /* NAVBAR MUST STAY IN FLOW */
-  .main-nav{
-    position: relative !important;
-    top: auto !important;
+  .footer-logo img{
+    width:120px;
+  }
+
+  /* SOCIAL LEFT */
+  .social-icons{
+    justify-content:flex-start;
+  }
+
+  /* ADDRESS */
+  .footer-address{
+    gap:8px;
+  }
+
+  .footer-address p{
+    font-size:13px;
   }
 
 }
+/* HIDE PHONE IN DESKTOP */
+.phone{
+  display:none;
+}
 
+/* MOBILE ONLY SHOW PHONE */
+@media(max-width:768px){
+  .phone{
+    display:flex;
+  }
+}
 
 
 
@@ -623,6 +822,7 @@ nav a:hover,
 .contact-info-box h3{
   font-size:26px;
   color:#d55191;
+  font-weight: 700;
 }
 
 .info-desc{
@@ -652,6 +852,7 @@ nav a:hover,
 
 .info-item h4{
   color:#d55191;
+  font-weight: 700;
   font-size:15px;
   margin-bottom:4px;
 }
@@ -680,6 +881,7 @@ nav a:hover,
 
 .contact-form-box h3{
   color:#d55191;
+  font-weight: 700;
   margin-bottom:18px;
 }
 
