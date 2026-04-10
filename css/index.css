@@ -4,11 +4,6 @@
   --light:#f0fdfa;
   --white:#ffffff;
 }
-/* GLOBAL OVERFLOW FIX */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
 
 * {
   box-sizing: border-box;
@@ -187,18 +182,22 @@ nav a,
 
   /* MOBILE NAV */
   nav{
-  position:absolute;
-  top:0;              /* 🔥 start from navbar top */
-  left:0;
-  width:100%;
-  background:var(--primary);
+   position:absolute;   /* ✅ ONLY this */
+    top:0;
+    left:0;
+    width:100%;
 
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-  padding:70px 0 20px;   /* 🔥 push content down inside */
-  display:none;
-}
+    background:var(--primary);
+    z-index:1500;
+
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+
+    padding:70px 0 20px;
+    display:none;
+  }
+
   nav.show{
     display:flex;
   }
