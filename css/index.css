@@ -873,7 +873,7 @@ nav a:hover,
 }
 
 .doctors-section {
-  padding: 60px 0;
+  padding: 50px 0;
   background-color: var(--bg-section);
   font-family: 'Poppins', sans-serif;
 }
@@ -1211,9 +1211,10 @@ nav a:hover,
 
 }
 
+
 /* ================= SECTION ================= */
 .home-services{
-  padding:90px 0;
+  padding:90px 40px;
   background:white;
 }
 
@@ -1254,10 +1255,6 @@ nav a:hover,
   flex-direction:column;
   text-align:center;
 
-  opacity:0;
-  animation-duration:1s;
-  animation-fill-mode:forwards;
-  animation-timing-function:cubic-bezier(.4,0,.2,1);
   transition:0.35s ease;
 }
 
@@ -1293,78 +1290,22 @@ nav a:hover,
   font-weight:600;
   border-radius:30px;
   transition:0.3s ease;
+  text-decoration:none;
 }
 
 .home-service-card .know-more:hover{
   background:#674dad;
 }
 
-/* ================= DESKTOP ANIMATIONS ================= */
-
-/* LEFT cards */
-.home-service-card:nth-child(1),
-.home-service-card:nth-child(4){
-  animation-name:slideFromLeft;
-}
-
-/* MIDDLE cards */
-.home-service-card:nth-child(2),
-.home-service-card:nth-child(5){
-  animation-name:slideFromBottom;
-}
-
-/* RIGHT cards */
-.home-service-card:nth-child(3),
-.home-service-card:nth-child(6){
-  animation-name:slideFromRight;
-}
-
-/* DELAYS (smooth look) */
-.home-service-card:nth-child(1){ animation-delay:0s; }
-.home-service-card:nth-child(2){ animation-delay:0.15s; }
-.home-service-card:nth-child(3){ animation-delay:0.3s; }
-.home-service-card:nth-child(4){ animation-delay:0.45s; }
-.home-service-card:nth-child(5){ animation-delay:0.6s; }
-.home-service-card:nth-child(6){ animation-delay:0.75s; }
-
-/* KEYFRAMES */
-@keyframes slideFromLeft{
-  from{
-    opacity:0;
-    transform:translateX(-60px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes slideFromRight{
-  from{
-    opacity:0;
-    transform:translateX(60px);
-  }
-  to{
-    opacity:1;
-    transform:translateX(0);
-  }
-}
-
-@keyframes slideFromBottom{
-  from{
-    opacity:0;
-    transform:translateY(60px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
 /* HOVER EFFECT */
 .home-service-card:hover{
   transform:translateY(-6px);
   box-shadow:0 22px 50px rgba(103,77,173,0.22);
+}
+
+/* AOS performance boost */
+[data-aos]{
+  will-change: transform, opacity;
 }
 
 /* ================= TABLET ================= */
@@ -1389,15 +1330,14 @@ nav a:hover,
     grid-template-columns:1fr;
   }
 
-  /* MOBILE animation bottom */
-  .home-service-card{
-    animation-name:slideFromBottom !important;
-  }
-
   .home-service-card img{
     height:180px;
   }
 }
+
+
+
+
 
 
 
@@ -2407,7 +2347,7 @@ nav a:hover,
 /* --- THE EXTRAORDINARY CARD --- */
 .facility-card {
   position: relative;
-  background: #ffffff;
+  background: rgba(103, 77, 173, 0.08);
   border-radius: 25px;
   padding: 50px 25px;
   text-align: center;
@@ -2616,20 +2556,9 @@ nav a:hover,
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* --- ANIMATIONS --- */
-.zoom-in {
-  animation: zoomIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+/* AOS smooth performance */
+[data-aos] {
+  will-change: transform, opacity;
 }
 
 /* --- RESPONSIVE FIXES --- */
