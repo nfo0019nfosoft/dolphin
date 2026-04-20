@@ -165,21 +165,19 @@ nav a,
     gap:15px;
     font-size:13px;
   }
+.menu-btn{
+  display:block;
+  position:absolute;
 
-  /* FIXED POSITION */
-  .menu-btn{
-    display:block;
-    position:absolute;
-    right:15px;
-    top:12px;   /* 🔥 fixed top */
-    font-size:26px;
-      left:60%;
-     transform:translateX(-50%);
-    color:#fff;
-    cursor:pointer;
-    z-index:2000;
-  }
+  left:50%;
+  top:50%;                     /* ✅ vertical center */
+  transform:translate(-50%, -50%); /* ✅ perfect center (X + Y) */
 
+  font-size:26px;
+  color:#fff;
+  cursor:pointer;
+  z-index:2000;
+}
   /* MOBILE NAV */
   nav{
    position:absolute;   /* ✅ ONLY this */
@@ -273,6 +271,8 @@ nav a:hover,
     display: block !important;
   }
 }
+
+
 
 
 

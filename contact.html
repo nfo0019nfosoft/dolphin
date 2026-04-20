@@ -78,44 +78,40 @@
   </div>
 </header>
 
+
+
+
+
 <script>
-  function toggleMenu(){
-    document.getElementById("navMenu").classList.toggle("show");
-    document.getElementById("serviceMenu").classList.remove("show");
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
+
+  nav.classList.toggle("show");
+
+  // lock/unlock scroll
+  if(nav.classList.contains("show")){
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
   }
 
-  function toggleService(e){
+  // close dropdown when menu closes
+  document.getElementById("serviceMenu").classList.remove("show");
+}
+
+function toggleService(e){
+  if(window.innerWidth <= 768){
     e.stopPropagation();
     document.getElementById("serviceMenu").classList.toggle("show");
   }
-</script>
+}
 
-
-<script>
-  function toggleMenu(){
-    document.getElementById("navMenu").classList.toggle("show");
+// close dropdown when clicking outside
+window.addEventListener("click", function(e){
+  if(!e.target.closest(".dropdown-custom")){
+    document.getElementById("serviceMenu").classList.remove("show");
   }
-
-  function toggleService(e){
-    // Mobile devices lo click chesinapudu toggle avvadaniki
-    if(window.innerWidth <= 768) {
-      e.stopPropagation();
-      document.getElementById("serviceMenu").classList.toggle("show");
-    }
-  }
-
-  // Ekkadaina bayata click chesthe dropdown close avvadaniki
-  window.onclick = function(event) {
-    if (!event.target.matches('.service-btn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-menu-custom");
-      for (var i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
+});
 </script>
 
 

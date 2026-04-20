@@ -70,17 +70,39 @@
     </div>
   </header>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navMenu").classList.toggle("show");
-      document.getElementById("serviceMenu").classList.remove("show");
-    }
+  
+<script>
+function toggleMenu(){
+  const nav = document.getElementById("navMenu");
 
-    function toggleService(e) {
-      e.stopPropagation();
-      document.getElementById("serviceMenu").classList.toggle("show");
-    }
-  </script>
+  nav.classList.toggle("show");
+
+  // lock/unlock scroll
+  if(nav.classList.contains("show")){
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  // close dropdown when menu closes
+  document.getElementById("serviceMenu").classList.remove("show");
+}
+
+function toggleService(e){
+  if(window.innerWidth <= 768){
+    e.stopPropagation();
+    document.getElementById("serviceMenu").classList.toggle("show");
+  }
+}
+
+// close dropdown when clicking outside
+window.addEventListener("click", function(e){
+  if(!e.target.closest(".dropdown-custom")){
+    document.getElementById("serviceMenu").classList.remove("show");
+  }
+});
+</script>
+
 
 
 
