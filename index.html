@@ -19,8 +19,15 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
-    duration: 1000, // animation speed 1 second
-    once: true,     // scroll chesinappudu okasari matrame animation avthundi
+    duration: 1000,
+    once: true,
+    easing: "ease-in-out",
+    offset: 100,
+
+    // 🔥 SIDE SCROLL FIX
+    disable: function() {
+      return window.innerWidth < 768; // mobile lo animations off
+    }
   });
 </script>
 </head>
