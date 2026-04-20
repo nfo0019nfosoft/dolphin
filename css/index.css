@@ -1317,36 +1317,110 @@ nav a:hover,
 
 /* ================= MOBILE ================= */
 
-@media(max-width:768px){
+/* ================= MOBILE (DESKTOP STYLE KEEP) ================= */
+
+@media (max-width:768px){
 
   .hope-container{
     flex-direction:column;
+    align-items:center;
   }
 
+  /* LEFT STACK */
   .left-stack{
     width:100%;
-    height:380px;
+    height:320px; /* 🔥 reduced height */
+    transform:scale(0.85); /* 🔥 shrink whole layout */
+    transform-origin:top center;
   }
 
+  /* BABY */
+  .img-baby{
+    top:0;
+    left:10%;
+    width:150px;
+  }
+
+  .img-baby img{
+    height:180px;
+  }
+
+  /* 98% BADGE */
+  .badge-98{
+    top:10px;
+    left:50%;
+    transform:translateX(-20%);
+    width:130px;
+    padding:10px;
+  }
+
+  .badge-98 h3{
+    font-size:16px;
+  }
+
+  .badge-98 p{
+    font-size:11px;
+  }
+
+  /* DOCTOR */
+  .img-doctor{
+    top:80px;
+    left:45%;
+    width:180px;
+  }
+
+  .img-doctor img{
+    height:200px;
+  }
+
+  /* SUPPORT BOX */
+  .support-box{
+    top:200px;
+    left:15%;
+    width:150px;
+    padding:8px;
+  }
+
+  .support-box h4{
+    font-size:12px;
+  }
+
+  .support-box p{
+    font-size:10px;
+  }
+
+  /* RIGHT CONTENT */
   .right-content{
     width:100%;
     text-align:center;
+    margin-top:20px;
   }
 
+  .right-content h2{
+    font-size:24px;
+  }
+
+  .right-content p{
+    font-size:14px;
+    text-align: justify
+  }
+
+  /* BUTTONS */
   .btns{
     justify-content:center;
+    flex-wrap:wrap;
   }
 
-  .badge-98{
-    left:160px;
+  /* VIDEO */
+  .video-card img{
+    height:200px;
   }
 
-  .img-doctor{
-    left:170px;
+  .overlay-title{
+    font-size:16px;
   }
+
 }
-
-
 
 
 
