@@ -49,7 +49,7 @@ a{
 }
 
 .logo-wrap img{
-  width:130px;   /* increased size */
+  width:170px;   /* increased size */
   height:auto;   /* keeps aspect ratio clean */
   object-fit:contain;
   display:block;
