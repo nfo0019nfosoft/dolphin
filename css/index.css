@@ -895,7 +895,7 @@ nav a:hover,
 /* 🔥 IMAGE BOX (RECTANGLE LIKE SCREENSHOT) */
 .img-box {
   width: 100%;
-  height: 320px; /* 🔥 height ekkuva */
+  height: 380px; /* 🔥 height ekkuva */
   background: #674dad;
   border-radius: 6px;
   overflow: hidden;
@@ -907,6 +907,8 @@ nav a:hover,
   height: 100%;
   object-fit: cover;
 }
+
+
 
 /* ================= TEXT ================= */
 
@@ -985,15 +987,12 @@ nav a:hover,
 
 
 
-
-
-/* ================= DIRECTORS SECTION ================= */
+/* ===== SECTION ===== */
 .directors-section {
-  padding: 50px 20px;
-  background: white;
-  overflow: hidden;
+  padding: 60px 20px;
+  background: #f6f7fb;
   text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .directors-title {
@@ -1001,113 +1000,194 @@ nav a:hover,
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 8px;
-  text-transform: uppercase;
 }
 
 .directors-sub {
-  color: #674dad;
-  font-size: 16px;
+  color: #674dad`;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
-/* GRID SETUP */
+/* ===== GRID ===== */
 .directors-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  max-width: 900px;
+  gap: 25px;
+  max-width: 1000px;
   margin: auto;
 }
 
-/* CARD DESIGN */
+/* ===== CARD ===== */
 .director-card {
-  background: #f3f0ff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 18px;
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  text-align: left;
+  align-items: flex-start;
+  transition: all 0.3s ease;
 }
 
 .director-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
+/* ===== IMAGE ===== */
 .director-img {
-  width: 100%;
-  height: 250px;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .director-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top; /* FACE VISIBLE */
 }
 
-.director-card h3 {
-  font-size: 20px;
-  color: #674dad;
-  font-weight: 800;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #f3f0ff;
-  padding-bottom: 10px;
-  width: 100%;
+/* ===== CONTENT ===== */
+.director-content {
+  flex: 1;
 }
 
-/* ================= QUALIFICATION (NEAT ALIGNMENT) ================= */
+.director-content h3 {
+  color: #d55191;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* ===== QUALIFICATION ===== */
 .qualification {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  align-items: flex-start; /* Icons oke line lo start avvadaniki main idhe */
-  padding-left: 10%; /* Center lo kanipinchadaniki adjustment */
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .qualification span {
   display: flex;
   align-items: center;
-  gap: 12px; /* Icon ki text ki madhya gap */
-  font-size: 14px;
-  color: #444;
-  font-weight: 600;
-  text-align: left;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
 }
 
 .qualification i {
   color: #d55191;
-  font-size: 16px;
-  width: 20px; /* Prathi icon ki fixed width valla text neat ga align avthundhi */
+  font-size: 14px;
+  width: 18px;
   text-align: center;
 }
 
-/* HIGHLIGHT BOX */
-.qualification .highlight {
-  background: #ede8ff;
-  padding: 6px 12px;
-  border-radius: 8px;
+/* ===== BADGE ===== */
+.highlight {
+  background: #f2ecff;
+  padding: 6px 10px;
+  border-radius: 6px;
   color: #674dad;
-  margin-top: 5px;
-  margin-left: -5px;
+  font-weight: 600;
+  width: fit-content;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
-@media (max-width: 768px) {
+/* ===== BUTTONS ===== */
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-outline {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-outline:hover {
+  border-color: #674dad;
+  color: #674dad;
+}
+
+.btn-primary {
+  padding: 6px 12px;
+  border: none;
+  background: #d55191;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #e9b9d8;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
   .directors-grid {
     grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-  
-  .qualification {
-    padding-left: 15%;
+    max-width: 600px;
   }
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+  .directors-section {
+    padding: 40px 15px;
+  }
+
+  .directors-title {
+    font-size: 24px;
+  }
+
+  .directors-sub {
+    font-size: 14px;
+  }
+
+  .director-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .director-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .director-content h3 {
+    font-size: 16px;
+  }
+
+  .qualification {
+    align-items: center;
+  }
+
+  .qualification span {
+    justify-content: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+
+
 
 
 
