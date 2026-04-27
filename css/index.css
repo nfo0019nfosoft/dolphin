@@ -985,11 +985,9 @@ nav a:hover,
 
 
 
-
-
 /* ===== SECTION ===== */
 .directors-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   background: #f6f7fb;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
@@ -997,23 +995,24 @@ nav a:hover,
 
 .directors-title {
   color: #d55191;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
 }
 
 .directors-sub {
   color: #674dad;
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 35px;
 }
 
 /* ===== GRID ===== */
 .directors-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  gap: 22px;
   max-width: 1000px;
   margin: auto;
 }
@@ -1021,25 +1020,25 @@ nav a:hover,
 /* ===== CARD ===== */
 .director-card {
   display: flex;
-  gap: 18px;
+  align-items: center; /* 🔥 vertical alignment */
+  gap: 16px;
   background: #ffffff;
-  padding: 18px;
+  padding: 16px;
   border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
   text-align: left;
-  align-items: flex-start;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .director-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 /* ===== IMAGE ===== */
 .director-img {
-  width: 100px;
+  width: 150px;
   height: 150px;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -1048,7 +1047,7 @@ nav a:hover,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top; /* FACE VISIBLE */
+  object-position: top;
 }
 
 /* ===== CONTENT ===== */
@@ -1058,23 +1057,23 @@ nav a:hover,
 
 .director-content h3 {
   color: #d55191;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 /* ===== QUALIFICATION ===== */
 .qualification {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 10px;
+  gap: 4px;
 }
 
 .qualification span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  font-weight: 700;
   font-size: 13px;
   color: #555;
   line-height: 1.4;
@@ -1082,56 +1081,9 @@ nav a:hover,
 
 .qualification i {
   color: #d55191;
-  font-size: 14px;
-  width: 18px;
+  font-size: 13px;
+  width: 16px;
   text-align: center;
-}
-
-/* ===== BADGE ===== */
-.highlight {
-  background: #f2ecff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: #674dad;
-  font-weight: 600;
-  width: fit-content;
-}
-
-/* ===== BUTTONS ===== */
-.buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-  flex-wrap: wrap;
-}
-
-.btn-outline {
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  background: white;
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-outline:hover {
-  border-color: #674dad;
-  color: #674dad;
-}
-
-.btn-primary {
-  padding: 6px 12px;
-  border: none;
-  background: #d55191;
-  border-radius: 6px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: #e9b9d8;
 }
 
 /* ===== TABLET ===== */
@@ -1150,42 +1102,28 @@ nav a:hover,
   }
 
   .directors-title {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .directors-sub {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .director-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
   }
 
   .director-img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .director-content h3 {
-    font-size: 16px;
-  }
-
-  .qualification {
-    align-items: center;
+    width: 110px;
+    height: 110px;
   }
 
   .qualification span {
     justify-content: center;
   }
-
-  .buttons {
-    justify-content: center;
-  }
 }
-
 
 
 
