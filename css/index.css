@@ -1003,7 +1003,7 @@ nav a:hover,
 }
 
 .directors-sub {
-  color: #674dad`;
+  color: #674dad;
   font-size: 15px;
   font-weight: 600;
   margin-bottom: 40px;
@@ -1038,7 +1038,7 @@ nav a:hover,
 /* ===== IMAGE ===== */
 .director-img {
   width: 100px;
-  height: 100px;
+  height: 150px;
   border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
