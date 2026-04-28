@@ -1058,6 +1058,7 @@ nav a:hover,
 .director-content h3 {
   color: #d55191;
   font-size: 16px;
+  text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 4px;
 }
