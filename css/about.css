@@ -673,19 +673,13 @@ nav a:hover,
 
 .about-btn:hover {
   background: #d55191;
-  color: #fff;
+  color: #c8b2b2;
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(213, 81, 145, 0.4);
 }
 
 .about-btn:hover span {
   transform: translateX(5px);
-}
-
-/* IMAGE SIDE FIX */
-.about-image-side {
-  flex: 0 0 45%;
-  position: relative;
 }
 
 .image-main-wrapper {
@@ -701,20 +695,21 @@ nav a:hover,
   box-shadow: 0 30px 60px rgba(0,0,0,0.12);
   border: 8px solid #fff;
 }
-
+.about-image-side {
+  flex: 0 0 57%; /* 🔥 increase from 45% → 55% */
+}
 /* Decorative background shape */
-.shape-bg {
+/* .shape-bg {
   position: absolute;
   top: -30px;
-  right: -30px;
+  right: 0px;
   width: 100%;
   height: 100%;
   background: #674dad;
   border-radius: 40px 10px 40px 10px;
   opacity: 0.08;
   z-index: 1;
-}
-
+} */
 /* Floating Glass Card */
 .floating-card {
   position: absolute;
@@ -797,10 +792,6 @@ nav a:hover,
   }
 
 }
-
-
-
-
 
 
 
