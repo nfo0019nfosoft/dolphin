@@ -823,6 +823,11 @@ nav a:hover,
     margin: 20px 0;
   }
 
+  .main-abt-img {
+    height: auto;          /* 🔥 no cropping */
+    max-height: none;      /* full image show */
+    border-radius: 20px;   /* optional clean */
+  }
   /* 🔥 CONTENT INTERNAL ORDER */
   .about-content {
     display: flex;
