@@ -309,21 +309,170 @@ window.addEventListener("click", function(e){
 
 
 
+<section class="directors-section">
+
+  <h2 class="directors-title">OUR SPECIALISTS</h2>
+
+  <p class="directors-sub">
+    Experienced Doctors Dedicated to Women & Child Healthcare Excellence
+  </p>
+
+  <div class="directors-grid">
+
+    <!-- CARD 1 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc5.png" alt="Dr. Vasudev Bairy">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Vasudev Bairy</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, MD Pediatrics, PGPN Pro Boston, USA
+          </span>
+
+          <span>
+            <i class="fa-solid fa-stethoscope"></i>
+            Consultant Pediatrician
+          </span>
+
+          <span>
+            <i class="fa-solid fa-baby"></i>
+            Advanced Pediatric & Newborn Care Specialist
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc6.png" alt="Dr. Kandepi Swapnik">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Kandepi Swapnik</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MD, DM Neonatology, POCUS
+          </span>
+
+          <span>
+            <i class="fa-solid fa-heart-pulse"></i>
+            Consultant Neonatologist & Pediatrician
+          </span>
+
+          <span>
+            <i class="fa-solid fa-hospital-user"></i>
+            NICU, Critical Neonatal & Ventilator Care
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc7.png" alt="Dr. M. Nikhil Reddy">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. M. Nikhil Reddy</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, MD Pediatrics
+          </span>
+
+          <span>
+            <i class="fa-solid fa-stethoscope"></i>
+            Consultant Pediatrician
+          </span>
+
+          <span>
+            <i class="fa-solid fa-shield-heart"></i>
+            Child Health, Immunization & Emergency Care
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc8.png" alt="Dr. Mancham Himasai Lakshmi Prasanna">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Himasai Lakshmi Prasanna</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, MS OBGY, FMAS, DMAS
+          </span>
+
+          <span>
+            <i class="fa-solid fa-person-pregnant"></i>
+            Obstetrician, Gynecologist & Laparoscopic Surgeon
+          </span>
+
+          <span>
+            <i class="fa-solid fa-heart-circle-plus"></i>
+            High-Risk Pregnancy & Painless Delivery Care
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 
 
 
-
-
+<!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
 
 <section class="our-purpose">
 
-  <h2 class="purpose-heading">
-    OUR MISSSION & VISSION
+  <h2 class="purpose-heading" data-aos="zoom-in">
+    OUR MISSION & VISION
   </h2>
 
-  <p class="purpose-intro">
+  <p class="purpose-intro" data-aos="fade-up" data-aos-delay="100">
     Our purpose is driven by compassion, trust, and a commitment to
     delivering high-quality healthcare for women and children at
     every stage of life.
@@ -332,48 +481,63 @@ window.addEventListener("click", function(e){
   <div class="purpose-panels">
 
     <!-- MISSION -->
-    <div class="purpose-panel mission">
+    <div class="purpose-panel mission"
+         data-aos="fade-right"
+         data-aos-delay="200">
+
       <span class="panel-tag">OUR MISSION</span>
+
       <div class="icon">
         <i class="fa-solid fa-hand-holding-heart"></i>
       </div>
+
       <h3>Care with Compassion</h3>
+
       <p>
-        To deliver ethical, compassionate, and high-quality healthcare
-        for women and children by combining expert medical care with
-        advanced technology and a patient-first approach.
+        To provide ethical, compassionate, and advanced healthcare
+        services for women and children through expert medical care,
+        modern technology, and a patient-centered approach focused
+        on safety, comfort, and trust.
       </p>
+
     </div>
 
     <!-- VISION -->
-    <div class="purpose-panel vision">
+    <div class="purpose-panel vision"
+         data-aos="fade-left"
+         data-aos-delay="300">
+
       <span class="panel-tag">OUR VISION</span>
+
       <div class="icon">
         <i class="fa-solid fa-eye"></i>
       </div>
-      <h3>Excellence in Every Life</h3>
+
+      <h3>Excellence in Healthcare</h3>
+
       <p>
-        To be a trusted center of excellence in women and child healthcare,
-        known for innovation, safety, empathy, and lifelong commitment
-        to patient well-being.
+        To become a trusted center of excellence in women and child
+        healthcare, recognized for medical innovation, compassionate
+        service, clinical quality, and lifelong commitment to healthier
+        families and communities.
       </p>
+
     </div>
 
   </div>
 
 </section>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold:0.25 });
 
-document.querySelectorAll(".purpose-panel, .purpose-heading")
-  .forEach(el => observer.observe(el));
+<!-- AOS SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+    duration: 900,
+    once: true
+  });
 </script>
+
 
 
 
@@ -1353,6 +1517,8 @@ document.querySelectorAll(".facility-card, .facility-title")
 
 
 
+
+
 <section class="highlights-section">
   
   <!-- 🔥 OVERLAY -->
@@ -1442,13 +1608,13 @@ function startCounter() {
 /* TRIGGER */
 const section = document.querySelector('.highlights-section');
 
-const observerr = new IntersectionObserverr((entries) => {
+const observer = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting) {
     startCounter();
   }
 }, { threshold: 0.4 });
 
-observerr.observe(section);
+observer.observe(section);
 </script>
 
 

@@ -963,6 +963,150 @@ nav a:hover,
 
 
 
+/* ===== SECTION ===== */
+.directors-section {
+  padding: 40px 20px;
+  background: #f6f7fb;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.directors-title {
+  color: #d55191;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.directors-sub {
+  color: #674dad;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+/* ===== GRID ===== */
+.directors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===== CARD ===== */
+.director-card {
+  display: flex;
+  align-items: center; /* 🔥 vertical alignment */
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.director-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== IMAGE ===== */
+.director-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.director-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ===== CONTENT ===== */
+.director-content {
+  flex: 1;
+}
+
+.director-content h3 {
+  color: #d55191;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* ===== QUALIFICATION ===== */
+.qualification {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.qualification span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+.qualification i {
+  color: #d55191;
+  font-size: 13px;
+  width: 16px;
+  text-align: center;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 900px) {
+  .directors-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+
+  .directors-section {
+    padding: 40px 15px;
+  }
+
+  .directors-title {
+    font-size: 22px;
+  }
+
+  .directors-sub {
+    font-size: 13px;
+  }
+
+  .director-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .director-img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .qualification span {
+    justify-content: left;
+  }
+}
+
+
+
+
 
 
 /* ================= SECTION ================= */
@@ -2117,135 +2261,6 @@ nav a:hover,
 
 
 
-
-
-
-
-/* ================= OUR HIGHLIGHTS ================= */
-.highlights-section {
-  padding: 80px 0;
-  background: #f9fbfb;
-}
-
-/* TITLE */
-.highlights-title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color:  #d55191;
-  margin-bottom: 8px;
-  animation: slideFromRight 1.1s ease;
-}
-
-.highlights-sub {
-  text-align: center;
-  font-size: 15px;
-  color: #000;
-  margin-bottom: 55px;
-}
-
-/* GRID */
-.highlights-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-/* CARD */
-.highlight-card {
-  background: #ffffff;
-  padding: 45px 20px;
-  border-radius: 18px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-}
-
-/* TOP LINE */
-.top-line {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 4px;
-  background:  #d55191;
-  border-radius: 0 0 4px 4px;
-}
-
-/* COUNT */
-.highlight-card h3 {
-  font-size: 42px;
-  font-weight: 700;
-  color:  #674dad;;
-  margin-bottom: 10px;
-}
-
-/* TEXT */
-.highlight-card p {
-  font-size: 15px;
-  color: #000;
-}
-
-/* ZOOM IN */
-.zoom-in {
-  animation: zoomIn 0.9s ease;
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* HEADING SLIDE */
-@keyframes slideFromRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ================= TABLET (FIX FOR MINIMIZE ISSUE) ================= */
-@media (max-width: 1100px) {
-  .highlights-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .highlights-title {
-    font-size: 26px;
-  }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-
-  .highlights-section {
-    padding: 60px 0;
-  }
-
-  .highlights-title {
-    font-size: 24px;
-  }
-
-  .highlights-container {
-    grid-template-columns: 1fr;
-  }
-
-  .highlight-card h3 {
-    font-size: 36px;
-  }
-}
 
 
 
