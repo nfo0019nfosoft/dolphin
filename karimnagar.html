@@ -245,10 +245,14 @@ window.addEventListener("click", function(e){
         <!-- LEFT CONTENT -->
         <div class="about-content">
           <h2>ABOUT OUR HOSPITAL</h2>
-<p>
-  Dolphin Women & Children Hospital – Karimnagar Branch is a trusted destination for comprehensive women and child healthcare services, offering expert medical care with compassion and commitment. Our hospital is equipped with modern infrastructure, advanced diagnostic technology, and experienced specialists dedicated to providing personalized treatment for every patient.
 
-  We specialize in Gynecology, Obstetrics, Pediatrics, Neonatology, infertility care, pregnancy care, and women’s wellness services, ensuring complete healthcare support from maternity to child development. With a patient-centered approach and a focus on safety, comfort, and quality treatment, Dolphin Hospital continues to serve families across Karimnagar and surrounding regions with excellence.
+
+<p>
+  Dolphin Women & Children Hospital – Hanumakonda Branch is a trusted healthcare destination dedicated to providing advanced Neonatology, Pediatrics, and Pediatric Surgery services with compassionate and specialized care for newborns, infants, children, and adolescents. Our hospital is designed to create a safe, child-friendly, and comfortable environment where every patient receives personalized medical attention with warmth and care.
+
+  Equipped with modern infrastructure, advanced NICU facilities, pediatric intensive care support, and state-of-the-art diagnostic technology, Dolphin Hospital ensures high-quality treatment for a wide range of newborn and child health conditions. Our experienced team of neonatologists, pediatricians, pediatric surgeons, nurses, and healthcare professionals work together to deliver ethical, transparent, and patient-focused care at every stage of treatment and recovery.
+
+  We specialize in newborn intensive care, child health checkups, vaccinations, growth and developmental monitoring, pediatric emergency care, and advanced pediatric surgical procedures using modern medical techniques. With a strong commitment to safety, clinical excellence, and compassionate healthcare, Dolphin Hospital continues to serve families across Hanumakonda and surrounding regions with trust, dedication, and excellence in child healthcare services.
 </p>
 
           <a href="about.html" class="about-btn">Know More</a>
@@ -256,7 +260,7 @@ window.addEventListener("click", function(e){
 
         <!-- RIGHT IMAGE -->
         <div class="about-image">
-          <img src="img/karimnagar/DSC00779.JPG" alt="About Hospital">
+          <img src="img/KNR DOLPHIN  bilding.png" alt="About Hospital">
         </div>
 
       </div>
@@ -1870,6 +1874,125 @@ observer.observe(section);
 
 
 
+
+
+
+
+
+
+<section class="faq-section">
+  <div class="faq-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="faq-image" data-aos="fade-right">
+      <img src="img/faq.png" alt="Dolphin Hospital FAQ">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="faq-content">
+
+      <p class="faq-subtitle">
+        Frequently Asked Questions About Dolphin Women & Children Hospital
+      </p>
+
+      <h2 class="faq-title">
+        Frequently Asked Questions
+      </h2>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item ">
+        <button class="faq-question">
+          Which services are available at Dolphin Women & Children Hospital?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            We provide Gynecology, Obstetrics, Pediatrics, Neonatology, fertility care, pregnancy care, vaccinations, and women’s health services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you provide pregnancy and maternity care?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, we offer complete maternity services including antenatal checkups, normal delivery, C-section care, and postnatal support.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Are pediatric services available for newborns and children?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Our pediatric specialists provide newborn care, vaccinations, growth monitoring, emergency pediatric care, and child wellness services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you handle high-risk pregnancies?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, our experienced obstetric specialists provide advanced monitoring and treatment for high-risk pregnancies with personalized care.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector(".faq-question");
+
+    btn.addEventListener("click", () => {
+
+      faqItems.forEach(faq => {
+        if(faq !== item){
+          faq.classList.remove("active");
+        }
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- FOOTER -->
 <footer class="footer" id="footer">
   <div class="container footer-grid">
@@ -1901,9 +2024,10 @@ observer.observe(section);
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-        <a href="pediatrics.html">Pediatrics</a>
-        <a href="maternity.html">Maternity</a>
-        <a href="gynecology.html">Gynecology</a>
+           <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
       </div>
     </div>
 

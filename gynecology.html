@@ -387,6 +387,131 @@ window.addEventListener("click", function(e){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="faq-section">
+  <div class="faq-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="faq-image" data-aos="fade-right">
+      <img src="img/faq.png" alt="Dolphin Hospital FAQ">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="faq-content">
+
+      <p class="faq-subtitle">
+        Frequently Asked Questions About Dolphin Women & Children Hospital
+      </p>
+
+      <h2 class="faq-title">
+        Frequently Asked Questions
+      </h2>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item ">
+        <button class="faq-question">
+          Which services are available at Dolphin Women & Children Hospital?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            We provide Gynecology, Obstetrics, Pediatrics, Neonatology, fertility care, pregnancy care, vaccinations, and women’s health services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you provide pregnancy and maternity care?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, we offer complete maternity services including antenatal checkups, normal delivery, C-section care, and postnatal support.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Are pediatric services available for newborns and children?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Our pediatric specialists provide newborn care, vaccinations, growth monitoring, emergency pediatric care, and child wellness services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you handle high-risk pregnancies?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, our experienced obstetric specialists provide advanced monitoring and treatment for high-risk pregnancies with personalized care.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector(".faq-question");
+
+    btn.addEventListener("click", () => {
+
+      faqItems.forEach(faq => {
+        if(faq !== item){
+          faq.classList.remove("active");
+        }
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
   <!-- FOOTER -->
   <footer class="footer" id="footer">
     <div class="container footer-grid">

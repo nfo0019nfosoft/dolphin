@@ -13,7 +13,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/warangal.css">
+  <link rel="stylesheet" href="css/hanamkonda.css">
   <link rel="icon" type="image/png" href="img/fav.png">
 </head>
 
@@ -52,9 +52,13 @@
           </button>
 
           <div class="dropdown-menu-custom" id="serviceMenu">
+            <a href="neonatology.html">Neonatology</a>
+
             <a href="pediatrics.html">Pediatrics</a>
-            <a href="maternity.html">Maternity</a>
-            <a href="gynecology.html">Gynecology</a>
+
+           <a href="#pediatric-surgery-section" id="pediatric-surgery-btn" >
+              Pediatric Surgery
+            </a>
           </div>
         </div>
 
@@ -70,42 +74,38 @@
     </div>
   </header>
 
-  
-<script>
-function toggleMenu(){
-  const nav = document.getElementById("navMenu");
 
-  nav.classList.toggle("show");
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navMenu");
 
-  // lock/unlock scroll
-  if(nav.classList.contains("show")){
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+      nav.classList.toggle("show");
 
-  // close dropdown when menu closes
-  document.getElementById("serviceMenu").classList.remove("show");
-}
+      // lock/unlock scroll
+      if (nav.classList.contains("show")) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
 
-function toggleService(e){
-  if(window.innerWidth <= 768){
-    e.stopPropagation();
-    document.getElementById("serviceMenu").classList.toggle("show");
-  }
-}
+      // close dropdown when menu closes
+      document.getElementById("serviceMenu").classList.remove("show");
+    }
 
-// close dropdown when clicking outside
-window.addEventListener("click", function(e){
-  if(!e.target.closest(".dropdown-custom")){
-    document.getElementById("serviceMenu").classList.remove("show");
-  }
-});
-</script>
+    function toggleService(e) {
+      if (window.innerWidth <= 768) {
+        e.stopPropagation();
+        document.getElementById("serviceMenu").classList.toggle("show");
+      }
+    }
 
-
-
-
+    // close dropdown when clicking outside
+    window.addEventListener("click", function (e) {
+      if (!e.target.closest(".dropdown-custom")) {
+        document.getElementById("serviceMenu").classList.remove("show");
+      }
+    });
+  </script>
 
 
 
@@ -114,14 +114,32 @@ window.addEventListener("click", function(e){
   <section class="main-slider">
     <div class="main-slider-track">
 
-      <!-- SLIDE 1 : PEDIATRICS -->
+      <!-- SLIDE 1 -->
       <div class="main-slide active">
-        <img src="img/abt.png" alt="Pediatrics Care">
+        <img src="img/abt.png" alt="Neonatology Care">
+
+        <div class="main-slide-content">
+          <h1>Neonatology Care</h1>
+
+          <p>
+            "Advanced NICU care for newborns and premature babies."
+          </p>
+
+          <a href="contact.html" class="hero-cta-btn">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="main-slide">
+        <img src="img/herobg.png" alt="Pediatrics Care">
+
         <div class="main-slide-content">
           <h1>Pediatrics Care</h1>
+
           <p>
-            Specialized medical care for infants, children and adolescents
-            with experienced pediatric specialists.
+            "Complete child healthcare with expert pediatric specialists."
           </p>
 
           <a href="contact.html" class="hero-cta-btn">
@@ -130,30 +148,15 @@ window.addEventListener("click", function(e){
         </div>
       </div>
 
-      <!-- SLIDE 2 : MATERNITY -->
+      <!-- SLIDE 3 -->
       <div class="main-slide">
-        <img src="img/herobg.png" alt="Maternity Care">
-        <div class="main-slide-content">
-          <h1>Maternity Care</h1>
-          <p>
-            Complete maternity services including prenatal, delivery and
-            postnatal care in a safe and supportive environment.
-          </p>
+        <img src="img/abtt.png" alt="Pediatric Surgery">
 
-          <a href="contact.html" class="hero-cta-btn">
-            Book Appointment
-          </a>
-        </div>
-      </div>
-
-      <!-- SLIDE 3 : GYNECOLOGY -->
-      <div class="main-slide">
-        <img src="img/abtt.png" alt="Gynecology Care">
         <div class="main-slide-content">
-          <h1>Gynecology Services</h1>
+          <h1>Pediatric Surgery</h1>
+
           <p>
-            Advanced gynecological treatments with modern technology and
-            personalized care for women at every stage of life.
+            "Safe and advanced surgical care specially designed for children."
           </p>
 
           <a href="contact.html" class="hero-cta-btn">
@@ -194,22 +197,25 @@ window.addEventListener("click", function(e){
             <h2>ABOUT OUR HOSPITAL</h2>
 
             <p>
-              Dolphin Women & Children Hospital is a trusted healthcare centre dedicated exclusively to the care of
-              women and children. With a strong commitment to medical excellence, compassionate service, and patient
-              safety, we provide comprehensive healthcare solutions in a warm and supportive environment.
+              Dolphin Women & Children Hospital – Hanumakonda, is dedicated to providing advanced Neonatology,
+              Pediatrics, and Pediatric Surgery services with compassionate and specialized care for newborns and
+              children. Our Neonatology department offers expert care for premature babies and critically ill newborns
+              with modern NICU facilities and continuous monitoring.
 
-              Our hospital specializes in Pediatrics, Maternity, Gynecology, and Women’s Health Services, delivering
-              personalized care at every stage of life — from pregnancy and childbirth to child growth and women’s
-              wellness.Our team of experienced doctors, nurses, and healthcare professionals work together to offer
-              ethical, transparent, and patient-centred care.
+              The Pediatrics department focuses on the complete health and development of infants, children, and
+              adolescents through preventive care, vaccinations, diagnosis, and treatment. Our Pediatric Surgery team
+              provides safe and advanced surgical care for children using modern techniques and child-friendly treatment
+              approaches to ensure faster recovery and better outcomes.
+
+              With experienced specialists, advanced technology, and a caring environment, Dolphin Hospital is committed
+              to delivering trusted healthcare for every child and family.
             </p>
-
             <a href="about.html" class="about-btn">Know More</a>
           </div>
 
           <!-- RIGHT IMAGE -->
           <div class="about-image">
-            <img src="img/abt.png" alt="About Hospital">
+            <img src="img/building1.png" alt="About Hospital">
           </div>
 
         </div>
@@ -218,7 +224,6 @@ window.addEventListener("click", function(e){
     </section>
 
   </div>
-
 
 
 
@@ -239,45 +244,299 @@ window.addEventListener("click", function(e){
 
     <div class="speciality-cards">
 
+      <!-- NEONATOLOGY -->
       <div class="speciality-card">
         <div class="speciality-icon">
           <i class="fa-solid fa-baby"></i>
         </div>
+
+        <h4>NEONATOLOGY</h4>
+
+        <p>
+          Advanced newborn and NICU care for premature and critically ill babies with expert monitoring.
+        </p>
+
+        <a href="neonatology.html" class="speciality-btn">
+          Know More
+        </a>
+      </div>
+
+      <!-- PEDIATRICS -->
+      <div class="speciality-card">
+        <div class="speciality-icon">
+          <i class="fa-solid fa-child"></i>
+        </div>
+
         <h4>PEDIATRICS</h4>
+
         <p>
-          Comprehensive medical care for infants, children and adolescents
-          with expert pediatricians.
+          Complete healthcare services for infants, children, and adolescents with experienced pediatric specialists.
         </p>
-        <a href="pediatrics.html" class="speciality-btn">Know More</a>
+
+        <a href="pediatrics.html" class="speciality-btn">
+          Know More
+        </a>
       </div>
 
+      <!-- PEDIATRIC SURGERY -->
       <div class="speciality-card">
         <div class="speciality-icon">
-          <i class="fa-solid fa-person-pregnant"></i>
+          <i class="fa-solid fa-user-doctor"></i>
         </div>
-        <h4>MATERNITY</h4>
-        <p>
-          Complete maternity services from pregnancy to delivery and
-          postnatal care in a safe environment.
-        </p>
-        <a href="maternity.html" class="speciality-btn">Know More</a>
-      </div>
 
-      <div class="speciality-card">
-        <div class="speciality-icon">
-          <i class="fa-solid fa-stethoscope"></i>
-        </div>
-        <h4>GYNECOLOGY</h4>
+        <h4>PEDIATRIC SURGERY</h4>
+
         <p>
-          Advanced gynecological treatments with modern technology
-          and personalized women’s care.
+          Safe and advanced surgical treatments specially designed for newborns, infants, and children.
         </p>
-        <a href="gynecology.html" class="speciality-btn">Know More</a>
+
+        <!-- BUTTON -->
+        <a href="#pediatric-surgery-section" id="pediatric-surgery-btn" class="speciality-btn">
+          Know More
+        </a>
+
       </div>
 
     </div>
 
   </section>
+
+
+
+
+
+<section class="directors-section">
+
+  <h2 class="directors-title">OUR SPECIALISTS</h2>
+
+  <p class="directors-sub">
+    Experienced Doctors Dedicated to Neonatology, Pediatrics & Pediatric Critical Care
+  </p>
+
+  <div class="directors-grid">
+
+    <!-- CARD 1 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/abt.png" alt="Dr. Vallapudasu Bangaru">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Vallapudasu Bangaru</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, M.D (PEDS)
+          </span>
+
+          <span>
+            <i class="fa-solid fa-heart-pulse"></i>
+            Consultant Pediatrician & Pediatric Intensivist
+          </span>
+
+          <span>
+            <i class="fa-solid fa-bed-pulse"></i>
+            Pediatric Emergency & Critical Care Specialist
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/abt.png" alt="Dr. Y. Venkata Narayana">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Y. Venkata Narayana</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, MD Pediatrics, DM Neonatology
+          </span>
+
+          <span>
+            <i class="fa-solid fa-baby"></i>
+            Consultant Neonatologist & Pediatrician
+          </span>
+
+          <span>
+            <i class="fa-solid fa-hospital-user"></i>
+            NICU, Ventilator & Neonatal Critical Care
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc2.png" alt="Dr. Kuchana Suresh Kumar">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Kuchana Suresh Kumar</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, MD Pediatrics, PGPN Boston USA
+          </span>
+
+          <span>
+            <i class="fa-solid fa-stethoscope"></i>
+            Senior Consultant Pediatrician & Intensivist
+          </span>
+
+          <span>
+            <i class="fa-solid fa-shield-heart"></i>
+            Pediatric Intensive & Development Care Specialist
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="director-card">
+
+      <div class="director-img">
+        <img src="img/doc3.png" alt="Dr. Prashanth Reddy Kandi">
+      </div>
+
+      <div class="director-content">
+
+        <h3>Dr. Prashanth Reddy Kandi</h3>
+
+        <div class="qualification">
+
+          <span>
+            <i class="fa-solid fa-user-doctor"></i>
+            MBBS, DNB Pediatrics, PALS Certified
+          </span>
+
+          <span>
+            <i class="fa-solid fa-stethoscope"></i>
+            Children & New Born Specialist
+          </span>
+
+          <span>
+            <i class="fa-solid fa-baby"></i>
+            Pediatric & Newborn Healthcare Expert
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <section class="our-purpose">
+
+    <h2 class="purpose-heading" data-aos="zoom-in">
+      OUR MISSION & VISION
+    </h2>
+
+    <p class="purpose-intro" data-aos="fade-up" data-aos-delay="100">
+      Our purpose is driven by compassion, trust, and a commitment to
+      delivering high-quality healthcare for women and children at
+      every stage of life.
+    </p>
+
+    <div class="purpose-panels">
+
+      <!-- MISSION -->
+      <div class="purpose-panel mission" data-aos="fade-right" data-aos-delay="200">
+
+        <span class="panel-tag">OUR MISSION</span>
+
+        <div class="icon">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <h3>Care with Compassion</h3>
+
+        <p>
+          To provide ethical, compassionate, and advanced healthcare
+          services for women and children through expert medical care,
+          modern technology, and a patient-centered approach focused
+          on safety, comfort, and trust.
+        </p>
+
+      </div>
+
+      <!-- VISION -->
+      <div class="purpose-panel vision" data-aos="fade-left" data-aos-delay="300">
+
+        <span class="panel-tag">OUR VISION</span>
+
+        <div class="icon">
+          <i class="fa-solid fa-eye"></i>
+        </div>
+
+        <h3>Excellence in Healthcare</h3>
+
+        <p>
+          To become a trusted center of excellence in women and child
+          healthcare, recognized for medical innovation, compassionate
+          service, clinical quality, and lifelong commitment to healthier
+          families and communities.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- AOS SCRIPT -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 900,
+      once: true
+    });
+  </script>
+
+
+
+
+
+
+
+
 
 
 
@@ -288,19 +547,170 @@ window.addEventListener("click", function(e){
 
 
   <section class="vector-header">
-    <div class="vector-lines">
-      <!-- <span class="line l1"></span>
-    <span class="line l2"></span>
-    <span class="line l3"></span> -->
-    </div>
 
     <div class="vector-content">
 
-      <h2>PEDIATRICS SERVICES</h2>
-      <p>“Caring for little lives with gentle hands and big hearts.”</p>
+      <div class="vector-text">
+        <h2>NEONATOLOGY</h2>
+
+        <p>
+          Advanced neonatology care for newborn and premature babies with specialized NICU support, and compassionate
+          medical attention.
+        </p>
+      </div>
+
+      <div class="vector-icon">
+        <i class="fa-solid fa-hospital-user"></i>
+      </div>
+
     </div>
 
-    <div class="vector-cut"></div>
+  </section>
+
+
+
+
+
+  <section class="home-services">
+    <div class="site-container">
+
+      <div class="home-services-grid">
+
+        <!-- 1 -->
+        <div class="home-service-card" data-aos="fade-right">
+          <img src="img/neonatal images/level 4.jpg" alt="NICU Care">
+          <h3>Level III / Level IV NICU</h3>
+          <p>
+            Advanced Neonatal Intensive Care Unit equipped to manage critically
+            ill newborns with continuous monitoring and life-saving support.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 2 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="img/neonatal images/premature baby 7.jpg" alt="Premature Baby Care">
+          <h3>Premature & Low Birth Weight Baby Care</h3>
+          <p>
+            Specialized care for preterm and low birth weight babies to ensure
+            proper growth, development, and survival.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 3 -->
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="200">
+          <img src="img/neonatal images/emergency 3.jpg" alt="Neonatologist Care">
+          <h3>24/7 DM Neonatologist & Emergency Care</h3>
+          <p>
+            Round-the-clock availability of expert neonatologists for emergency
+            newborn care and critical interventions.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 4 -->
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="300">
+          <img src="img/neonatal images/Ventilator & CPAP Support for Newborns.jpg" alt="Ventilator Support">
+          <h3>Ventilator & CPAP Support for Newborns</h3>
+          <p>
+            Advanced respiratory support including ventilators and CPAP systems
+            for babies with breathing difficulties.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 5 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="img/neonatal images/Neonatal Infections Management 1.jpg" alt="Neonatal Infections">
+          <h3>Neonatal Infections Management</h3>
+          <p>
+            Early diagnosis and effective treatment of infections in newborns
+            to prevent complications and ensure recovery.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 6 -->
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="500">
+          <img src="img/neonatal images/jaundice 4.jpg" alt="Jaundice Treatment">
+          <h3>Management of Neonatal Jaundice (Phototherapy & Exchange Transfusion)</h3>
+          <p>
+            Treatment of newborn jaundice using phototherapy and exchange
+            transfusion with continuous monitoring.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 7 -->
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="600">
+          <img src="img/neonatal images/emergency 3.jpg" alt="Sepsis Care">
+          <h3>Sepsis & Infection Management</h3>
+          <p>
+            Intensive care for neonatal sepsis with prompt diagnosis,
+            antibiotics, and supportive treatment.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 8 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="700">
+          <img src="img/neonatal images/high risk baby.jpg" alt="Development Follow-up">
+          <h3>Developmental Follow-up for High-Risk Babies</h3>
+          <p>
+            Long-term monitoring of growth and developmental milestones for
+            high-risk newborns.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 9 -->
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="800">
+          <img src="img/neonatal images/Breastfeeding Support 6.jpg" alt="Nutrition Support">
+          <h3>Neonatal Nutrition & Breastfeeding Support</h3>
+          <p>
+            Guidance on newborn nutrition and lactation support to promote
+            healthy growth and immunity.
+          </p>
+          <a href="neonatology.html" class="know-more">Know More</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="vector-header">
+
+    <div class="vector-content">
+
+      <div class="vector-text">
+        <h2>PEDIATRICS</h2>
+
+        <p>
+          Specialized pediatric care for infants, children, nutrition, vaccinations, and overall child health.
+        </p>
+      </div>
+
+      <div class="vector-icon">
+        <i class="fa-solid fa-baby"></i>
+      </div>
+
+    </div>
+
   </section>
 
 
@@ -311,72 +721,158 @@ window.addEventListener("click", function(e){
   <section class="home-services">
     <div class="site-container">
 
-
-
       <div class="home-services-grid">
 
         <!-- 1 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Antenatal Care">
-          <h3>Antenatal Care</h3>
+        <div class="home-service-card" data-aos="fade-right">
+          <img src="img/pediatrics/emergency copy.jpg" alt="Pediatric Emergency">
+          <h3>24/7 Pediatric Emergency Care</h3>
           <p>
-            Complete prenatal care including regular checkups, scans, and health
-            monitoring to ensure a safe and healthy pregnancy journey.
+            кругл-the-clock emergency services for children with rapid response
+            and expert pediatric care for critical situations.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
 
         <!-- 2 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="High Risk Pregnancy">
-          <h3>High-Risk Pregnancy Care</h3>
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="img/pediatrics/PICU copy.jpg" alt="PICU">
+          <h3>Advanced PICU</h3>
           <p>
-            Specialized monitoring and treatment for high-risk pregnancies with
-            advanced diagnostics and expert obstetric care.
+            Pediatric Intensive Care Unit equipped with advanced technology
+            for managing critically ill infants and children.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
 
         <!-- 3 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Delivery Services">
-          <h3>Normal & Cesarean Delivery</h3>
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="200">
+          <img src="img/pediatrics/General Pediatric Consultation copy.jpg" alt="Consultation">
+          <h3>General Pediatric Consultation</h3>
           <p>
-            Safe and well-equipped delivery services with experienced doctors,
-            nurses, and emergency support systems.
+            Comprehensive consultations for infants and children covering
+            routine checkups, illness diagnosis, and preventive care.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
 
         <!-- 4 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Postnatal Care">
-          <h3>Postnatal Care</h3>
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="300">
+          <img src="img/pediatrics/Vaccination & Immunization Programs copy.jpg" alt="Vaccination">
+          <h3>Vaccination & Immunization Programs</h3>
           <p>
-            Comprehensive post-delivery care focusing on mother’s recovery,
-            newborn health, and emotional well-being.
+            Complete immunization services following national schedules to
+            protect children from preventable diseases.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
 
         <!-- 5 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Lactation Support">
-          <h3>Breastfeeding Support</h3>
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="img/pediatrics/Fever copy.jpg" alt="Fever Treatment">
+          <h3>Treatment for Fever, Infections & Common Illnesses</h3>
           <p>
-            Expert lactation guidance to help mothers initiate and maintain
-            successful breastfeeding with confidence.
+            Expert care for fever, viral infections, and common childhood
+            illnesses with accurate diagnosis and treatment.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
 
         <!-- 6 -->
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Gynecology Care">
-          <h3>Gynecology Care</h3>
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="500">
+          <img src="img/pediatrics/Pediatric Nutrition & Diet Counseling copy.jpg" alt="Nutrition">
+          <h3>Pediatric Nutrition & Diet Counseling</h3>
           <p>
-            Complete women’s health services including menstrual care, hormonal
-            treatment, preventive screening, and fertility support.
+            Guidance on balanced nutrition, feeding practices, and dietary
+            plans for healthy growth and development.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 7 -->
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="600">
+          <img src="img/pediatrics/Pediatric Infectious Disease Care copy.jpg" alt="Infectious Disease">
+          <h3>Pediatric Infectious Disease Care</h3>
+          <p>
+            Specialized treatment for complex infections with expert
+            diagnosis and evidence-based care.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 8 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="700">
+          <img src="img/pediatrics/Growth copy.jpg" alt="Growth Monitoring">
+          <h3>Growth & Development Monitoring</h3>
+          <p>
+            Regular assessment of physical growth and developmental milestones
+            to ensure healthy progress in children.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 9 -->
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="800">
+          <img src="img/pediatrics/Skin Allergy copy.jpg" alt="Skin Allergy">
+          <h3>Pediatric Skin & Allergy Treatments</h3>
+          <p>
+            Treatment for skin conditions, allergies, and rashes in children
+            with safe and effective care.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 10 -->
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="900">
+          <img src="img/pediatrics/Pediatric Pulmonology copy.jpg" alt="Pulmonology">
+          <h3>Pediatric Pulmonology (Asthma & Lung Care)</h3>
+          <p>
+            Diagnosis and management of asthma, breathing issues, and lung
+            disorders in children.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 11 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="1000">
+          <img src="img/pediatrics/Pediatric Neurology copy.jpg" alt="Neurology">
+          <h3>Pediatric Neurology</h3>
+          <p>
+            Evaluation and treatment of neurological conditions including
+            seizures, developmental delays, and disorders.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 12 -->
+        <div class="home-service-card" data-aos="fade-left" data-aos-delay="1100">
+          <img src="img/pediatrics/Pediatric Cardiology copy.jpg" alt="Cardiology">
+          <h3>Pediatric Cardiology</h3>
+          <p>
+            Specialized care for congenital and acquired heart conditions
+            in infants and children.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 13 -->
+        <div class="home-service-card" data-aos="fade-right" data-aos-delay="1200">
+          <img src="img/pediatrics/gastro copy.jpg" alt="Gastroenterology">
+          <h3>Pediatric Gastroenterology</h3>
+          <p>
+            Diagnosis and treatment of digestive disorders including
+            feeding issues and gastrointestinal conditions.
+          </p>
+          <a href="pediatrics.html" class="know-more">Know More</a>
+        </div>
+
+        <!-- 14 -->
+        <div class="home-service-card" data-aos="fade-up" data-aos-delay="1300">
+          <img src="img/pediatrics/Pediatric Surgeries copy.jpg" alt="Surgery">
+          <h3>Pediatric Surgeries</h3>
+          <p>
+            Safe surgical care for children with modern techniques and
+            specialized pediatric surgical expertise.
           </p>
           <a href="pediatrics.html" class="know-more">Know More</a>
         </div>
@@ -389,311 +885,218 @@ window.addEventListener("click", function(e){
 
 
 
-  <section class="vector-header">
-    <div class="vector-lines">
-      <!-- <span class="line l1"></span>
-    <span class="line l2"></span>
-    <span class="line l3"></span> -->
-    </div>
-
-    <div class="vector-content">
-
-      <h2>MATERNITY SERVICES</h2>
-      <p>“Supporting every mother, nurturing every new beginning.”</p>
-    </div>
-
-    <div class="vector-cut"></div>
-  </section>
 
 
 
 
-  <section class="home-services">
-    <div class="site-container">
 
 
 
-      <div class="home-services-grid">
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Antenatal Care">
-          <h3>Antenatal Care</h3>
-          <p>
-            Comprehensive prenatal care with regular checkups, scans, and
-            monitoring to ensure healthy pregnancy progress and early
-            identification of risks.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
+
+
+
+
+
+  <!-- =========================
+     PEDIATRIC SURGERY SECTION
+========================= -->
+  <section class="surgery-section" id="pediatric-surgery-section">
+
+    <div class="surgery-container">
+
+      <!-- LEFT CONTENT -->
+      <div class="surgery-content">
+
+        <span class="surgery-badge">
+          <i class="fa-solid fa-heart-pulse"></i>
+          Pediatric Surgery
+        </span>
+
+        <h2>
+          Advanced Care <br>
+          for Little Lives
+        </h2>
+
+        <p>
+          Dolphin Hospital provides safe and advanced pediatric
+          surgical care for newborns, infants, and children with
+          experienced surgeons, modern technology, and compassionate support.
+        </p>
+
+        <!-- FEATURES -->
+        <div class="surgery-points">
+
+          <div class="surgery-point">
+            <i class="fa-solid fa-user-doctor"></i>
+            <span>Expert Pediatric Surgeons</span>
+          </div>
+
+          <div class="surgery-point">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Safe Child-Friendly Care</span>
+          </div>
+
+          <div class="surgery-point">
+            <i class="fa-solid fa-laptop-medical"></i>
+            <span>Modern Surgical Technology</span>
+          </div>
+
+          <div class="surgery-point">
+            <i class="fa-solid fa-bed-pulse"></i>
+            <span>Complete Recovery Support</span>
+          </div>
+
         </div>
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="High Risk Pregnancy">
-          <h3>High-Risk Pregnancy Care</h3>
-          <p>
-            Specialized care for high-risk pregnancies including diabetes,
-            hypertension, and multiple pregnancies with expert monitoring.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
-        </div>
+        <!-- BUTTON -->
+        <a href="contact.html" class="surgery-btn">
+          Book Appointment
+        </a>
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Delivery Services">
-          <h3>Normal & Cesarean Delivery</h3>
-          <p>
-            Safe and well-equipped delivery services with experienced doctors,
-            modern labor rooms, and emergency readiness.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
-        </div>
+      </div>
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Labour Care">
-          <h3>Labour & Pain Management</h3>
-          <p>
-            Personalized labour care with pain management techniques to ensure
-            comfort, safety, and positive birthing experience.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
-        </div>
+      <!-- RIGHT IMAGE -->
+      <div class="surgery-image-area">
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Postnatal Care">
-          <h3>Postnatal Care</h3>
-          <p>
-            Complete post-delivery care focusing on mother’s recovery, newborn
-            care guidance, and emotional well-being.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
-        </div>
+        <div class="image-bg"></div>
 
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Lactation Support">
-          <h3>Breastfeeding Support</h3>
-          <p>
-            Expert lactation guidance to help mothers initiate and maintain
-            successful breastfeeding with confidence.
-          </p>
-          <a href="maternity.html" class="know-more">Know More</a>
+        <img src="img/abtt.png" alt="Pediatric Surgery">
+
+        <!-- FLOAT CARD -->
+        <div class="mini-card">
+
+          <i class="fa-solid fa-hands-holding-child"></i>
+
+          <div>
+            <h4>Trusted Care</h4>
+            <p>Safe Hands for Every Child</p>
+          </div>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
 
+  <section class="facility-section">
+    <div class="container">
 
+      <h2 class="facility-title">OUR FACILITIES</h2>
 
-  <section class="vector-header">
-    <div class="vector-lines">
-      <!-- <span class="line l1"></span>
-    <span class="line l2"></span>
-    <span class="line l3"></span> -->
-    </div>
-
-    <div class="vector-content">
-
-      <h2>GYNECOLOGY SERVICES</h2>
-      <p>“Caring for women’s health at every stage of life.”</p>
-    </div>
-
-    <div class="vector-cut"></div>
-  </section>
-
-
-
-
-
-
-  <section class="home-services">
-    <div class="site-container">
-
-      <div class="home-services-grid">
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="General Gynecology">
-          <h3>General Gynecology Care</h3>
-          <p>
-            Complete gynecological care for women including diagnosis and
-            treatment of common reproductive health concerns.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Menstrual Disorders">
-          <h3>Menstrual Disorder Management</h3>
-          <p>
-            Treatment for irregular periods, heavy bleeding, painful cycles,
-            and hormonal-related menstrual issues.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="PCOS Care">
-          <h3>PCOS & Hormonal Care</h3>
-          <p>
-            Specialized care for PCOS, thyroid issues, and hormonal imbalances
-            with lifestyle and medical management.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Fertility Care">
-          <h3>Fertility & Pre-Conception Care</h3>
-          <p>
-            Fertility assessments, ovulation tracking, and pre-pregnancy
-            counseling to support healthy conception.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Preventive Screening">
-          <h3>Preventive Women’s Health</h3>
-          <p>
-            Routine screenings including cervical health, breast exams, and
-            preventive gynecological checkups.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-        <div class="home-service-card">
-          <img src="img/abt.png" alt="Menopause Care">
-          <h3>Menopause Care</h3>
-          <p>
-            Supportive care during menopause with symptom management,
-            hormonal evaluation, and lifestyle guidance.
-          </p>
-          <a href="gynecology.html" class="know-more">Know More</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-<section class="our-purpose">
-
-  <h2 class="purpose-heading">
-    OUR MISSSION & VISSION
-  </h2>
-
-  <p class="purpose-intro">
-    Our purpose is driven by compassion, trust, and a commitment to
-    delivering high-quality healthcare for women and children at
-    every stage of life.
-  </p>
-
-  <div class="purpose-panels">
-
-    <!-- MISSION -->
-    <div class="purpose-panel mission">
-      <span class="panel-tag">OUR MISSION</span>
-      <div class="icon">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-      </div>
-      <h3>Care with Compassion</h3>
-      <p>
-        To deliver ethical, compassionate, and high-quality healthcare
-        for women and children by combining expert medical care with
-        advanced technology and a patient-first approach.
+      <p class="facility-sub">
+        Advanced Neonatology, Pediatrics & Pediatric Surgery Facilities
+        designed for safe and compassionate child healthcare.
       </p>
-    </div>
 
-    <!-- VISION -->
-    <div class="purpose-panel vision">
-      <span class="panel-tag">OUR VISION</span>
-      <div class="icon">
-        <i class="fa-solid fa-eye"></i>
+      <div class="facility-container">
+
+        <!-- ROW 1 -->
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-baby"></i>
+          </div>
+          <h3>NICU Care</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3>Neonatal Monitoring</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-user-doctor"></i>
+          </div>
+          <h3>Expert Pediatricians</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-syringe"></i>
+          </div>
+          <h3>Vaccination Care</h3>
+        </div>
+
+        <!-- ROW 2 -->
+        <div class="facility-card right">
+          <div class="icon-circle">
+            <i class="fa-solid fa-bed-pulse"></i>
+          </div>
+          <h3>Pediatric ICU</h3>
+        </div>
+
+        <div class="facility-card right">
+          <div class="icon-circle">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <h3>Child Health Checkups</h3>
+        </div>
+
+        <div class="facility-card right">
+          <div class="icon-circle">
+            <i class="fa-solid fa-scissors"></i>
+          </div>
+          <h3>Pediatric Surgery</h3>
+        </div>
+
+        <div class="facility-card right">
+          <div class="icon-circle">
+            <i class="fa-solid fa-laptop-medical"></i>
+          </div>
+          <h3>Modern Operation Theatres</h3>
+        </div>
+
+        <!-- ROW 3 -->
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-truck-medical"></i>
+          </div>
+          <h3>24/7 Emergency Care</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-microscope"></i>
+          </div>
+          <h3>Advanced Diagnostics</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3>Safe Child-Friendly Care</h3>
+        </div>
+
+        <div class="facility-card left">
+          <div class="icon-circle">
+            <i class="fa-solid fa-hospital"></i>
+          </div>
+          <h3>Comfortable Pediatric Rooms</h3>
+        </div>
+
       </div>
-      <h3>Excellence in Every Life</h3>
-      <p>
-        To be a trusted center of excellence in women and child healthcare,
-        known for innovation, safety, empathy, and lifelong commitment
-        to patient well-being.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-}, { threshold:0.25 });
-
-document.querySelectorAll(".purpose-panel, .purpose-heading")
-  .forEach(el => observer.observe(el));
-</script>
-
-
-
-
-
-
-
-
-
-
-<section class="facility-section">
-  <div class="container">
-
-    <h2 class="facility-title">OUR FACILITIES</h2>
-    <p class="facility-sub">
-      Designed to support safe, reliable and comfortable healthcare.
-    </p>
-
-    <div class="facility-container">
-
-      <!-- Row 1 (LEFT) -->
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-user-doctor"></i></div><h3>Expert Doctors</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-truck-medical"></i></div><h3>24/7 Emergency</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-bed-pulse"></i></div><h3>ICU Care</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-microscope"></i></div><h3>Diagnostics</h3></div>
-
-      <!-- Row 2 (RIGHT) -->
-      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-vials"></i></div><h3>Laboratory</h3></div>
-      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-capsules"></i></div><h3>Pharmacy</h3></div>
-      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-person-pregnant"></i></div><h3>Maternity Care</h3></div>
-      <div class="facility-card right"><div class="icon-circle"><i class="fa-solid fa-baby"></i></div><h3>Neonatal Care</h3></div>
-
-      <!-- Row 3 (LEFT) -->
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div><h3>Cardiac Care</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-x-ray"></i></div><h3>Digital X-Ray</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-shield-heart"></i></div><h3>Patient Safety</h3></div>
-      <div class="facility-card left"><div class="icon-circle"><i class="fa-solid fa-hospital"></i></div><h3>Modern Rooms</h3></div>
 
     </div>
+  </section>
+  <script>
+    const facilityObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
 
-  </div>
-</section>
-<script>
-const facilityObserver = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-},{threshold:0.2});
-
-document.querySelectorAll(".facility-card, .facility-title")
-  .forEach(el=>facilityObserver.observe(el));
-</script>
+    document.querySelectorAll(".facility-card, .facility-title")
+      .forEach(el => facilityObserver.observe(el));
+  </script>
 
 
 
@@ -710,34 +1113,39 @@ document.querySelectorAll(".facility-card, .facility-title")
 
 
   <section class="highlights-section">
+
+    <!-- 🔥 OVERLAY -->
+    <div class="highlights-overlay"></div>
+
     <div class="container">
 
-      <h2 class="highlights-title">OUR HIGHLIGHTS</h2>
-      <p class="highlights-sub">
+      <h2 class="highlights-title" data-aos="fade-up">OUR HIGHLIGHTS</h2>
+
+      <p class="highlights-sub" data-aos="fade-up" data-aos-delay="100">
         Each number tells a story of care, trust, and excellence.
       </p>
 
       <div class="highlights-container">
 
-        <div class="highlight-card zoom-in">
+        <div class="highlight-card" data-aos="zoom-in">
           <span class="top-line"></span>
           <h3 class="count" data-target="12">0</h3>
           <p>Experience</p>
         </div>
 
-        <div class="highlight-card zoom-in">
+        <div class="highlight-card" data-aos="zoom-in" data-aos-delay="100">
           <span class="top-line"></span>
           <h3 class="count" data-target="25000">0</h3>
           <p>Patients Treated</p>
         </div>
 
-        <div class="highlight-card zoom-in">
+        <div class="highlight-card" data-aos="zoom-in" data-aos-delay="200">
           <span class="top-line"></span>
           <h3 class="count" data-target="15000">0</h3>
           <p>Happy Patients</p>
         </div>
 
-        <div class="highlight-card zoom-in">
+        <div class="highlight-card" data-aos="zoom-in" data-aos-delay="300">
           <span class="top-line"></span>
           <h3 class="count" data-target="100">0</h3>
           <p>Trusted Care</p>
@@ -747,28 +1155,59 @@ document.querySelectorAll(".facility-card, .facility-title")
 
     </div>
   </section>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    const counters = document.querySelectorAll('.count');
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      let current = 0;
-      const increment = target / 80;
-
-      const updateCounter = () => {
-        if (current < target) {
-          current += increment;
-          counter.innerText =
-            Math.ceil(current) + (target === 100 ? '%' : '+');
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText =
-            target + (target === 100 ? '%' : '+');
-        }
-      };
-
-      updateCounter();
+    AOS.init({
+      duration: 1000,
+      once: true
     });
+
+    /* COUNTER */
+    const counters = document.querySelectorAll('.count');
+    let started = false;
+
+    function startCounter() {
+      if (started) return;
+
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let current = 0;
+        const increment = target / 80;
+
+        const update = () => {
+          if (current < target) {
+            current += increment;
+
+            counter.innerText =
+              Math.ceil(current).toLocaleString() +
+              (target === 100 ? '%' : '+');
+
+            requestAnimationFrame(update);
+          } else {
+            counter.innerText =
+              target.toLocaleString() +
+              (target === 100 ? '%' : '+');
+          }
+        };
+
+        update();
+      });
+
+      started = true;
+    }
+
+    /* TRIGGER */
+    const section = document.querySelector('.highlights-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        startCounter();
+      }
+    }, { threshold: 0.4 });
+
+    observer.observe(section);
   </script>
 
 
@@ -835,9 +1274,8 @@ document.querySelectorAll(".facility-card, .facility-title")
           <div>
             <h4>Address</h4>
             <p class="address-text">
-              H.NO 6-2-161 &162, H.No 6-2-161 & 162, opposite Kasam Brothers Lane,
-              beside Police Station, Hanamkonda Chowrastha,
-              Kakaji Nagar Colony, Warangal,
+              H.NO 6-2-161 &162, Opposite Kasam Brothers Lane, Beside Police Station,
+              Chowrastha,
               Hanamkonda, Telangana 506011
 
             </p>
@@ -879,10 +1317,10 @@ document.querySelectorAll(".facility-card, .facility-title")
             <input type="text" placeholder="Phone Number">
             <select>
               <option>Select Service</option>
- <option>Gynecology</option>
-          <option>Obstetrics</option>
-          <option>Neonatalogy</option>
-           <option>Pediatrics</option>
+
+              <option>Neonatalogy</option>
+              <option>Pediatrics</option>
+              <option>Pediatric Surgery</option>
             </select>
           </div>
 
@@ -899,6 +1337,125 @@ document.querySelectorAll(".facility-card, .facility-title")
 
 
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="faq-section">
+  <div class="faq-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="faq-image" data-aos="fade-right">
+      <img src="img/faq.png" alt="Dolphin Hospital FAQ">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="faq-content">
+
+      <p class="faq-subtitle">
+        Frequently Asked Questions About Dolphin Women & Children Hospital
+      </p>
+
+      <h2 class="faq-title">
+        Frequently Asked Questions
+      </h2>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item ">
+        <button class="faq-question">
+          Which services are available at Dolphin Women & Children Hospital?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            We provide Gynecology, Obstetrics, Pediatrics, Neonatology, fertility care, pregnancy care, vaccinations, and women’s health services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you provide pregnancy and maternity care?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, we offer complete maternity services including antenatal checkups, normal delivery, C-section care, and postnatal support.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Are pediatric services available for newborns and children?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Our pediatric specialists provide newborn care, vaccinations, growth monitoring, emergency pediatric care, and child wellness services.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ ITEM -->
+      <div class="faq-item">
+        <button class="faq-question">
+          Do you handle high-risk pregnancies?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes, our experienced obstetric specialists provide advanced monitoring and treatment for high-risk pregnancies with personalized care.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector(".faq-question");
+
+    btn.addEventListener("click", () => {
+
+      faqItems.forEach(faq => {
+        if(faq !== item){
+          faq.classList.remove("active");
+        }
+      });
+
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -938,9 +1495,14 @@ document.querySelectorAll(".facility-card, .facility-title")
       <div class="footer-col">
         <h4>SERVICES</h4>
         <div class="footer-anim">
-          <a href="pediatrics.html">Pediatrics</a>
-          <a href="maternity.html">Maternity</a>
-          <a href="gynecology.html">Gynecology</a>
+        <a href="neonatalogy.html">Maternity</a>
+            <a href="pediatrics.html">Pediatrics</a>
+            
+           <a href="#pediatric-surgery-section" id="pediatric-surgery-btn" >
+              Pediatric Surgery
+            </a>
+            
+         
         </div>
       </div>
 
