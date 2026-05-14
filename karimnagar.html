@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dolphin Hospital</title>
+  <title>Karimnagar - Dolphin Hospital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Bootstrap -->
@@ -12,15 +12,31 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/karimnagar.css">
+  <link rel="stylesheet" href="css/index.css">
   <link rel="icon" type="image/png" href="img/fav.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+    easing: "ease-in-out",
+    offset: 100,
+
+    // 🔥 SIDE SCROLL FIX
+    disable: function() {
+      return window.innerWidth < 768; // mobile lo animations off
+    }
+  });
+</script>
 </head>
 <body>
 
 
 <!-- TOP BAR -->
 <div class="top-bar">
-  <div class="container top-flex">
+  <div class="top-container top-flex">
 
     <a href="index.html" class="logo-wrap">
       <img src="img/logo.png" alt="Dolphin Hospital">
@@ -31,30 +47,31 @@
       <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
     </div>
 
-    <a href="contact.html" class="btn book-btn">Book Appointment</a>
+   <a href="contact.html" class="book-btn">Book Appointment</a>
 
   </div>
 </div>
 
 <!-- NAVBAR -->
 <header class="main-nav">
-  <div class="container nav-center">
+  <div class="nav-container nav-center">
 
     <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
 
-      <div class="dropdown-custom">
-        <button class="service-btn" onclick="toggleService(event)">
-          Services ▾
-        </button>
+     <div class="dropdown-custom">
+  <button class="service-btn" onclick="toggleService(event)">
+    Services ▾
+  </button>
 
-        <div class="dropdown-menu-custom" id="serviceMenu">
-          <a href="pediatrics.html">Pediatrics</a>
-          <a href="maternity.html">Maternity</a>
-          <a href="gynecology.html">Gynecology</a>
-        </div>
-      </div>
+  <div class="dropdown-menu-custom" id="serviceMenu">
+    <a href="gynecology.html">Gynecology</a>
+    <a href="obstetrics.html">Obstetrics</a>
+    <a href="neonatalogy.html">Neonatalogy</a>
+    <a href="pediatrics.html">Pediatrics</a>
+  </div>
+</div>
 
       <a href="hanamkonda.html">Hanamkonda</a>
       <a href="karimnagar.html">Karimnagar</a>
@@ -67,6 +84,7 @@
 
   </div>
 </header>
+
 
 
 <script>
@@ -100,6 +118,7 @@ window.addEventListener("click", function(e){
   }
 });
 </script>
+
 
 
 
@@ -1481,8 +1500,82 @@ window.addEventListener("click", function(e){
 
 
 
+<section class="hospital-info">
+  <div class="blue-panel">
+    <div class="content-wrapper">
 
+      <h2>WHY CHOOSE Dolphin Hospital</h2>
 
+      <h3>
+        Trusted Mother & Child Care with Compassion and Excellence
+      </h3>
+
+      <p class="description">
+        At Dolphin Hospital, we are dedicated to providing exceptional
+        healthcare for mothers, newborns, infants, and children in a
+        warm and caring environment. Our experienced pediatricians,
+        gynecologists, neonatologists, and nursing staff work together
+        to ensure every mother and child receives personalized attention,
+        advanced treatment, and complete support throughout their health
+        journey. With modern facilities, child-friendly care, and a
+        commitment to safety and comfort, Dolphin Hospital stands as a
+        trusted destination for comprehensive mother and child healthcare.
+      </p>
+
+      <div class="features-grid">
+
+        <div class="feature-item">
+          <strong>
+            Advanced maternity, pregnancy, and neonatal care services
+          </strong>
+        </div>
+
+        <div class="feature-item">
+          <strong>
+            24/7 pediatric emergency, vaccination, and diagnostic support
+          </strong>
+        </div>
+
+        <div class="feature-item">
+          <strong>
+            Expert child specialists and modern NICU facilities under one roof
+          </strong>
+        </div>
+
+        <div class="feature-item">
+          <strong>
+            Safe, ethical, and compassionate healthcare for mothers and children
+          </strong>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Floating White Cards -->
+    <div class="floating-cards">
+
+      <div class="info-card">
+        <div class="icon">👩‍⚕️</div>
+        <span>Expert Pediatricians</span>
+      </div>
+
+      <div class="info-card">
+        <div class="icon">🏥</div>
+        <span>Modern Medical Technology</span>
+      </div>
+
+      <div class="info-card">
+        <div class="icon">💖</div>
+        <span>Quality Mother & Child Care</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="image-panel">
+    <img src="img/where4.png" alt="Doctor with child">
+  </div>
+</section>
 
 
 
