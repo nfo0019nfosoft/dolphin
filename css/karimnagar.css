@@ -16,6 +16,11 @@
   box-sizing:border-box;
   font-family:Arial, Helvetica, sans-serif;
 }
+html,
+body{
+    overflow-x:hidden;
+    width:100%;
+}
 
 a{
   text-decoration:none;
@@ -641,7 +646,8 @@ nav a:hover,
 
 /* ================= ABOUT SECTION ================= */
 .about-section {
-  padding: 80px 0;
+  padding: 40px 0;
+  overflow: hidden;
   background: #ffffff;
 }
 
@@ -803,6 +809,7 @@ nav a:hover,
   padding:70px 20px 90px;
   background:#ede8ff;
   margin-bottom:30px;
+  overflow: hidden;
   text-align:center;
 }
 
@@ -1001,6 +1008,7 @@ nav a:hover,
 .directors-section {
   padding: 40px 20px;
   background: #f6f7fb;
+  overflow: hidden;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -1149,6 +1157,7 @@ nav a:hover,
     padding: 45px 16px;
     background: linear-gradient(to bottom, #f7fbff, #eef5ff);
     font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
 }
 
 /* ================= GRID ================= */
@@ -1691,6 +1700,7 @@ nav a:hover,
   width:100%;
   padding:12px 10px; /* reduced */
   background:#f4f4f4;
+  overflow: hidden;
 }
 
 /* MAIN BOX */
@@ -2136,7 +2146,8 @@ body {
 
 /* ================= SECTION ================= */
 .our-purpose{
-  padding:80px 20px;
+  padding:40px 20px;
+  overflow: hidden;
   background:linear-gradient(180deg,#f7f3ff,#ffffff);
   text-align:center;
 }
@@ -2304,7 +2315,8 @@ body {
 
 
 .facility-section {
-  padding: 80px 0;
+  padding: 40px 0;
+  overflow: hidden;
   background: #ede9f7;
 }
 
@@ -2524,6 +2536,7 @@ body {
  .contact-modern {
   padding: 90px 20px 50px;
   background: #f4fbfa;
+  overflow: hidden;
   font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -2905,6 +2918,7 @@ body {
   width:100%;
   padding:35px 15px; /* reduced */
   background:#fff;
+  overflow: hidden;
 }
 
 /* CONTAINER */
