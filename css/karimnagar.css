@@ -538,7 +538,7 @@ nav a:hover,
 /* HEADING */
 
 .main-slide-content h1{
-  font-size:46px;
+  font-size:52px;
   font-weight:700;
   margin-bottom:14px;
   line-height:1.15;
@@ -549,7 +549,7 @@ nav a:hover,
 /* TEXT */
 
 .main-slide-content p{
-  font-size:17px;
+  font-size:18px;
   line-height:1.7;
   margin-bottom:24px;
 
@@ -2012,135 +2012,191 @@ nav a:hover,
 
 
 
-
-
-
-
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
-
-.hospital-info {
+/* =========================
+   MAIN SECTION
+========================= */
+.hospital-info{
+  width: 92%;
+  max-width: 1350px;
+  margin: 50px auto;
   display: flex;
-  min-height: 500px;
-  width: 100%;
+  align-items: stretch;   /* Equal height */
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  background: #fff;
 }
 
-/* Left Blue Side */
-.blue-panel {
-  flex: 1;
-  background-color: #674dad; /* Dark blue from the image */
-  color: white;
-  padding: 60px;
+/* =========================
+   LEFT SIDE
+========================= */
+.blue-panel{
+  width: 58%;
+  background: #674dad;
+  color: #fff;
+
+  /* Remove unnecessary spaces */
+  padding: 45px 190px 45px 45px;
+
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.content-wrapper {
-  max-width: 500px;
+.content-wrapper{
+  width: 100%;
 }
 
-.blue-panel h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  font-weight: bold;
+/* Heading */
+.blue-panel h2{
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
 }
 
-.blue-panel h3 {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+/* Subheading */
+.blue-panel h3{
+  font-size: 1.35rem;
+  line-height: 1.4;
+  margin-bottom: 18px;
+  font-weight: 500;
 }
 
-.description {
-  font-size: 0.9rem;
-  line-height: 1.6;
+/* Description */
+.description{
+  font-size: 0.94rem;
+  line-height: 1.8;
   text-align: justify;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 28px;
 }
 
-/* The 2x2 Grid of text */
-.features-grid {
+/* =========================
+   FEATURES
+========================= */
+.features-grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding-top: 20px;
+  gap: 16px;
 }
 
-.feature-item {
-  font-size: 0.85rem;
+.feature-item{
+  border-top: 1px solid rgba(255,255,255,0.25);
+  padding-top: 12px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* =========================
+   RIGHT IMAGE
+========================= */
+.image-panel{
+  width: 42%;
+}
+
+.image-panel img{
+  width: 100%;
+  height: 100%;     /* SAME HEIGHT */
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================
+   FLOATING CARDS
+========================= */
+.floating-cards{
+  position: absolute;
+  top: 50%;
+  right: -60px;
+
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  z-index: 100;
+}
+
+/* =========================
+   CARD DESIGN
+========================= */
+.info-card{
+  width: 220px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+}
+
+.info-card .icon{
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+
+  border-radius: 12px;
+  background: #f3efff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.4rem;
+}
+
+.info-card span{
+  color: #222;
+  font-size: 0.82rem;
+  font-weight: 600;
   line-height: 1.4;
 }
 
-/* The White Floating Cards */
-.floating-cards {
-  position: absolute;
-  right: -90px; /* Overlaps into the image side */
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 10;
-}
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:991px){
 
-.info-card {
-  background: white;
-  color: #333;
-  padding: 15px 25px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  width: 200px;
-}
-
-.info-card .icon {
-  font-size: 2rem;
-  color: #005696;
-}
-
-.info-card span {
-  font-weight: bold;
-  font-size: 0.7rem;
-}
-
-/* Right Image Side */
-.image-panel {
-  flex: 1;
-  overflow: hidden;
-}
-
-.image-panel img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 900px) {
-  .hospital-info {
+  .hospital-info{
     flex-direction: column;
   }
-  .floating-cards {
+
+  .blue-panel,
+  .image-panel{
+    width: 100%;
+  }
+
+  .blue-panel{
+    padding: 40px 25px;
+  }
+
+  .features-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .floating-cards{
     position: static;
     transform: none;
-    margin: 20px auto;
-    right: 0;
+    margin: 28px auto;
+    align-items: center;
   }
-  .blue-panel {
-    padding: 30px;
-  }
-  .description {
-    text-align: justify;
-}
-}
 
+  .info-card{
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .image-panel img{
+    height: 380px;
+  }
+}
 
 
 
@@ -2925,7 +2981,7 @@ body {
 .faq-container{
   max-width:1100px;
   margin:auto;
-  background:var(--faq-light);
+ background: #e7e1fa;
   border-radius:20px;
   padding:30px; /* reduced */
   display:grid;

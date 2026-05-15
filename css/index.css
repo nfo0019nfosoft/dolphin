@@ -567,21 +567,22 @@ nav a:hover,
   top:50%;
   transform:translateY(-50%);
   color:#fff;
-  max-width:520px;
+  max-width:620px;
   z-index:2;
   animation:slideFade 1.2s ease;
 }
 
 .main-slide-content h1{
-  font-size:44px;
+  font-size:52px;
   font-weight:700;
   margin-bottom:12px;
 }
 
 .main-slide-content p{
-  font-size:17px;
+  font-size:18px;
   line-height:1.6;
   margin-bottom:22px;
+  text-align: justify;
   opacity:0.95;
 }
 
@@ -705,21 +706,20 @@ nav a:hover,
   font-size: 16.5px;
   text-align: justify;
 }
-
 /* BUTTON STYLE */
 .about-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 15px;
-  padding: 15px 35px;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 10px 24px; /* Reduced button size */
   background: #674dad;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 13px; /* Smaller text */
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 50px;
-  box-shadow: 0 10px 25px rgba(103, 77, 173, 0.3);
+  border-radius: 40px;
+  box-shadow: 0 6px 18px rgba(103, 77, 173, 0.25);
   transition: all 0.4s ease;
   text-decoration: none;
 }
@@ -2365,7 +2365,7 @@ nav a:hover,
     bottom: 0;
      right: 80px; 
     width: 300px; /* 🔥 control size */ 
-    height: auto;
+    height: 200px;
      object-fit: contain; 
     }
 
@@ -3631,7 +3631,7 @@ button:hover{
 
 /* TEXT */
 .banner-text {
-  color: var(--brand-blue); 
+  color: black; 
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 20px;
@@ -3697,6 +3697,33 @@ button:hover{
   }
 }
 
+.banner-wrapper {
+  width: 100%;
+  margin: 0;
+  display: flex;              /* 🔥 side by side */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;                  /* 🔥 small space between image & content */
+}
+
+/* IMAGE LEFT */
+.banner-img {
+  max-width: 420px;
+  margin-left: 40px;
+}
+
+/* CONTENT RIGHT */
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* 🔥 left align */
+  justify-content: center;
+  text-align: left;           /* 🔥 text left */
+  margin-left: 0;
+  padding-right: 20px;
+  max-width: 700px;
+}
+
 
 
 
@@ -3724,7 +3751,7 @@ button:hover{
 .faq-container{
   max-width:1100px;
   margin:auto;
-  background:var(--faq-light);
+background: #e7e1fa;
   border-radius:20px;
   padding:30px; /* reduced */
   display:grid;
