@@ -72,8 +72,8 @@
 
         <!-- DROPDOWN -->
         <div class="dropdown">
+<button class="drop-btn" onclick="toggleDropdown()">
 
-          <button class="drop-btn">
             Services ▾
           </button>
 
@@ -258,10 +258,11 @@
 
       </nav>
 
-      <!-- MOBILE MENU -->
-      <div class="menu-btn" onclick="toggleMenu()">
-        ☰
-      </div>
+     <!-- MOBILE MENU BUTTON -->
+
+<div class="menu-btn" onclick="toggleMenu()">
+  ☰
+</div>
 
     </div>
 
@@ -275,6 +276,34 @@
         .getElementById("navMenu")
         .classList.toggle("show");
     }
+    function toggleMenu(){
+  document
+    .getElementById("navMenu")
+    .classList.toggle("show");
+}
+
+function toggleDropdown(){
+
+  document
+    .querySelector(".dropdown")
+    .classList.toggle("active");
+}
+
+/* SUBMENU */
+
+document.querySelectorAll(".sub-btn").forEach(btn=>{
+
+  btn.addEventListener("click",function(){
+
+    if(window.innerWidth <= 768){
+
+      this.parentElement
+      .classList.toggle("active");
+    }
+
+  });
+
+});
 
   </script>
 
