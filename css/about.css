@@ -17,6 +17,10 @@
   font-family:Arial, Helvetica, sans-serif;
 }
 
+section {
+  overflow-x: hidden;
+}
+
 a{
   text-decoration:none;
 }
@@ -93,59 +97,7 @@ a{
   min-height:38px; /* reduced from 45px */
 }
 
-/* NAV LINKS WRAPPER */
-nav{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:22px;       /* slightly reduced spacing */
-  padding:6px 0;  /* ↓ this is the main height control */
-}
 
-/* LINKS */
-nav a,
-.service-btn{
-  color:#fff;
-  background:none;
-  border:none;
-   padding:10px 10px;
-  font-size:16px; /* slightly smaller */
-  cursor:pointer;
-  line-height:1;  /* prevents extra vertical space */
-}
-
-
-/* DROPDOWN */
-.dropdown-custom{
-  position:relative;
-   margin-left:0;
-}
-
-.dropdown-menu-custom{
-  position:absolute;
-  top:38px;
-  left:0;
-  background:#fff;
-  min-width:200px;
-  border-radius:10px;
-  box-shadow:0 15px 30px rgba(0,0,0,.15);
-  opacity:0;
-  transform:translateY(10px);
-  pointer-events:none;
-  transition:0.3s;
-}
-
-.dropdown-menu-custom a{
-  display:block;
-  padding:12px 16px;
-  color:#0f172a;
-}
-
-.dropdown-menu-custom.show{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
-}
 
 /* MENU BUTTON */
 .menu-btn{
@@ -178,98 +130,258 @@ nav a,
   cursor:pointer;
   z-index:2000;
 }
-  /* MOBILE NAV */
-  nav{
-   position:absolute;   /* ✅ ONLY this */
-    top:0;
-    left:0;
-    width:100%;
+}
+/* =========================
+   NAVBAR
+========================= */
 
-    background:var(--primary);
-    z-index:1500;
+/* =========================
+   NAVBAR
+========================= */
 
-    flex-direction:column;
-    align-items:center;
-    gap:16px;
+.main-nav{
+  width:100%;
+  height:50px;
 
-    padding:70px 0 20px;
-    display:none;
-  }
+  background:#6d4bb8;
 
-  nav.show{
-    display:flex;
-  }
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-  nav a,
-  .service-btn{
-    width:100%;
-    text-align:center;
-  
-    padding:3px 0;
-    font-size:16px;
-  }
+/* =========================
+   NAV MENU
+========================= */
 
-  /* MOBILE DROPDOWN */
-  .dropdown-custom{
-    width:100%;
-    text-align:center;
-  }
+nav{
 
-  .dropdown-menu-custom{
-    position:static;
-    display:none;
-    width:100%;
-    background:#5b3fa3;
-    box-shadow:none;
-    margin-top:6px;
-    opacity:1;
-    transform:none;
-    pointer-events:auto;
-  }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-  .dropdown-menu-custom.show{
-    display:block;
-  }
+  gap:40px;
 
-  .dropdown-menu-custom a{
-    color:#ffffff;
-    padding:8px 0;
-    font-size:15px;
-  }
+  height:100%;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+nav a,
+.drop-btn{
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  height:100%;
+
+  color:#fff;
+  text-decoration:none;
+margin-top: -20px;
+  background:none;
+  border:none;
+
+  font-size:16px;
+  font-weight:500;
+
+  padding:0 5px;
+
+  cursor:pointer;
+
+  transition:0.3s;
 }
 
 /* HOVER */
+
 nav a:hover,
-.service-btn:hover{
-  color:#d55191;
+.drop-btn:hover{
+  color:#ffd4f1;
 }
 
-.dropdown-menu-custom a:hover{
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown{
+
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  height:100%;
+}
+
+/* MAIN DROPDOWN */
+
+.dropdown-content{
+
+  position:absolute;
+
+  top:100%;
+  left:0;
+
+  width:300px;
+
+  background:#5b3fa3;
+
+  border-radius:10px;
+
+  padding:10px;
+
+  display:none;
+
+  z-index:9999;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.25);
+}
+
+/* SHOW */
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+/* =========================
+   SUB DROPDOWN
+========================= */
+
+.sub-dropdown{
+  position:static;
+}
+
+/* LEFT SIDE BUTTONS */
+
+.sub-btn{
+
+  width:100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  text-align:left;
+
+  color:#fff;
+
+  background:none;
+  border:none;
+
+  padding:14px 16px;
+
+  border-radius:8px;
+
+  font-size:17px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+/* HOVER */
+
+.sub-btn:hover{
   background:#d55191;
-  color:#ffffff;
 }
 
-/* DESKTOP HOVER EFFECT */
-@media(min-width: 769px) {
-  .dropdown-custom:hover .dropdown-menu-custom {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    display: block; /* Safety for visibility */
-  }
+/* =========================
+   RIGHT SIDE MENU
+========================= */
+.sub-content{
 
-  /* Dropdown paina mouse unnapudu adi maayapokunda gap cover chestundi */
-  .dropdown-custom {
-    padding-bottom: 10px; 
-    margin-bottom: -10px;
-  }
+  position:absolute;
+
+  left:97%;   /* 100% badulu 97% */
+
+  top:10px;
+
+  width:380px;
+
+  max-height:500px;
+
+  overflow-y:auto;
+
+  background:#7a57ca;
+
+  border-radius:10px;
+
+  padding:15px;
+
+  display:none;
+
+  box-shadow:0 5px 20px rgba(0,0,0,0.25);
+}
+.sub-content a{
+
+  display:block;
+
+  color:#fff;
+  text-decoration:none;
+
+  padding:10px 14px;
+
+  margin-bottom:8px;   /* SPACE BETWEEN ITEMS */
+
+  border-radius:6px;
+
+  font-size:15px;
+
+  line-height:2.5;   /* TEXT SPACING */
+
+  transition:0.3s;
+}
+/* SHOW SUBMENU */
+
+.sub-dropdown:hover .sub-content{
+  display:block;
 }
 
-/* Mobile lo toggle button click chesinapudu matrame ravali kabatti idi */
-@media(max-width: 768px) {
-  .dropdown-menu-custom.show {
-    display: block !important;
-  }
+/* =========================
+   SCROLLBAR
+========================= */
+
+.sub-content::-webkit-scrollbar{
+  width:8px;
+}
+
+.sub-content::-webkit-scrollbar-thumb{
+  background:#d55191;
+  border-radius:10px;
+}
+
+.sub-content::-webkit-scrollbar-track{
+  background:#8f6be0;
+}
+
+/* =========================
+   SUB LINKS
+========================= */
+
+.sub-content a{
+
+  display:block;
+
+  color:#fff;
+  text-decoration:none;
+
+  padding:10px 14px;
+
+  border-radius:6px;
+
+  font-size:15px;
+
+  line-height:2.0;
+
+  transition:0.3s;
+}
+
+/* HOVER */
+
+.sub-content a:hover{
+  background:#d55191;
 }
 
 

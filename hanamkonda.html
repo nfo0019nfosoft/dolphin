@@ -40,72 +40,185 @@
 
   <!-- NAVBAR -->
   <header class="main-nav">
-    <div class="container nav-center">
 
+    <div class="nav-container">
+
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="images/logo.png" alt="">
+      </div>
+
+      <!-- CENTER NAV -->
       <nav id="navMenu">
+
         <a href="index.html">Home</a>
+
         <a href="about.html">About Us</a>
 
-        <div class="dropdown-custom">
-          <button class="service-btn" onclick="toggleService(event)">
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+
+          <button class="drop-btn">
             Services ▾
           </button>
 
-          <div class="dropdown-menu-custom" id="serviceMenu">
-            <a href="neonatology.html">Neonatology</a>
+          <div class="dropdown-content">
 
-            <a href="pediatrics.html">Pediatrics</a>
 
-           <a href="#pediatric-surgery-section" id="pediatric-surgery-btn" >
-              Pediatric Surgery
-            </a>
+            
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Neonatalogy ▸
+              </button>
+              <div class="sub-content">
+                <a href="neonatology.html">Level IV / Level III NICU</a>
+
+                <a href="neonatology.html">
+                  Premature & Low Birth Weight Baby Care
+                </a>
+
+                <a href="neonatology.html">
+                  24/7 DM Neonatologist & Emergency Care
+                </a>
+
+                <a href="neonatology.html">
+                  Ventilator & CPAP Support
+                </a>
+
+                <a href="neonatology.html">
+                  Neonatal Infections Management
+                </a>
+
+                <a href="neonatology.html">
+                  Neonatal Jaundice Treatment
+                </a>
+
+                <a href="neonatology.html">
+                  Sepsis & Infection Management
+                </a>
+
+                <a href="neonatology.html">
+                  Developmental Follow-up
+                </a>
+
+                <a href="neonatology.html">
+                  Nutrition & Breastfeeding Support
+                </a>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Pediatrics ▸
+              </button>
+
+              <div class="sub-content">
+
+  <a href="pediatrics.html">
+    24/7 Pediatric Emergency Care
+  </a>
+
+  <a href="pediatrics.html">
+    Advanced PICU
+  </a>
+
+  <a href="pediatrics.html">
+    General Pediatric Consultation
+  </a>
+
+  <a href="pediatrics.html">
+    Vaccination & Immunization Programs
+  </a>
+
+  <a href="pediatrics.html">
+    Fever, Infections & Common Illnesses
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Nutrition & Diet Counseling
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Infectious Disease Care
+  </a>
+
+  <a href="pediatrics.html">
+    Growth & Development Monitoring
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Skin & Allergy Treatments
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Pulmonology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Neurology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Cardiology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Gastroenterology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Surgeries
+  </a>
+
+</div>
+
+            </div>
+
+
+
+
+          
+
+            
+
           </div>
+
         </div>
 
         <a href="hanamkonda.html">Hanamkonda</a>
+
         <a href="karimnagar.html">Karimnagar</a>
+
         <a href="contact.html">Contact Us</a>
+
       </nav>
 
+      <!-- MOBILE MENU -->
       <div class="menu-btn" onclick="toggleMenu()">
-        <i class="fa-solid fa-bars"></i>
+        ☰
       </div>
 
     </div>
+
   </header>
 
-
+  <!-- SCRIPT -->
   <script>
+
     function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-
-      nav.classList.toggle("show");
-
-      // lock/unlock scroll
-      if (nav.classList.contains("show")) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "auto";
-      }
-
-      // close dropdown when menu closes
-      document.getElementById("serviceMenu").classList.remove("show");
+      document
+        .getElementById("navMenu")
+        .classList.toggle("show");
     }
 
-    function toggleService(e) {
-      if (window.innerWidth <= 768) {
-        e.stopPropagation();
-        document.getElementById("serviceMenu").classList.toggle("show");
-      }
-    }
-
-    // close dropdown when clicking outside
-    window.addEventListener("click", function (e) {
-      if (!e.target.closest(".dropdown-custom")) {
-        document.getElementById("serviceMenu").classList.remove("show");
-      }
-    });
   </script>
+
 
 
 

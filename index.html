@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Dolphin Hospital</title>
@@ -16,298 +17,461 @@
   <link rel="icon" type="image/png" href="img/fav.png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true,
-    easing: "ease-in-out",
-    offset: 100,
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+      offset: 100,
 
-    // 🔥 SIDE SCROLL FIX
-    disable: function() {
-      return window.innerWidth < 768; // mobile lo animations off
-    }
-  });
-</script>
+      // 🔥 SIDE SCROLL FIX
+      disable: function () {
+        return window.innerWidth < 768; // mobile lo animations off
+      }
+    });
+  </script>
 </head>
+
 <body>
 
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="top-container top-flex">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-container top-flex">
 
-    <a href="index.html" class="logo-wrap">
-      <img src="img/logo.png" alt="Dolphin Hospital">
-    </a>
+      <a href="index.html" class="logo-wrap">
+        <img src="img/logo.png" alt="Dolphin Hospital">
+      </a>
 
-    <div class="top-info">
-      <span><i class="fa-solid fa-location-dot"></i> Hanamkonda, Telangana</span>
-      <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
+      <div class="top-info">
+        <span><i class="fa-solid fa-location-dot"></i> Hanamkonda, Telangana</span>
+        <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
+      </div>
+
+      <a href="contact.html" class="book-btn">Book Appointment</a>
+
     </div>
-
-   <a href="contact.html" class="book-btn">Book Appointment</a>
-
   </div>
-</div>
+  <!-- NAVBAR -->
+  <header class="main-nav">
 
-<!-- NAVBAR -->
-<header class="main-nav">
-  <div class="nav-container nav-center">
+    <div class="nav-container">
 
-    <nav id="navMenu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-
-     <div class="dropdown-custom">
-  <button class="service-btn" onclick="toggleService(event)">
-    Services ▾
-  </button>
-
-  <div class="dropdown-menu-custom" id="serviceMenu">
-    <a href="gynecology.html">Gynecology</a>
-    <a href="obstetrics.html">Obstetrics</a>
-    <a href="neonatalogy.html">Neonatalogy</a>
-    <a href="pediatrics.html">Pediatrics</a>
-  </div>
-</div>
-
-      <a href="hanamkonda.html">Hanamkonda</a>
-      <a href="karimnagar.html">Karimnagar</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
-
-    <div class="menu-btn" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
-    </div>
-
-  </div>
-</header>
-
-
-
-<script>
-function toggleMenu(){
-  const nav = document.getElementById("navMenu");
-
-  nav.classList.toggle("show");
-
-  // lock/unlock scroll
-  if(nav.classList.contains("show")){
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
-
-  // close dropdown when menu closes
-  document.getElementById("serviceMenu").classList.remove("show");
-}
-
-function toggleService(e){
-  if(window.innerWidth <= 768){
-    e.stopPropagation();
-    document.getElementById("serviceMenu").classList.toggle("show");
-  }
-}
-
-// close dropdown when clicking outside
-window.addEventListener("click", function(e){
-  if(!e.target.closest(".dropdown-custom")){
-    document.getElementById("serviceMenu").classList.remove("show");
-  }
-});
-</script>
-
-
-
-
-
-
-
-<section class="main-slider">
-  <div class="main-slider-track">
-
-    <!-- SLIDE 1 : GYNECOLOGY -->
-    <div class="main-slide active">
-      <img src="img/abtt.png" alt="Gynecology Care">
-      <div class="main-slide-content">
-        <h1>Gynecology</h1>
-       
-          <p>
-  Complete child healthcare services with expert pediatric specialists,growth monitoring, and compassionate medical care for infants and children.
-</p>
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 2 : OBSTETRICS -->
-    <div class="main-slide">
-      <img src="img/herobg.png" alt="Obstetrics Care">
-      <div class="main-slide-content">
-        <h1>Obstetrics</h1>
-         <p>
-  Comprehensive pregnancy and  the maternity care with expert support for safe motherhood and the  healthy delivery.
-</p>
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 3 : NEONATOLOGY -->
-    <div class="main-slide">
-      <img src="img/abt.png" alt="Neonatology Care">
-      <div class="main-slide-content">
-        <h1>Neonatology</h1>
-        <p>
-  Advanced NICU care for newborns and premature babies with continuous monitoring, modern technology, and expert neonatal specialists.
-</p>
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-    <!-- SLIDE 4 : PEDIATRICS -->
-    <div class="main-slide">
-      <img src="img/herobg.png" alt="Pediatrics Care">
-      <div class="main-slide-content">
-        <h1>Pediatrics</h1>
-        
-       <p>
-  Specialized pediatric healthcare services for newborns, infants, and children with expert medical care and support.
-</p>
-        <a href="contact.html" class="hero-cta-btn">
-          Book Appointment
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<script>
-  const slides = document.querySelectorAll(".main-slide");
-  let currentIndex = 0;
-
-  function runSlider(){
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[currentIndex].classList.add("active");
-    currentIndex = (currentIndex + 1) % slides.length;
-  }
-
-  runSlider();
-  setInterval(runSlider, 4500);
-</script>
-
-
-
-
-
-
-
-
-<section class="about-section">
-  <div class="container">
-    <div class="about-container">
-
-      <div class="about-content" data-aos="fade-right">
-        <span class="sub-title">Expert Care for Mothers & Children</span>
-        <h2>ABOUT OUR HOSPITAL</h2>
-        <div class="heading-line"></div>
-<p>
-  New Dolphin Children Hospital – Hanumakonda  is a trusted children’s healthcare centre in Hanumakonda, dedicated to providing compassionate pediatric care with safety, comfort, and modern medical facilities for infants, children, and adolescents.
-</p>
-
-<p>
-  Dolphin Women & Children Hospital – Karimnagar offers expert care in Gynecology, Obstetrics, Neonatology, Pediatrics, and Women’s Health Services with advanced technology and experienced specialists.
-</p>
-
-        <a href="about.html" class="about-btn">
-          Know More <span>&rarr;</span>
-        </a>
+      <!-- LOGO -->
+      <div class="logo">
+        <img src="images/logo.png" alt="">
       </div>
 
-      <div class="about-image-side" data-aos="fade-left">
-        <div class="image-main-wrapper">
-          <div class="shape-bg"></div>
-          
-          <img src="img/about.png" alt="About Hospital" class="img-fluid main-abt-img">
-          
-          <div class="floating-card">
-            <i class="fa-solid fa-heart-pulse"></i>
-            <div>
-              <h4>24/7</h4>
-              <p>Emergency Care</p>
+      <!-- CENTER NAV -->
+      <nav id="navMenu">
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About Us</a>
+
+        <!-- DROPDOWN -->
+        <div class="dropdown">
+
+          <button class="drop-btn">
+            Services ▾
+          </button>
+
+          <div class="dropdown-content">
+
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Gynecology ▸
+              </button>
+
+              <div class="sub-content">
+                <a href="gynecology.html">MENSTRUAL DISORDERS TREATMENT</a>
+                <a href="gynecology.html">PCOS / PCOD MANAGEMENT</a>
+                <a href="gynecology.html">THYROID & HIGH BP IN WOMEN</a>
+                <a href="gynecology.html">WHITE DISCHARGE TREATMENT</a>
+                <a href="gynecology.html">UTERINE FIBROIDS TREATMENT</a>
+                <a href="gynecology.html">OVARIAN CYST DIAGNOSIS & TREATMENT</a>
+                <a href="gynecology.html">ENDOMETRIOSIS TREATMENT</a>
+                <a href="gynecology.html">PELVIC PAIN EVALUATION</a>
+                <a href="gynecology.html">CERVICAL SCREENING (PAP SMEAR)</a>
+                <a href="gynecology.html">BREAST EXAMINATION & SCREENING</a>
+                <a href="gynecology.html">VAGINAL INFECTIONS / UTI TREATMENT</a>
+                <a href="gynecology.html">HORMONAL IMBALANCE TREATMENT</a>
+                <a href="gynecology.html">MENOPAUSE MANAGEMENT</a>
+                <a href="gynecology.html">INFERTILITY EVALUATION & TREATMENT</a>
+                <a href="gynecology.html">UROGYNECOLOGY</a>
+              </div>
+
             </div>
+
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Obstetrics ▸
+              </button>
+
+              <div class="sub-content">
+                <a href="obstetrics.html">ROUTINE PREGNANCY CHECK-UPS</a>
+                <a href="obstetrics.html">HIGH-RISK PREGNANCY CARE</a>
+                <a href="obstetrics.html">ANTENATAL (PRENATAL) CARE</a>
+                <a href="obstetrics.html">ECTOPIC PREGNANCY MANAGEMENT</a>
+                <a href="obstetrics.html">NORMAL DELIVERY</a>
+                <a href="obstetrics.html">PAINLESS / EPIDURAL DELIVERY</a>
+                <a href="obstetrics.html">CESAREAN SECTION (C-SECTION)</a>
+                <a href="obstetrics.html">POSTNATAL CARE</a>
+                <a href="obstetrics.html">FETAL GROWTH & HEALTH MONITORING</a>
+                <a href="obstetrics.html">FETAL ULTRASOUND SCANS</a>
+                <a href="obstetrics.html">PREGNANCY COMPLICATION MANAGEMENT</a>
+                <a href="obstetrics.html">POST-DELIVERY RECOVERY SUPPORT</a>
+                <a href="obstetrics.html">24/7 EMERGENCY OBSTETRIC CARE</a>
+                <a href="obstetrics.html">VBAC (VAGINAL BIRTH AFTER CESAREAN)</a>
+                <a href="obstetrics.html">PAINLESS DELIVERY (WATER BIRTHING / EPIDURAL ANALGESIA)</a>
+                <a href="obstetrics.html">ADVANCED FETAL DOPPLER & ANOMALY SCANS</a>
+              </div>
+
+            </div>
+
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Neonatalogy ▸
+              </button>
+              <div class="sub-content">
+                <a href="neonatology.html">Level IV / Level III NICU</a>
+
+                <a href="neonatology.html">
+                  Premature & Low Birth Weight Baby Care
+                </a>
+
+                <a href="neonatology.html">
+                  24/7 DM Neonatologist & Emergency Care
+                </a>
+
+                <a href="neonatology.html">
+                  Ventilator & CPAP Support
+                </a>
+
+                <a href="neonatology.html">
+                  Neonatal Infections Management
+                </a>
+
+                <a href="neonatology.html">
+                  Neonatal Jaundice Treatment
+                </a>
+
+                <a href="neonatology.html">
+                  Sepsis & Infection Management
+                </a>
+
+                <a href="neonatology.html">
+                  Developmental Follow-up
+                </a>
+
+                <a href="neonatology.html">
+                  Nutrition & Breastfeeding Support
+                </a>
+              </div>
+
+            </div>
+
+
+
+
+            <div class="sub-dropdown">
+
+              <button class="sub-btn">
+                Pediatrics ▸
+              </button>
+
+              <div class="sub-content">
+
+  <a href="pediatrics.html">
+    24/7 Pediatric Emergency Care
+  </a>
+
+  <a href="pediatrics.html">
+    Advanced PICU
+  </a>
+
+  <a href="pediatrics.html">
+    General Pediatric Consultation
+  </a>
+
+  <a href="pediatrics.html">
+    Vaccination & Immunization Programs
+  </a>
+
+  <a href="pediatrics.html">
+    Fever, Infections & Common Illnesses
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Nutrition & Diet Counseling
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Infectious Disease Care
+  </a>
+
+  <a href="pediatrics.html">
+    Growth & Development Monitoring
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Skin & Allergy Treatments
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Pulmonology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Neurology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Cardiology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Gastroenterology
+  </a>
+
+  <a href="pediatrics.html">
+    Pediatric Surgeries
+  </a>
+
+</div>
+
+            </div>
+
           </div>
+
+        </div>
+
+        <a href="hanamkonda.html">Hanamkonda</a>
+
+        <a href="karimnagar.html">Karimnagar</a>
+
+        <a href="contact.html">Contact Us</a>
+
+      </nav>
+
+      <!-- MOBILE MENU -->
+      <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- SCRIPT -->
+  <script>
+
+    function toggleMenu() {
+      document
+        .getElementById("navMenu")
+        .classList.toggle("show");
+    }
+
+  </script>
+
+
+
+
+
+  <section class="main-slider">
+    <div class="main-slider-track">
+
+      <!-- SLIDE 1 : GYNECOLOGY -->
+      <div class="main-slide active">
+        <img src="img/abtt.png" alt="Gynecology Care">
+        <div class="main-slide-content">
+          <h1>Gynecology</h1>
+
+          <p>
+            Complete child healthcare services with expert pediatric specialists,growth monitoring, and compassionate
+            medical care for infants and children.
+          </p>
+          <a href="contact.html" class="hero-cta-btn">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 : OBSTETRICS -->
+      <div class="main-slide">
+        <img src="img/herobg.png" alt="Obstetrics Care">
+        <div class="main-slide-content">
+          <h1>Obstetrics</h1>
+          <p>
+            Comprehensive pregnancy and the maternity care with expert support for safe motherhood and the healthy
+            delivery.
+          </p>
+          <a href="contact.html" class="hero-cta-btn">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 : NEONATOLOGY -->
+      <div class="main-slide">
+        <img src="img/abt.png" alt="Neonatology Care">
+        <div class="main-slide-content">
+          <h1>Neonatology</h1>
+          <p>
+            Advanced NICU care for newborns and premature babies with continuous monitoring, modern technology, and
+            expert neonatal specialists.
+          </p>
+          <a href="contact.html" class="hero-cta-btn">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+
+      <!-- SLIDE 4 : PEDIATRICS -->
+      <div class="main-slide">
+        <img src="img/herobg.png" alt="Pediatrics Care">
+        <div class="main-slide-content">
+          <h1>Pediatrics</h1>
+
+          <p>
+            Specialized pediatric healthcare services for newborns, infants, and children with expert medical care and
+            support.
+          </p>
+          <a href="contact.html" class="hero-cta-btn">
+            Book Appointment
+          </a>
         </div>
       </div>
 
     </div>
-  </div>
-</section>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </section>
 
-<script>
-  // AOS Initialization
-  AOS.init({
-    // Global settings:
-    duration: 1000,     // Animation speed (1 second)
-    easing: 'ease-in-out', // Smooth movement
-    once: true,         // Scroll chesinappudu okasari matrame animate avthundi
-    mirror: false,      // Reverse scroll chesinappudu animation repeat avvadhu
-    offset: 120,        // Element screen loki vachina entha distance tharvatha start avvali
-    anchorPlacement: 'top-bottom', 
-  });
-</script>
+  <script>
+    const slides = document.querySelectorAll(".main-slide");
+    let currentIndex = 0;
 
+    function runSlider() {
+      slides.forEach(slide => slide.classList.remove("active"));
+      slides[currentIndex].classList.add("active");
+      currentIndex = (currentIndex + 1) % slides.length;
+    }
+
+    runSlider();
+    setInterval(runSlider, 4500);
+  </script>
 
 
 
 
-<section class="hospital-network">
-  <h2 class="network-title" data-aos="fade-up">
-    OUR HOSPITAL NETWORK IN TELANGANA
-  </h2>
 
-  <div class="network-grid">
 
-    <!-- LEFT -->
-    <div class="network-card" data-aos="fade-right">
-      <div class="img-box">
-        <img src="img/building1.png" alt="">
+
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-container">
+
+        <div class="about-content" data-aos="fade-right">
+          <span class="sub-title">Expert Care for Mothers & Children</span>
+          <h2>ABOUT OUR HOSPITAL</h2>
+          <div class="heading-line"></div>
+          <p>
+            New Dolphin Children Hospital – Hanumakonda is a trusted children’s healthcare centre in Hanumakonda,
+            dedicated to providing compassionate pediatric care with safety, comfort, and modern medical facilities for
+            infants, children, and adolescents.
+          </p>
+
+          <p>
+            Dolphin Women & Children Hospital – Karimnagar offers expert care in Gynecology, Obstetrics, Neonatology,
+            Pediatrics, and Women’s Health Services with advanced technology and experienced specialists.
+          </p>
+
+          <a href="about.html" class="about-btn">
+            Know More <span>&rarr;</span>
+          </a>
+        </div>
+
+        <div class="about-image-side" data-aos="fade-left">
+          <div class="image-main-wrapper">
+            <div class="shape-bg"></div>
+
+            <img src="img/about.png" alt="About Hospital" class="img-fluid main-abt-img">
+
+            <div class="floating-card">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <div>
+                <h4>24/7</h4>
+                <p>Emergency Care</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // AOS Initialization
+    AOS.init({
+      // Global settings:
+      duration: 1000,     // Animation speed (1 second)
+      easing: 'ease-in-out', // Smooth movement
+      once: true,         // Scroll chesinappudu okasari matrame animate avthundi
+      mirror: false,      // Reverse scroll chesinappudu animation repeat avvadhu
+      offset: 120,        // Element screen loki vachina entha distance tharvatha start avvali
+      anchorPlacement: 'top-bottom',
+    });
+  </script>
+
+
+
+
+
+  <section class="hospital-network">
+    <h2 class="network-title" data-aos="fade-up">
+      OUR HOSPITAL NETWORK IN TELANGANA
+    </h2>
+
+    <div class="network-grid">
+
+      <!-- LEFT -->
+      <div class="network-card" data-aos="fade-right">
+        <div class="img-box">
+          <img src="img/building1.png" alt="">
+        </div>
+
+        <h3 class="main-title">DOLPHIN HOSPITAL</h3>
+        <p class="sub-title">(PEDIATRICS)</p>
+        <p class="place">HANAMKONDA</p>
+
+        <a href="hanamkonda.html" class="know-btn">KNOW MORE</a>
       </div>
 
-      <h3 class="main-title">DOLPHIN HOSPITAL</h3>
-      <p class="sub-title">(PEDIATRICS)</p>
-      <p class="place">HANAMKONDA</p>
+      <!-- RIGHT -->
+      <div class="network-card" data-aos="fade-left">
+        <div class="img-box">
+          <img src="img/KNR DOLPHIN  bilding.png" alt="">
+        </div>
 
-      <a href="hanamkonda.html" class="know-btn">KNOW MORE</a>
-    </div>
+        <h3 class="main-title">DOLPHIN HOSPITALS</h3>
+        <p class="sub-title">FOR WOMEN & CHILDREN</p>
+        <p class="place">KARIMNAGAR</p>
 
-    <!-- RIGHT -->
-    <div class="network-card" data-aos="fade-left">
-      <div class="img-box">
-        <img src="img/KNR DOLPHIN  bilding.png" alt="">
+        <a href="karimnagar.html" class="know-btn">KNOW MORE</a>
       </div>
 
-      <h3 class="main-title">DOLPHIN HOSPITALS</h3>
-      <p class="sub-title">FOR WOMEN & CHILDREN</p>
-      <p class="place">KARIMNAGAR</p>
-
-      <a href="karimnagar.html" class="know-btn">KNOW MORE</a>
     </div>
-
-  </div>
-</section>
+  </section>
 
 
 
-<!-- 
+  <!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -557,162 +721,163 @@ const positions = [
 
 
 
-<section class="directors-section">
-  <h2 class="directors-title">OUR DIRECTORS</h2>
-  <p class="directors-sub">Empowering Healthcare Leaders to Deliver Excellence</p>
+  <section class="directors-section">
+    <h2 class="directors-title">OUR DIRECTORS</h2>
+    <p class="directors-sub">Empowering Healthcare Leaders to Deliver Excellence</p>
 
-  <div class="directors-grid">
+    <div class="directors-grid">
 
-    <!-- CARD 1 -->
-    <div class="director-card">
-      <div class="director-img">
-        <img src="img/doc1.png" alt="Dr. B. Ramesh">
-      </div>
-
-      <div class="director-content">
-        <h3>Dr. B. Ramesh</h3>
-
-        <div class="qualification">
-          <span><i class="fa-solid fa-user-md"></i> M.D. (Pediatrics)  PGPN Boston USA</span>
-         
-          <span ><i class="fa-solid fa-baby"></i>Children & New Born Specialist</span>
+      <!-- CARD 1 -->
+      <div class="director-card">
+        <div class="director-img">
+          <img src="img/doc1.png" alt="Dr. B. Ramesh">
         </div>
 
-       
+        <div class="director-content">
+          <h3>Dr. B. Ramesh</h3>
+
+          <div class="qualification">
+            <span><i class="fa-solid fa-user-md"></i> M.D. (Pediatrics) PGPN Boston USA</span>
+
+            <span><i class="fa-solid fa-baby"></i>Children & New Born Specialist</span>
+          </div>
+
+
+        </div>
       </div>
+
+
+
+      <!-- CARD 3 -->
+      <div class="director-card">
+        <div class="director-img">
+          <img src="img/doc2.png" alt="Dr. Kuchana Suresh Kumar">
+        </div>
+
+        <div class="director-content">
+          <h3>Dr. Kuchana Suresh Kumar</h3>
+
+          <div class="qualification">
+            <span><i class="fa-solid fa-user-md"></i> MBBS, MD Pediatrics, PGPN Boston USA</span>
+
+            <span><i class="fa-solid fa-baby"></i> Children & New Born Specialist</span>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- CARD 2 -->
+      <div class="director-card">
+        <div class="director-img">
+          <img src="img/doc3.png" alt="Dr. Prashanth Reddy Kandi">
+        </div>
+
+        <div class="director-content">
+          <h3>Dr. Prashanth Reddy Kandi</h3>
+
+          <div class="qualification">
+            <span><i class="fa-solid fa-user-md"></i> MBBS, DNB Pediatrics , PALS Certified</span>
+
+            <span><i class="fa-solid fa-baby"></i> Children & New Born Specialist</span>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="director-card">
+        <div class="director-img">
+          <img src="img/doc4.png" alt="Dr. A. Hruday Ranjan">
+        </div>
+
+        <div class="director-content">
+          <h3>Dr. A. Hruday Ranjan</h3>
+
+          <div class="qualification">
+            <span><i class="fa-solid fa-user-md"></i> MBBS,DCH</span>
+
+            <span><i class="fa-solid fa-baby"></i>Children & New Born Specialist</span>
+          </div>
+
+        </div>
+      </div>
+
     </div>
+  </section>
 
-   
 
-    <!-- CARD 3 -->
-    <div class="director-card">
-      <div class="director-img">
-        <img src="img/doc2.png" alt="Dr. Kuchana Suresh Kumar">
-      </div>
 
-      <div class="director-content">
-        <h3>Dr. Kuchana Suresh Kumar</h3>
 
-        <div class="qualification">
-          <span><i class="fa-solid fa-user-md"></i> MBBS, MD Pediatrics, PGPN Boston USA</span>
-         
-          <span><i class="fa-solid fa-baby"></i> Children & New Born Specialist</span>
+
+
+
+
+
+
+  <section class="hope-section">
+    <div class="hope-container">
+
+      <!-- LEFT -->
+      <div class="left-stack">
+
+        <div class="img-baby">
+          <img src="img/where1.png">
+        </div>
+
+        <div class="badge-98">
+          <h3>98%</h3>
+          <p>Positive Feedback</p>
+        </div>
+
+        <div class="support-box">
+          <h4><i class="fa-solid fa-clock"></i>24/7 Support</h4>
+          <p>Call the hospital at any time to get support on your pregnancy.</p>
+        </div>
+
+        <div class="img-doctor">
+          <img src="img/where2.png">
         </div>
 
       </div>
-    </div>
 
+      <!-- RIGHT -->
+      <div class="right-content">
 
-    
-    <!-- CARD 2 -->
-    <div class="director-card">
-      <div class="director-img">
-        <img src="img/doc3.png" alt="Dr. Prashanth Reddy Kandi">
-      </div>
+        <h2>Where Hope Begins</h2>
 
-      <div class="director-content">
-        <h3>Dr. Prashanth Reddy Kandi</h3>
-
-        <div class="qualification">
-          <span><i class="fa-solid fa-user-md"></i> MBBS, DNB Pediatrics , PALS Certified</span>
-          
-          <span ><i class="fa-solid fa-baby"></i> Children & New Born Specialist</span>
-        </div>
-
-        
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="director-card">
-      <div class="director-img">
-        <img src="img/doc4.png" alt="Dr. A. Hruday Ranjan">
-      </div>
-
-      <div class="director-content">
-        <h3>Dr. A. Hruday Ranjan</h3>
-
-        <div class="qualification">
-          <span><i class="fa-solid fa-user-md"></i> MBBS,DCH</span>
-        
-          <span><i class="fa-solid fa-baby"></i>Children & New Born Specialist</span>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-<section class="hope-section">
-  <div class="hope-container">
-
-    <!-- LEFT -->
-    <div class="left-stack">
-
-      <div class="img-baby">
-        <img src="img/where1.png">
-      </div>
-
-      <div class="badge-98">
-        <h3>98%</h3>
-        <p>Positive Feedback</p>
-      </div>
-
-      <div class="support-box">
-        <h4><i class="fa-solid fa-clock"></i>24/7 Support</h4>
-        <p>Call the hospital at any time to get support on your pregnancy.</p>
-      </div>
-
-      <div class="img-doctor">
-        <img src="img/where2.png">
-      </div>
-
-    </div>
-
-    <!-- RIGHT -->
-    <div class="right-content">
-
-      <h2>Where Hope Begins</h2>
-
-      <p>
-       Every story here begins with care, science, and belief in your dream.
-        At Dolphin Hospital, we understand that every healthcare journey is unique,
-         but you are never alone. With years of trusted experience, our doctors and
+        <p>
+          Every story here begins with care, science, and belief in your dream.
+          At Dolphin Hospital, we understand that every healthcare journey is unique,
+          but you are never alone. With years of trusted experience, our doctors and
           team have helped thousands of families receive the care they deserve.
-          
-      </p>
 
-      <div class="btns">
-        <a href="contact.html" class="btn primary">Book Appointment</a>
-        <a href="about.html" class="btn secondary">Read More</a>
-      </div>
+        </p>
 
-      <div class="video-card">
-        <img src="img/where4.png">
-
-
-        <div class="bottom-badges">
-          <span class="badge pink">DOLPHIN HOSPITAL</span>
-          <span class="badge purple">Mother and Children</span>
+        <div class="btns">
+          <a href="contact.html" class="btn primary">Book Appointment</a>
+          <a href="about.html" class="btn secondary">Read More</a>
         </div>
+
+        <div class="video-card">
+          <img src="img/where4.png">
+
+
+          <div class="bottom-badges">
+            <span class="badge pink">DOLPHIN HOSPITAL</span>
+            <span class="badge purple">Mother and Children</span>
+          </div>
+        </div>
+
       </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
 
 </body>
+
 </html>
 
 
@@ -779,27 +944,33 @@ const positions = [
         <div class="mc-grid">
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="0">
-            <img src="img/m1.png"><p>Gynecology</p>
+            <img src="img/m1.png">
+            <p>Gynecology</p>
           </div>
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="100">
-            <img src="img/m2.png"><p>Obstetrics</p>
+            <img src="img/m2.png">
+            <p>Obstetrics</p>
           </div>
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="200">
-            <img src="img/m3.png"><p>Fertility</p>
+            <img src="img/m3.png">
+            <p>Fertility</p>
           </div>
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="300">
-            <img src="img/m4.png"><p>Pregnancy Delivery</p>
+            <img src="img/m4.png">
+            <p>Pregnancy Delivery</p>
           </div>
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="400">
-            <img src="img/m5.png"><p>High-risk Pregnancy</p>
+            <img src="img/m5.png">
+            <p>High-risk Pregnancy</p>
           </div>
 
           <div class="mc-card" data-aos="zoom-in" data-aos-delay="500">
-            <img src="img/m6.png"><p>Laparoscopy</p>
+            <img src="img/m6.png">
+            <p>Laparoscopy</p>
           </div>
 
         </div>
@@ -809,12 +980,24 @@ const positions = [
       <div id="children" class="mc-content">
         <div class="mc-grid">
 
-          <div class="mc-card"><img src="img/m4.png"><p>Neonatology</p></div>
-          <div class="mc-card"><img src="img/m7.png"><p>Pediatrics</p></div>
-          <div class="mc-card"><img src="img/m8.png"><p>Vaccination</p></div>
-          <div class="mc-card"><img src="img/level4.png"><p>Level 4 NICU</p></div>
-          <div class="mc-card"><img src="img/picuu.png"><p>Advanced PICU</p></div>
-          <div class="mc-card"><img src="img/m11.png"><p>Pediatric Surgeries</p></div>
+          <div class="mc-card"><img src="img/m4.png">
+            <p>Neonatology</p>
+          </div>
+          <div class="mc-card"><img src="img/m7.png">
+            <p>Pediatrics</p>
+          </div>
+          <div class="mc-card"><img src="img/m8.png">
+            <p>Vaccination</p>
+          </div>
+          <div class="mc-card"><img src="img/level4.png">
+            <p>Level 4 NICU</p>
+          </div>
+          <div class="mc-card"><img src="img/picuu.png">
+            <p>Advanced PICU</p>
+          </div>
+          <div class="mc-card"><img src="img/m11.png">
+            <p>Pediatric Surgeries</p>
+          </div>
 
         </div>
       </div>
@@ -827,12 +1010,12 @@ const positions = [
 
 <script>
   function switchMcTab(tabName) {
-  document.querySelectorAll(".mc-tab").forEach(btn => btn.classList.remove("active"));
-  document.querySelectorAll(".mc-content").forEach(c => c.classList.remove("active"));
+    document.querySelectorAll(".mc-tab").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".mc-content").forEach(c => c.classList.remove("active"));
 
-  document.querySelector(`[onclick="switchMcTab('${tabName}')"]`).classList.add("active");
-  document.getElementById(tabName).classList.add("active");
-}
+    document.querySelector(`[onclick="switchMcTab('${tabName}')"]`).classList.add("active");
+    document.getElementById(tabName).classList.add("active");
+  }
 </script>
 
 
@@ -848,7 +1031,7 @@ const positions = [
   </div>
 
   <div class="vector-content">
-    
+
     <h2>GYNECOLOGY SERVICES</h2>
     <p>“Caring for little lives with gentle hands and big hearts.”</p>
   </div>
@@ -1046,7 +1229,7 @@ const positions = [
   </div>
 
   <div class="vector-content">
-    
+
     <h2>OBSTETRICS SERVICES</h2>
     <p>“Supporting every mother, nurturing every new beginning.”</p>
   </div>
@@ -1270,7 +1453,7 @@ const positions = [
   </div>
 
   <div class="vector-content">
-    
+
     <h2>NEONATOLOGY SERVICES</h2>
     <p>“Caring for women’s health at every stage of life.”</p>
   </div>
@@ -1411,7 +1594,7 @@ const positions = [
   </div>
 
   <div class="vector-content">
-    
+
     <h2>PEDIATRICS SERVICES</h2>
     <p>“Caring for women’s health at every stage of life.”</p>
   </div>
@@ -1598,7 +1781,7 @@ const positions = [
     </div>
 
     <div class="dolphin-grid">
-      
+
       <!-- 1 -->
       <div class="dolphin-card" data-aos="fade-up">
         <div class="icon-wrapper">
@@ -1743,10 +1926,11 @@ const positions = [
         </p>
 
         <p class="small-text">
-          Whether it's pregnancy care, newborn support, or pediatric treatment, our experts guide you at every step with care and trust.
+          Whether it's pregnancy care, newborn support, or pediatric treatment, our experts guide you at every step with
+          care and trust.
         </p>
 
-        
+
 
         <img src="img/talking.png" class="doctr-img" alt="doctor">
 
@@ -1895,16 +2079,16 @@ const positions = [
   </div>
 </section>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Show Title
     document.querySelector('.facility-title').classList.add('show');
-    
+
     // Show Cards with a slight delay for each
     const cards = document.querySelectorAll('.facility-card');
     cards.forEach((card, index) => {
       setTimeout(() => {
         card.classList.add('show');
-      }, index * 100); 
+      }, index * 100);
     });
   });
 </script>
@@ -1933,57 +2117,61 @@ const positions = [
 
 
 <section class="fertility-banner-section">
-    <div class="f-wrapper">
-        
-        <div class="f-hero-card" data-aos="fade-up">
-            <div class="f-grid-layout">
-                <div class="f-text-area">
-                  <p class="f-top-subtitle">Comprehensive Infertility & Fertility Solutions</p>
+  <div class="f-wrapper">
 
-<h1 class="f-main-heading">
-    Supporting Your Dream of<br>Becoming Parents
-</h1>
-                    <div class="f-matter">
-    <p>Infertility is a common reproductive condition that can affect both men and the  women, making it difficult to the  achieve pregnancy naturally. Factors such as   hormonal imbalance, ovulation disorders, age, stress, lifestyle habits, and  the medical conditions can contribute to infertility.</p>
+    <div class="f-hero-card" data-aos="fade-up">
+      <div class="f-grid-layout">
+        <div class="f-text-area">
+          <p class="f-top-subtitle">Comprehensive Infertility & Fertility Solutions</p>
 
-    <p>At Dolphin Women & Children Hospital, we provide advanced infertility evaluation and personalized fertility treatments including IVF, IUI, ICSI, fertility counseling, and reproductive care to support couples on their journey toward parenthood.</p>
-</div>
+          <h1 class="f-main-heading">
+            Supporting Your Dream of<br>Becoming Parents
+          </h1>
+          <div class="f-matter">
+            <p>Infertility is a common reproductive condition that can affect both men and the women, making it
+              difficult to the achieve pregnancy naturally. Factors such as hormonal imbalance, ovulation disorders,
+              age, stress, lifestyle habits, and the medical conditions can contribute to infertility.</p>
 
-                    <div class="f-actions">
-                        <a href="contact.html" class="f-btn f-btn-solid">Book Appointment</a>
-                        
-                    </div>
+            <p>At Dolphin Women & Children Hospital, we provide advanced infertility evaluation and personalized
+              fertility treatments including IVF, IUI, ICSI, fertility counseling, and reproductive care to support
+              couples on their journey toward parenthood.</p>
+          </div>
 
-                    <div class="f-footer-stats">
-                        <div class="f-stat"><i class="fa-solid fa-star"></i> 12+ Years of Expertise</div>
-                        <div class="f-stat"><i class="fa-solid fa-users"></i> 25,000+ Successful Cases</div>
-                        <div class="f-stat"><i class="fa-solid fa-heart"></i> Personalized Fertility Plans</div>
-                    </div>
-                </div>
+          <div class="f-actions">
+            <a href="contact.html" class="f-btn f-btn-solid">Book Appointment</a>
 
-                <div class="f-image-area">
-                    <img src="dolphin images/dolphinimages/stand.png" alt="Couple">
-                </div>
-            </div>
+          </div>
+
+          <div class="f-footer-stats">
+            <div class="f-stat"><i class="fa-solid fa-star"></i> 12+ Years of Expertise</div>
+            <div class="f-stat"><i class="fa-solid fa-users"></i> 25,000+ Successful Cases</div>
+            <div class="f-stat"><i class="fa-solid fa-heart"></i> Personalized Fertility Plans</div>
+          </div>
         </div>
 
-        <div class="f-side-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="f-facility-img">
-                <img src="img/where3.png" alt="Our Facility">
-            </div>
-            <div class="f-contact-box-container">
-                <a href="tel:+917299974701" class="f-contact-card">
-                    <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
-                    <span>+91 63091 73007</span>
-                </a>
-                <a href="tel:+919429690040" class="f-contact-card">
-                    <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
-                    <span>+91 89777 60911</span>
-                </a>
-            </div>
+        <div class="f-image-area">
+          <img src="dolphin images/dolphinimages/stand.png" alt="Couple">
         </div>
-
+      </div>
     </div>
+
+    <div class="f-side-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="f-facility-img">
+        <img src="img/where3.png" alt="Our Facility">
+      </div>
+      <div class="f-contact-box-container">
+        <a href="tel:+917299974701" class="f-contact-card">
+          <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+          <span>+91 63091 73007</span>
+        </a>
+        <a href="tel:+919429690040" class="f-contact-card">
+          <div class="f-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+          <span>+91 89777 60911</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
@@ -2007,53 +2195,58 @@ const positions = [
 
 
 <section class="abt-main-wrapper">
-    <div class="abt-container">
-        <div class="abt-row">
-            <div class="abt-content" data-aos="fade-right" data-aos-duration="1000">
-                <span class="abt-tagline">How Dolphin Changes the Fertility Journey.</span>
-              <h2 class="abt-heading">Comprehensive Care for Women’s Health & Safe Motherhood</h2>
-                
-               <ul class="abt-points">
-    <li><i class="fa-solid fa-user-doctor"></i> Expert gynecology care for women at every stage of life.</li>
+  <div class="abt-container">
+    <div class="abt-row">
+      <div class="abt-content" data-aos="fade-right" data-aos-duration="1000">
+        <span class="abt-tagline">How Dolphin Changes the Fertility Journey.</span>
+        <h2 class="abt-heading">Comprehensive Care for Women’s Health & Safe Motherhood</h2>
 
-    <li><i class="fa-solid fa-baby"></i> Comprehensive obstetric services for safe pregnancy and childbirth.</li>
+        <ul class="abt-points">
+          <li><i class="fa-solid fa-user-doctor"></i> Expert gynecology care for women at every stage of life.</li>
 
-    <li><i class="fa-solid fa-heart-pulse"></i> Advanced maternal and women’s health monitoring facilities.</li>
+          <li><i class="fa-solid fa-baby"></i> Comprehensive obstetric services for safe pregnancy and childbirth.</li>
 
-    <li><i class="fa-solid fa-stethoscope"></i> Personalized treatment plans with experienced specialists.</li>
+          <li><i class="fa-solid fa-heart-pulse"></i> Advanced maternal and women’s health monitoring facilities.</li>
 
-    <li><i class="fa-solid fa-shield-heart"></i> Compassionate care focused on mother and baby well-being.</li>
-</ul>
-            </div>
-            <div class="abt-image" data-aos="fade-left" data-aos-duration="1000">
-                <img src="dolphin images/dolphinimages/couple.png" alt="Fertility Benefits">
-            </div>
-        </div>
+          <li><i class="fa-solid fa-stethoscope"></i> Personalized treatment plans with experienced specialists.</li>
 
-        <div class="abt-row abt-reverse">
-            <div class="abt-content" data-aos="fade-left" data-aos-duration="1000">
-              <p class="abt-desc-top">
-    Dolphin Women & Children Hospital is committed to providing advanced healthcare services with expert doctors, modern facilities, and compassionate patient care.
-</p>
-
-<h2 class="abt-heading">Comprehensive Pediatrics Care for Your Child’s Healthy Growth</h2>
-                
-               <ul class="abt-points">
-    <li><i class="fa-solid fa-baby"></i> Specialized pediatric care for newborns, infants, and growing children.</li>
-
-    <li><i class="fa-solid fa-user-doctor"></i> Experienced pediatricians focused on child health and development.</li>
-
-    <li><i class="fa-solid fa-syringe"></i> Vaccination, routine checkups, and preventive healthcare services.</li>
-
-    <li><i class="fa-solid fa-heart-pulse"></i> Advanced care for childhood illnesses and emergency pediatric support.</li>
-</ul>
-                <!-- <a href="#" class="abt-btn">Fertility Evaluation</a> -->
-            </div>
-            <div class="abt-image" data-aos="fade-right" data-aos-duration="1000">
-                <img src="dolphin images/dolphinimages/cople2.png" alt="Parenthood Considerations">
-            </div>
-        </div>
+          <li><i class="fa-solid fa-shield-heart"></i> Compassionate care focused on mother and baby well-being.</li>
+        </ul>
+      </div>
+      <div class="abt-image" data-aos="fade-left" data-aos-duration="1000">
+        <img src="dolphin images/dolphinimages/couple.png" alt="Fertility Benefits">
+      </div>
     </div>
+
+    <div class="abt-row abt-reverse">
+      <div class="abt-content" data-aos="fade-left" data-aos-duration="1000">
+        <p class="abt-desc-top">
+          Dolphin Women & Children Hospital is committed to providing advanced healthcare services with expert doctors,
+          modern facilities, and compassionate patient care.
+        </p>
+
+        <h2 class="abt-heading">Comprehensive Pediatrics Care for Your Child’s Healthy Growth</h2>
+
+        <ul class="abt-points">
+          <li><i class="fa-solid fa-baby"></i> Specialized pediatric care for newborns, infants, and growing children.
+          </li>
+
+          <li><i class="fa-solid fa-user-doctor"></i> Experienced pediatricians focused on child health and development.
+          </li>
+
+          <li><i class="fa-solid fa-syringe"></i> Vaccination, routine checkups, and preventive healthcare services.
+          </li>
+
+          <li><i class="fa-solid fa-heart-pulse"></i> Advanced care for childhood illnesses and emergency pediatric
+            support.</li>
+        </ul>
+        <!-- <a href="#" class="abt-btn">Fertility Evaluation</a> -->
+      </div>
+      <div class="abt-image" data-aos="fade-right" data-aos-duration="1000">
+        <img src="dolphin images/dolphinimages/cople2.png" alt="Parenthood Considerations">
+      </div>
+    </div>
+  </div>
 </section>
 
 
@@ -2202,7 +2395,7 @@ const positions = [
 
 
 <section class="highlights-section">
-  
+
   <!-- 🔥 OVERLAY -->
   <div class="highlights-overlay"></div>
 
@@ -2248,55 +2441,55 @@ const positions = [
 <!-- AOS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init({
-  duration: 1000,
-  once: true
-});
-
-/* COUNTER */
-const counters = document.querySelectorAll('.count');
-let started = false;
-
-function startCounter() {
-  if (started) return;
-
-  counters.forEach(counter => {
-    const target = +counter.getAttribute('data-target');
-    let current = 0;
-    const increment = target / 80;
-
-    const update = () => {
-      if (current < target) {
-        current += increment;
-
-        counter.innerText =
-          Math.ceil(current).toLocaleString() +
-          (target === 100 ? '%' : '+');
-
-        requestAnimationFrame(update);
-      } else {
-        counter.innerText =
-          target.toLocaleString() +
-          (target === 100 ? '%' : '+');
-      }
-    };
-
-    update();
+  AOS.init({
+    duration: 1000,
+    once: true
   });
 
-  started = true;
-}
+  /* COUNTER */
+  const counters = document.querySelectorAll('.count');
+  let started = false;
 
-/* TRIGGER */
-const section = document.querySelector('.highlights-section');
+  function startCounter() {
+    if (started) return;
 
-const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
-    startCounter();
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let current = 0;
+      const increment = target / 80;
+
+      const update = () => {
+        if (current < target) {
+          current += increment;
+
+          counter.innerText =
+            Math.ceil(current).toLocaleString() +
+            (target === 100 ? '%' : '+');
+
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText =
+            target.toLocaleString() +
+            (target === 100 ? '%' : '+');
+        }
+      };
+
+      update();
+    });
+
+    started = true;
   }
-}, { threshold: 0.4 });
 
-observer.observe(section);
+  /* TRIGGER */
+  const section = document.querySelector('.highlights-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      startCounter();
+    }
+  }, { threshold: 0.4 });
+
+  observer.observe(section);
 </script>
 
 
@@ -2312,31 +2505,33 @@ observer.observe(section);
 <section class="dph-about-section">
   <div class="dph-container">
     <div class="dph-main-flex">
-      
+
       <!-- LEFT -->
       <div class="dph-content-side">
 
         <span class="dph-sub-tag" data-aos="fade-up">
           Our Success Stories
         </span>
-<h2 class="dph-heading" data-aos="fade-up" data-aos-delay="100">
-  Trusted Women & Children Hospital Delivering Compassionate Care with Medical Excellence
-</h2>
+        <h2 class="dph-heading" data-aos="fade-up" data-aos-delay="100">
+          Trusted Women & Children Hospital Delivering Compassionate Care with Medical Excellence
+        </h2>
         <p class="dph-para" data-aos="fade-up" data-aos-delay="200">
-          At Dolphin Hospital, every success story is more than just a result; it's a journey of strength, trust, and transformation.
+          At Dolphin Hospital, every success story is more than just a result; it's a journey of strength, trust, and
+          transformation.
         </p>
 
         <p class="dph-para" data-aos="fade-up" data-aos-delay="300">
-          Over the last three decades, we've been privileged to guide 15,000+ couples from fear and doubt to joy and parenthood.
+          Over the last three decades, we've been privileged to guide 15,000+ couples from fear and doubt to joy and
+          parenthood.
         </p>
-        
+
         <div class="dph-slider-box" data-aos="fade-up" data-aos-delay="400">
 
           <div class="dph-review-card">
             <i class="fa-solid fa-quote-right dph-quote"></i>
 
             <p class="dph-review-text" id="dph-text">“Review loading...”</p>
-            
+
             <div class="dph-user">
               <img src="" alt="User" id="dph-img" class="dph-avatar">
               <div class="dph-meta">
@@ -2363,7 +2558,7 @@ observer.observe(section);
         <div class="dph-img-container">
 
           <img src="dolphin images/dolphinimages/review.png" alt="Doctors" class="dph-abt-img">
-          
+
           <div class="dph-google-box" data-aos="zoom-in" data-aos-delay="400">
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
             <div class="dph-rating">
@@ -2380,27 +2575,27 @@ observer.observe(section);
 </section>
 
 <script>
-    // 6 Different Reviews (Bangalore, Hyderabad, etc.)
-    const dphData = [
-        { name: "Neha", city: "Bangalore", text: "We came here with low AMH and zero hope. Today, we're holding our baby girl. Dolphin Hospital didn't just treat us — they walked with us.", img: "https://i.pravatar.cc/100?u=11" },
-        { name: "Saritha", city: "Hyderabad", text: "Exceptional care! The doctors are very professional. After 4 years of struggle, we finally conceived here.", img: "https://i.pravatar.cc/100?u=12" },
-        { name: "Rajesh", city: "Chennai", text: "The Neonatal care is world-class. My twin boys were in safe hands. Forever grateful to Dolphin Hospital.", img: "https://i.pravatar.cc/100?u=13" },
-        { name: "Priya", city: "Karimangar", text: "The hospitality and medical expertise are unmatched. They made our journey to parenthood stress-free.", img: "https://i.pravatar.cc/100?u=14" },
-        { name: "Anjali", city: "Warangal", text: "Very supportive staff. Every doubt was cleared with patience. Highly recommend for fertility issues.", img: "https://i.pravatar.cc/100?u=15" },
-        { name: "Kavya", city: "Vijayawada", text: "They treat patients like family. The technology and doctors here are the best we have seen.", img: "https://i.pravatar.cc/100?u=16" }
-    ];
+  // 6 Different Reviews (Bangalore, Hyderabad, etc.)
+  const dphData = [
+    { name: "Neha", city: "Bangalore", text: "We came here with low AMH and zero hope. Today, we're holding our baby girl. Dolphin Hospital didn't just treat us — they walked with us.", img: "https://i.pravatar.cc/100?u=11" },
+    { name: "Saritha", city: "Hyderabad", text: "Exceptional care! The doctors are very professional. After 4 years of struggle, we finally conceived here.", img: "https://i.pravatar.cc/100?u=12" },
+    { name: "Rajesh", city: "Chennai", text: "The Neonatal care is world-class. My twin boys were in safe hands. Forever grateful to Dolphin Hospital.", img: "https://i.pravatar.cc/100?u=13" },
+    { name: "Priya", city: "Karimangar", text: "The hospitality and medical expertise are unmatched. They made our journey to parenthood stress-free.", img: "https://i.pravatar.cc/100?u=14" },
+    { name: "Anjali", city: "Warangal", text: "Very supportive staff. Every doubt was cleared with patience. Highly recommend for fertility issues.", img: "https://i.pravatar.cc/100?u=15" },
+    { name: "Kavya", city: "Vijayawada", text: "They treat patients like family. The technology and doctors here are the best we have seen.", img: "https://i.pravatar.cc/100?u=16" }
+  ];
 
-    let dphIdx = 0;
-    function dphUpdate() {
-        const item = dphData[dphIdx];
-        document.getElementById('dph-text').innerText = `“${item.text}”`;
-        document.getElementById('dph-name').innerText = item.name;
-        document.getElementById('dph-city').innerText = item.city;
-        document.getElementById('dph-img').src = item.img;
-    }
-    function dphNext() { dphIdx = (dphIdx + 1) % dphData.length; dphUpdate(); }
-    function dphPrev() { dphIdx = (dphIdx - 1 + dphData.length) % dphData.length; dphUpdate(); }
-    dphUpdate();
+  let dphIdx = 0;
+  function dphUpdate() {
+    const item = dphData[dphIdx];
+    document.getElementById('dph-text').innerText = `“${item.text}”`;
+    document.getElementById('dph-name').innerText = item.name;
+    document.getElementById('dph-city').innerText = item.city;
+    document.getElementById('dph-img').src = item.img;
+  }
+  function dphNext() { dphIdx = (dphIdx + 1) % dphData.length; dphUpdate(); }
+  function dphPrev() { dphIdx = (dphIdx - 1 + dphData.length) % dphData.length; dphUpdate(); }
+  dphUpdate();
 </script>
 
 
@@ -2445,7 +2640,8 @@ observer.observe(section);
 
         <div class="faq-answer">
           <p>
-            We provide Gynecology, Obstetrics, Pediatrics, Neonatology, fertility care, pregnancy care, vaccinations, and women’s health services.
+            We provide Gynecology, Obstetrics, Pediatrics, Neonatology, fertility care, pregnancy care, vaccinations,
+            and women’s health services.
           </p>
         </div>
       </div>
@@ -2459,7 +2655,8 @@ observer.observe(section);
 
         <div class="faq-answer">
           <p>
-            Yes, we offer complete maternity services including antenatal checkups, normal delivery, C-section care, and postnatal support.
+            Yes, we offer complete maternity services including antenatal checkups, normal delivery, C-section care, and
+            postnatal support.
           </p>
         </div>
       </div>
@@ -2473,7 +2670,8 @@ observer.observe(section);
 
         <div class="faq-answer">
           <p>
-            Our pediatric specialists provide newborn care, vaccinations, growth monitoring, emergency pediatric care, and child wellness services.
+            Our pediatric specialists provide newborn care, vaccinations, growth monitoring, emergency pediatric care,
+            and child wellness services.
           </p>
         </div>
       </div>
@@ -2487,7 +2685,8 @@ observer.observe(section);
 
         <div class="faq-answer">
           <p>
-            Yes, our experienced obstetric specialists provide advanced monitoring and treatment for high-risk pregnancies with personalized care.
+            Yes, our experienced obstetric specialists provide advanced monitoring and treatment for high-risk
+            pregnancies with personalized care.
           </p>
         </div>
       </div>
@@ -2504,7 +2703,7 @@ observer.observe(section);
     btn.addEventListener("click", () => {
 
       faqItems.forEach(faq => {
-        if(faq !== item){
+        if (faq !== item) {
           faq.classList.remove("active");
         }
       });
@@ -2572,8 +2771,8 @@ observer.observe(section);
           <h4>Address</h4>
           <p class="address-text">
             H.NO 6-2-161 &162, Opposite Kasam Brothers Lane, Beside Police Station,
-             Chowrastha,
-            Hanamkonda, Telangana 506011 
+            Chowrastha,
+            Hanamkonda, Telangana 506011
           </p>
         </div>
       </div>
@@ -2609,7 +2808,7 @@ observer.observe(section);
         <div>
           <h4>Address</h4>
           <p class="address-text">
-            3-6-315/1, Subhash Nagar, Karimnagar, Telangana 505001 
+            3-6-315/1, Subhash Nagar, Karimnagar, Telangana 505001
           </p>
         </div>
       </div>
@@ -2678,7 +2877,7 @@ observer.observe(section);
       <h4>QUICK LINKS</h4>
       <div class="footer-anim">
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a> 
+        <a href="about.html">About Us</a>
         <a href="services.html">Services</a>
         <a href="hanamkonda.html">Hanamkonda</a>
         <a href="karimnagar.html">Karimnagar</a>
@@ -2690,10 +2889,10 @@ observer.observe(section);
     <div class="footer-col">
       <h4>SERVICES</h4>
       <div class="footer-anim">
-         <a href="gynecology.html">Gynecology</a>
-    <a href="obstetrics.html">Obstetrics</a>
-    <a href="neonatalogy.html">Neonatalogy</a>
-    <a href="pediatrics.html">Pediatrics</a>
+        <a href="gynecology.html">Gynecology</a>
+        <a href="obstetrics.html">Obstetrics</a>
+        <a href="neonatalogy.html">Neonatalogy</a>
+        <a href="pediatrics.html">Pediatrics</a>
       </div>
     </div>
 
@@ -2704,11 +2903,12 @@ observer.observe(section);
 
       <div class="footer-anim footer-address">
         <p><strong>Hanamkonda Branch</strong></p>
-        <p><i class="fa-solid fa-location-dot"></i> Beside Police Station,Hanumakonda Chowrasta,Warangal,Hanamkonda Telangana</p>
+        <p><i class="fa-solid fa-location-dot"></i> Beside Police Station,Hanumakonda Chowrasta,Warangal,Hanamkonda
+          Telangana</p>
         <p><i class="fa-solid fa-phone"></i> +91 63091 73007</p>
       </div>
 
-      
+
       <div class="footer-anim footer-address">
         <p><strong>Karimnagar Branch</strong></p>
         <p><i class="fa-solid fa-location-dot"></i> Subhash Nagar,Karimnagar, Telangana</p>
@@ -2748,5 +2948,3 @@ observer.observe(section);
     });
   });
 </script>
-
-
