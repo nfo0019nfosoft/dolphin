@@ -1,516 +1,400 @@
-:root{
-  --primary:#674dad;
-  --secondary:#14b8a6;
-  --light:#f0fdfa;
-  --white:#ffffff;
+:root {
+  --primary: #674dad;
+  --secondary: #14b8a6;
+  --light: #f0fdfa;
+  --white: #ffffff;
+  --pink: #d55191; 
 }
 
 * {
   box-sizing: border-box;
-}
-
-/* GLOBAL */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 section {
   overflow-x: hidden;
 }
 
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
 }
-.top-container{
-  max-width:1200px;
-  width:100%;
-  margin:0 auto;
-  padding:0 20px; /* slightly increased for better spacing */
+
+.top-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* TOP BAR */
-.top-bar{
-  background:var(--white);
-  border-bottom:1px solid #e5e7eb;
-  padding:10px 0; /* reduced height */
+.top-bar {
+  background: var(--white);
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 0;
 }
 
-.top-flex{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
+.top-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-/* LOGO */
-.logo-wrap{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo-wrap img{
-  width:170px;   /* increased size */
-  height:auto;   /* keeps aspect ratio clean */
-  object-fit:contain;
-  display:block;
+.logo-wrap img {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-/* TOP INFO */
-.top-info{
-  display:flex;
-  align-items:center;
-  gap:35px;
-  font-size:15px; /* slightly bigger text */
-  color:var(--primary);
+.top-info {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  font-size: 15px;
+  color: var(--primary);
 }
 
-/* Optional: icons inside top-info */
 .top-info i,
-.top-info svg{
-  font-size:18px; /* bigger icons */
+.top-info svg {
+  font-size: 18px;
 }
 
-/* BOOK BUTTON */
-.book-btn{
-  background:#674dad;
-  color:#fff;
-  padding:12px 28px; /* bigger button */
-  border-radius:30px;
-  font-weight:600;
-  font-size:15px;
-  transition:0.3s;
+.book-btn {
+  background: #674dad;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
-.book-btn:hover{
-  background:#d55191;
-}
-/* NAVBAR */
-.main-nav{
-  background:var(--primary);
-  position:sticky;
-  top:0;
-  z-index:999;
-  min-height:38px; /* reduced from 45px */
-}
-
-
-
-/* MENU BUTTON */
-.menu-btn{
-  display:none;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-
-  .top-flex{
-    flex-direction:column;
-    gap:10px;
-    text-align:center;
-  }
-
-  .top-info{
-    gap:15px;
-    font-size:13px;
-  }
-.menu-btn{
-  display:block;
-  position:absolute;
-
-  left:50%;
-  top:50%;                     /* ✅ vertical center */
-  transform:translate(-50%, -50%); /* ✅ perfect center (X + Y) */
-
-  font-size:26px;
-  color:#fff;
-  cursor:pointer;
-  z-index:2000;
-}
-}
-/* =========================
-   NAVBAR
-========================= */
-
-/* =========================
-   NAVBAR
-========================= */
-
-.main-nav{
-  width:100%;
-  height:50px;
-
-  background:#6d4bb8;
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.book-btn:hover {
+  background: var(--pink);
 }
 
 /* =========================
-   NAV MENU
+   NAVBAR MAIN (Middle Align)
 ========================= */
+.main-nav {
+  width: 100%;
+  height: 50px;
+  background: #6d4bb8;
+  display: flex;
+  justify-content: center; /* లింక్స్ అన్నీ పర్ఫెక్ట్ గా మధ్యలోకి రావడానికి */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 
-nav{
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center; /* కంటైనర్ లోపల కూడా సెంటర్ చేస్తుంది */
+  align-items: center;
+  position: relative;
+}
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:40px;
-
-  height:100%;
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px; /* లింక్స్ మధ్య గ్యాప్ కొద్దిగా తగ్గించాను */
+  height: 100%;
 }
 
 /* =========================
-   NAV LINKS
+   NAV LINKS & HOVER PINK BAR
 ========================= */
-
 nav a,
-.drop-btn{
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  height:100%;
-
-  color:#fff;
-  text-decoration:none;
-margin-top: -20px;
-  background:none;
-  border:none;
-
-  font-size:16px;
-  font-weight:500;
-
-  padding:0 5px;
-
-  cursor:pointer;
-
-  transition:0.3s;
+.drop-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* నావ్‌బార్ హైట్‌కి మ్యాచ్ చేసాను */
+  color: #fff;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0 5px;
+  cursor: pointer;
+  position: relative; 
+  transition: 0.3s;
 }
-
-/* HOVER */
 
 nav a:hover,
-.drop-btn:hover{
-  color:#ffd4f1;
+.drop-btn:hover {
+  color: #ffd4f1;
+}
+
+/* మెయిన్ నావ్ లింక్స్ కి కింద వచ్చే పింక్ బార్ */
+nav a::after,
+.drop-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0; 
+  height: 3px; 
+  background-color: var(--pink);
+  border-radius: 2px;
+  transition: width 0.3s ease; 
+}
+
+nav a:hover::after,
+.drop-btn::after.active,
+.dropdown:hover .drop-btn::after {
+  width: 80%; 
 }
 
 /* =========================
-   DROPDOWN
+   DROPDOWN (Spaces Reduced)
 ========================= */
-
-.dropdown{
-
-  position:relative;
-
-  display:flex;
-  align-items:center;
-
-  height:100%;
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
-/* MAIN DROPDOWN */
-
-.dropdown-content{
-
-  position:absolute;
-
-  top:100%;
-  left:0;
-
-  width:300px;
-
-  background:#5b3fa3;
-
-  border-radius:10px;
-
-  padding:10px;
-
-  display:none;
-
-  z-index:9999;
-
-  box-shadow:0 5px 20px rgba(0,0,0,0.25);
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%); /* డ్రాప్‌డౌన్ సెంటర్ అవ్వడానికి */
+  width: 260px; /* వెడల్పు తగ్గించాను */
+  background: #5b3fa3;
+  border-radius: 10px;
+  padding: 8px; /* ప్యాడింగ్ తగ్గించాను */
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* SHOW */
+/* 🔥 నార్మల్ డ్రాప్‌డౌన్ లింక్స్ స్పేసింగ్ తగ్గించబడింది */
+.dropdown-content > a {
+  display: block;
+  color: #fff;
+  padding: 8px 12px; /* ప్యాడింగ్ తగ్గించాను */
+  margin-bottom: 4px; /* లింక్స్ మధ్య గ్యాప్ తగ్గించాను */
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.4; /* లైన్ హైట్ తగ్గించాను */
+  transition: 0.3s;
+}
 
-.dropdown:hover .dropdown-content{
-  display:block;
+.dropdown-content > a:hover {
+  background: var(--pink);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* =========================
    SUB DROPDOWN
 ========================= */
-
-.sub-dropdown{
-  position:static;
+.sub-dropdown {
+  position: static;
 }
 
-/* LEFT SIDE BUTTONS */
-
-.sub-btn{
-
-  width:100%;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  text-align:left;
-
-  color:#fff;
-
-  background:none;
-  border:none;
-
-  padding:14px 16px;
-
-  border-radius:8px;
-
-  font-size:17px;
-
-  cursor:pointer;
-
-  transition:0.3s;
+.sub-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 10px 12px; /* ప్యాడింగ్ తగ్గించాను */
+  margin-bottom: 4px; /* గ్యాప్ తగ్గించాను */
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* HOVER */
-
-.sub-btn:hover{
-  background:#d55191;
+.sub-btn:hover {
+  background: var(--pink);
 }
 
-/* =========================
-   RIGHT SIDE MENU
-========================= */
-.sub-content{
-
-  position:absolute;
-
-  left:97%;   /* 100% badulu 97% */
-
-  top:10px;
-
-  width:380px;
-
-  max-height:500px;
-
-  overflow-y:auto;
-
-  background:#7a57ca;
-
-  border-radius:10px;
-
-  padding:15px;
-
-  display:none;
-
-  box-shadow:0 5px 20px rgba(0,0,0,0.25);
+.sub-content {
+  position: absolute;
+  left: 98%;
+  top: 0;
+  width: 350px;
+  max-height: 450px;
+  overflow-y: auto;
+  background: #7a57ca;
+  border-radius: 10px;
+  padding: 12px;
+  display: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
 }
-.sub-content a{
 
-  display:block;
-
-  color:#fff;
-  text-decoration:none;
-
-  padding:10px 14px;
-
-  margin-bottom:8px;   /* SPACE BETWEEN ITEMS */
-
-  border-radius:6px;
-
-  font-size:15px;
-
-  line-height:2.5;   /* TEXT SPACING */
-
-  transition:0.3s;
+.sub-content a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: 0.3s;
 }
-/* SHOW SUBMENU */
 
-.sub-dropdown:hover .sub-content{
-  display:block;
+.sub-dropdown:hover .sub-content {
+  display: block;
+}
+
+/* SCROLLBAR */
+.sub-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sub-content::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 10px;
+}
+
+.sub-content::-webkit-scrollbar-track {
+  background: #8f6be0;
+}
+
+.sub-content a:hover {
+  background: var(--pink);
+}
+
+/* MENU BUTTON */
+.menu-btn {
+  display: none;
 }
 
 /* =========================
-   SCROLLBAR
+   MOBILE RESPONSIVE
 ========================= */
-
-.sub-content::-webkit-scrollbar{
-  width:8px;
-}
-
-.sub-content::-webkit-scrollbar-thumb{
-  background:#d55191;
-  border-radius:10px;
-}
-
-.sub-content::-webkit-scrollbar-track{
-  background:#8f6be0;
-}
-
-/* =========================
-   SUB LINKS
-========================= */
-
-.sub-content a{
-
-  display:block;
-
-  color:#fff;
-  text-decoration:none;
-
-  padding:10px 14px;
-
-  border-radius:6px;
-
-  font-size:15px;
-
-  line-height:2.0;
-
-  transition:0.3s;
-}
-
-/* HOVER */
-
-.sub-content a:hover{
-  background:#d55191;
-}
-
-
-@media screen and (max-width:768px){
-
-  .main-nav{
-    position:relative;
-    height:auto;
-    padding:10px 0;
+@media(max-width:768px) {
+  .top-flex {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 
-  /* MENU BUTTON */
-
-  .menu-btn{
-    display:block;
-    position:absolute;
-    top:20px;
-    left:180px;
-    color:#fff;
-    font-size:30px;
-    cursor:pointer;
-    z-index:99999;
+  .top-info {
+    gap: 15px;
+    font-size: 13px;
   }
 
-  /* NAV */
-
-  nav{
-    width:100%;
-    background:#6d4bb8;
-
-    display:none;
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:0;
-
-    padding-top:60px;
+  .main-nav {
+    position: relative;
+    height: auto;
+    padding: 10px 0;
+    justify-content: flex-start;
   }
 
-  nav.show{
-    display:flex;
+  .menu-btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2000;
   }
 
-  /* LINKS */
+  nav {
+    width: 100%;
+    background: #6d4bb8;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 20px;
+  }
+
+  nav.show {
+    display: flex;
+  }
 
   nav a,
-  .drop-btn{
-
-    width:100%;
-
-    justify-content:flex-start;
-
-    padding:15px 20px;
-
-    margin-top:0;
-
-    height:auto;
-
-    font-size:18px;
+  .drop-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 20px;
+    margin-top: 0;
+    height: auto;
+    font-size: 17px;
   }
 
-  /* DROPDOWN */
-
-  .dropdown{
-    width:100%;
-    flex-direction:column;
-    align-items:flex-start;
+  nav a::after,
+  .drop-btn::after {
+    display: none;
   }
 
-  .dropdown-content{
-
-    position:static;
-
-    width:100%;
-
-    display:none;
-
-    padding:10px;
-
-    border-radius:0;
-
-    box-shadow:none;
+  .dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .dropdown:hover .dropdown-content{
-    display:block;
+  .dropdown-content {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: none;
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    max-height: none;
   }
 
-  /* SUB MENU */
-
-  .sub-dropdown{
-    width:100%;
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 
-  .sub-btn{
-
-    width:100%;
-
-    padding:14px;
-
-    font-size:16px;
+  .sub-dropdown {
+    width: 100%;
   }
 
-  .sub-content{
-
-    position:static;
-
-    width:100%;
-
-    max-height:none;
-
-    overflow:visible;
-
-    margin-top:10px;
-
-    padding:10px;
-
-    box-shadow:none;
+  .sub-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
   }
 
-  .sub-content a{
-    font-size:14px;
-    line-height:1.6;
+  .sub-content {
+    position: static;
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    margin-top: 5px;
+    padding: 10px;
+    box-shadow: none;
   }
 
+  .sub-content a {
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
-
-
 
 
 
@@ -3333,5 +3217,131 @@ nav a:hover,
   .faq-answer p{
     font-size:12px;
     line-height:1.5;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION */
+.insurance-section {
+  padding: 70px 40px;
+  background: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* TITLE */
+.insurance-title {
+  
+/* Section Title & Subtitle */
+
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #d55191;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* GRID LAYOUT */
+.insurance-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 55px 45px;
+  align-items: center;
+}
+
+/* CARD */
+.insurance-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  transition: transform 0.4s ease;
+}
+
+/* LOGOS */
+.insurance-card img {
+  width: 260px;
+  max-height: 120px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.insurance-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================
+   AOS CUSTOM EFFECTS
+========================= */
+
+/* RIGHT ANIMATION */
+[data-aos="right-slide"] {
+  opacity: 0;
+  transform: translateX(80px);
+  transition-property: transform, opacity;
+}
+
+[data-aos="right-slide"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* LEFT ANIMATION */
+[data-aos="left-slide"] {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition-property: transform, opacity;
+}
+
+[data-aos="left-slide"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* TABLET */
+@media (max-width: 992px) {
+
+  .insurance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insurance-card img {
+    width: 240px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+
+  .insurance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insurance-title {
+    font-size: 32px;
+  }
+
+  .insurance-card {
+    height: 120px;
+  }
+
+  .insurance-card img {
+    width: 220px;
   }
 }
