@@ -750,24 +750,33 @@ nav a:hover,
 
 
 
-
-
-/* ================= HERO SLIDER ================= */
+/* =========================
+   MAIN SLIDER
+========================= */
 
 .main-slider{
   width:100%;
-  height:88vh;
+  height:98vh;
   position:relative;
   overflow:hidden;
   background:#000;
 }
 
+/* =========================
+   SLIDES
+========================= */
+
 .main-slide{
   position:absolute;
   inset:0;
+
   opacity:0;
+
   transform:scale(1.06);
-  transition:opacity 1.2s ease, transform 1.2s ease;
+
+  transition:
+  opacity 1.2s ease,
+  transform 1.2s ease;
 }
 
 .main-slide.active{
@@ -776,111 +785,179 @@ nav a:hover,
   z-index:1;
 }
 
+/* =========================
+   IMAGE
+========================= */
+
 .main-slide img{
   width:100%;
   height:100%;
   object-fit:cover;
+  display:block;
 }
 
-/* OVERLAY */
+/* =========================
+   OVERLAY
+========================= */
+
 .main-slide::after{
   content:"";
+
   position:absolute;
   inset:0;
+
   background:linear-gradient(
     to right,
     rgba(0,0,0,0.55),
-    rgba(0,0,0,0.2)
+    rgba(0,0,0,0.20)
   );
 }
 
-/* CONTENT */
+/* =========================
+   CONTENT
+========================= */
+
 .main-slide-content{
   position:absolute;
+
   left:3%;
   top:50%;
+
   transform:translateY(-50%);
+
   color:#fff;
+
   max-width:620px;
+
   z-index:2;
+
   animation:slideFade 1.2s ease;
 }
+
+/* TITLE */
 
 .main-slide-content h1{
   font-size:52px;
   font-weight:700;
   margin-bottom:12px;
+  line-height:1.2;
 }
+
+/* PARAGRAPH */
 
 .main-slide-content p{
   font-size:18px;
   line-height:1.6;
   margin-bottom:22px;
-  text-align: justify;
+  text-align:justify;
   opacity:0.95;
 }
 
-/* ================= BOOK APPOINTMENT BUTTON ================= */
+/* =========================
+   BUTTON
+========================= */
 
 .hero-cta-btn{
   display:inline-block;
+
   padding:13px 34px;
-  background:#674dad;          /* PURPLE */
-  color:#ffffff;
+
+  background:#674dad;
+
+  color:#fff;
+
   font-size:15px;
   font-weight:600;
+
   border-radius:30px;
+
   text-decoration:none;
+
   transition:0.35s ease;
 }
 
+/* HOVER */
+
 .hero-cta-btn:hover{
-  background:#d55191;          /* PINK */
+  background:#d55191;
+
   transform:translateY(-3px);
+
   box-shadow:0 10px 25px rgba(213,81,145,0.35);
 }
 
-/* TEXT ANIMATION */
+/* =========================
+   TEXT ANIMATION
+========================= */
+
 @keyframes slideFade{
+
   from{
     opacity:0;
     transform:translate(-30px,-50%);
   }
+
   to{
     opacity:1;
     transform:translate(0,-50%);
   }
 }
 
-/* ================= MOBILE ================= */
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 
 @media(max-width:768px){
 
   .main-slider{
-    height:65vh;
+    height:auto;
+    min-height:60vh;
   }
 
+  /* IMAGE FULL SHOW */
+
+  .main-slide img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    background:#000;
+  }
+
+  /* CONTENT */
+
   .main-slide-content{
+
     left:6%;
+    top:50%;
+
+    transform:translateY(-50%);
+
     max-width:90%;
   }
 
+  /* TITLE */
+
   .main-slide-content h1{
     font-size:28px;
+    line-height:1.3;
   }
+
+  /* TEXT */
 
   .main-slide-content p{
     font-size:14.5px;
+    line-height:1.7;
+    text-align:left;
   }
+
+  /* BUTTON */
 
   .hero-cta-btn{
     padding:11px 28px;
     font-size:14px;
   }
+
 }
-  
-  
-  
   
   
   
