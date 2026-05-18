@@ -72,10 +72,10 @@
 
         <!-- DROPDOWN -->
         <div class="dropdown">
-<button class="drop-btn" onclick="toggleDropdown()">
+<button class="drop-btn" onclick="toggleDropdown(this)">
+  Services ▾
+</button>
 
-            Services ▾
-          </button>
 
           <div class="dropdown-content">
 
@@ -270,13 +270,7 @@
 
   <!-- SCRIPT -->
   <script>
-
-    function toggleMenu() {
-      document
-        .getElementById("navMenu")
-        .classList.toggle("show");
-    }
-    function toggleMenu(){
+function toggleMenu(){
   document
     .getElementById("navMenu")
     .classList.toggle("show");
@@ -289,7 +283,7 @@ function toggleDropdown(){
     .classList.toggle("active");
 }
 
-/* SUBMENU */
+/* MOBILE SUBMENU */
 
 document.querySelectorAll(".sub-btn").forEach(btn=>{
 
@@ -305,6 +299,10 @@ document.querySelectorAll(".sub-btn").forEach(btn=>{
 
 });
 
+function toggleDropdown(element) {
+  // This finds the specific dropdown container for the button you clicked
+  element.parentElement.classList.toggle("active");
+}
   </script>
 
 
