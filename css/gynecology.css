@@ -290,6 +290,7 @@ nav a:hover::after,
    MOBILE RESPONSIVE
 ========================= */
 @media(max-width:768px) {
+
   .top-flex {
     flex-direction: column;
     gap: 10px;
@@ -302,24 +303,23 @@ nav a:hover::after,
   }
 
   .main-nav {
-    position: relative;
-    height: auto;
-    padding: 10px 0;
-    justify-content: flex-start;
-  }
+  position: relative;
+}
 
-  .menu-btn {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    transform: translateY(-50%);
-    font-size: 26px;
-    color: #fff;
-    cursor: pointer;
-    z-index: 2000;
-  }
+.menu-btn {
+  display: block;
+  position: absolute;
+  top: -5px;
+  right: 20px;   /* left remove చేసి right పెట్టండి */
+  left: auto;
+  transform: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
+}
 
+  /* MOBILE MENU */
   nav {
     width: 100%;
     background: #6d4bb8;
@@ -339,9 +339,9 @@ nav a:hover::after,
     width: 100%;
     justify-content: flex-start;
     padding: 12px 20px;
-    margin-top: 0;
     height: auto;
     font-size: 17px;
+    color: #fff;
   }
 
   nav a::after,
@@ -349,6 +349,7 @@ nav a:hover::after,
     display: none;
   }
 
+  /* DROPDOWN */
   .dropdown {
     width: 100%;
     flex-direction: column;
@@ -359,17 +360,20 @@ nav a:hover::after,
     position: static;
     transform: none;
     width: 100%;
-    display: none;
     padding: 10px;
     border-radius: 0;
     box-shadow: none;
     max-height: none;
+    display: none;
+    background: #5b3fa3;
   }
 
-  .dropdown:hover .dropdown-content {
+  /* CLICK chesthe maatrame open */
+  .dropdown.active .dropdown-content {
     display: block;
   }
 
+  /* SUB MENU */
   .sub-dropdown {
     width: 100%;
   }
@@ -378,24 +382,33 @@ nav a:hover::after,
     width: 100%;
     padding: 12px;
     font-size: 16px;
+    justify-content: space-between;
   }
 
   .sub-content {
     position: static;
     width: 100%;
-    max-height: none;
-    overflow: visible;
     margin-top: 5px;
     padding: 10px;
     box-shadow: none;
+    max-height: none;
+    overflow: visible;
+    display: none;
+    background: #7a57ca;
+    border-radius: 8px;
+  }
+
+  /* CLICK chesthe maatrame sub menu open */
+  .sub-dropdown.active .sub-content {
+    display: block;
   }
 
   .sub-content a {
     font-size: 14px;
     line-height: 1.6;
+    padding: 8px 10px;
   }
 }
-
 
 
 

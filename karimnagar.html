@@ -268,19 +268,21 @@
   </header>
 
   <!-- SCRIPT -->
-  <script>
+ <script>
+function toggleMenu(){
 
-function toggleMenu() {
-  document
-    .getElementById("navMenu")
-    .classList.toggle("show");
+  const nav = document.getElementById("navMenu");
+  const btn = document.querySelector(".menu-btn");
 
-  document
-    .querySelector(".menu-btn")
-    .classList.toggle("hide");
+  nav.classList.toggle("show");
+
+  if(nav.classList.contains("show")){
+    btn.innerHTML = "✖";
+  } else {
+    btn.innerHTML = "☰";
+  }
 }
   </script>
-
 
 
 

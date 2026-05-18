@@ -262,44 +262,20 @@
 
   <!-- SCRIPT -->
   <script>
+function toggleMenu(){
 
-    function toggleMenu() {
-      document
-        .getElementById("navMenu")
-        .classList.toggle("show");
-    }
-    function toggleMenu(){
-  document
-    .getElementById("navMenu")
-    .classList.toggle("show");
+  const nav = document.getElementById("navMenu");
+  const btn = document.querySelector(".menu-btn");
+
+  nav.classList.toggle("show");
+
+  if(nav.classList.contains("show")){
+    btn.innerHTML = "✖";
+  } else {
+    btn.innerHTML = "☰";
+  }
 }
-
-function toggleDropdown(){
-
-  document
-    .querySelector(".dropdown")
-    .classList.toggle("active");
-}
-
-/* SUBMENU */
-
-document.querySelectorAll(".sub-btn").forEach(btn=>{
-
-  btn.addEventListener("click",function(){
-
-    if(window.innerWidth <= 768){
-
-      this.parentElement
-      .classList.toggle("active");
-    }
-
-  });
-
-});
-
   </script>
-
-
 
 
 
