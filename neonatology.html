@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Neonatology - Dolphin Hospital</title>
@@ -16,37 +17,44 @@
   <link rel="icon" type="image/png" href="img/fav.png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // animation speed 1 second
-    once: true,     // scroll chesinappudu okasari matrame animation avthundi
-  });
-</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+      offset: 100,
+
+      // 🔥 SIDE SCROLL FIX
+      disable: function () {
+        return window.innerWidth < 768; // mobile lo animations off
+      }
+    });
+  </script>
 </head>
+
 <body>
 
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="top-container top-flex">
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="top-container top-flex">
 
-    <a href="index.html" class="logo-wrap">
-      <img src="img/logo.png" alt="Dolphin Hospital">
-    </a>
+      <a href="index.html" class="logo-wrap">
+        <img src="img/logo.png" alt="Dolphin Hospital">
+      </a>
 
-    <div class="top-info">
-      <span><i class="fa-solid fa-location-dot"></i> Hanamkonda, Telangana</span>
-      <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
+      <div class="top-info">
+        <span><i class="fa-solid fa-location-dot"></i> Hanamkonda, Telangana</span>
+        <span><i class="fa-solid fa-location-dot"></i> Karimnagar, Telangana</span>
+      </div>
+
+      <a href="contact.html" class="book-btn">Book Appointment</a>
+
     </div>
-
-   <a href="contact.html" class="book-btn">Book Appointment</a>
-
   </div>
-</div>
-
-<!-- NAVBAR -->
-<header class="main-nav">
+  <!-- NAVBAR -->
+  <header class="main-nav">
 
     <div class="nav-container">
 
@@ -64,71 +72,68 @@
 
         <!-- DROPDOWN -->
         <div class="dropdown">
-<button class="drop-btn" onclick="toggleDropdown()">
+<button class="drop-btn" onclick="toggleDropdown(this)">
+  Services ▾
+</button>
 
-            Services ▾
-          </button>
 
           <div class="dropdown-content">
 
             <div class="sub-dropdown">
 
-              <button class="sub-btn">
-                Gynecology ▸
-              </button>
+  <a href="gynecology.html" class="sub-btn">
+    Gynecology ▸
+  </a>
+<div class="sub-content">
+  <a href="gynecology.html">Menstrual Disorders Treatment</a>
+  <a href="gynecology.html">PCOS / PCOD Management</a>
+  <a href="gynecology.html">Thyroid & High BP in Women</a>
+  <a href="gynecology.html">White Discharge Treatment</a>
+  <a href="gynecology.html">Uterine Fibroids Treatment</a>
+  <a href="gynecology.html">Ovarian Cyst Diagnosis & Treatment</a>
+  <a href="gynecology.html">Endometriosis Treatment</a>
+  <a href="gynecology.html">Pelvic Pain Evaluation</a>
+  <a href="gynecology.html">Cervical Screening (Pap Smear)</a>
+  <a href="gynecology.html">Breast Examination & Screening</a>
+  <a href="gynecology.html">Vaginal Infections / UTI Treatment</a>
+  <a href="gynecology.html">Hormonal Imbalance Treatment</a>
+  <a href="gynecology.html">Menopause Management</a>
+  <a href="gynecology.html">Infertility Evaluation & Treatment</a>
+  <a href="gynecology.html">Urogynecology</a>
+</div>
 
-              <div class="sub-content">
-                <a href="gynecology.html">MENSTRUAL DISORDERS TREATMENT</a>
-                <a href="gynecology.html">PCOS / PCOD MANAGEMENT</a>
-                <a href="gynecology.html">THYROID & HIGH BP IN WOMEN</a>
-                <a href="gynecology.html">WHITE DISCHARGE TREATMENT</a>
-                <a href="gynecology.html">UTERINE FIBROIDS TREATMENT</a>
-                <a href="gynecology.html">OVARIAN CYST DIAGNOSIS & TREATMENT</a>
-                <a href="gynecology.html">ENDOMETRIOSIS TREATMENT</a>
-                <a href="gynecology.html">PELVIC PAIN EVALUATION</a>
-                <a href="gynecology.html">CERVICAL SCREENING (PAP SMEAR)</a>
-                <a href="gynecology.html">BREAST EXAMINATION & SCREENING</a>
-                <a href="gynecology.html">VAGINAL INFECTIONS / UTI TREATMENT</a>
-                <a href="gynecology.html">HORMONAL IMBALANCE TREATMENT</a>
-                <a href="gynecology.html">MENOPAUSE MANAGEMENT</a>
-                <a href="gynecology.html">INFERTILITY EVALUATION & TREATMENT</a>
-                <a href="gynecology.html">UROGYNECOLOGY</a>
-              </div>
+            </div>
+
+            <div class="sub-dropdown">
+<a href="obstetrics.html" class="sub-btn">
+  Obstetrics ▸
+</a>
+<div class="sub-content">
+  <a href="obstetrics.html">Routine Pregnancy Check-Ups</a>
+  <a href="obstetrics.html">High-Risk Pregnancy Care</a>
+  <a href="obstetrics.html">Antenatal (Prenatal) Care</a>
+  <a href="obstetrics.html">Ectopic Pregnancy Management</a>
+  <a href="obstetrics.html">Normal Delivery</a>
+  <a href="obstetrics.html">Painless / Epidural Delivery</a>
+  <a href="obstetrics.html">Cesarean Section (C-Section)</a>
+  <a href="obstetrics.html">Postnatal Care</a>
+  <a href="obstetrics.html">Fetal Growth & Health Monitoring</a>
+  <a href="obstetrics.html">Fetal Ultrasound Scans</a>
+
+  <a href="obstetrics.html">Post-Delivery Recovery Support</a>
+  <a href="obstetrics.html">24/7 Emergency Obstetric Care</a>
+  <a href="obstetrics.html">VBAC (Vaginal Birth After Cesarean)</a>
+  <a href="obstetrics.html">Painless Delivery (Water Birthing / Epidural Analgesia)</a>
+  <a href="obstetrics.html">Advanced Fetal Doppler & Anomaly Scans</a>
+</div>
 
             </div>
 
             <div class="sub-dropdown">
 
-              <button class="sub-btn">
-                Obstetrics ▸
-              </button>
-
-              <div class="sub-content">
-                <a href="obstetrics.html">ROUTINE PREGNANCY CHECK-UPS</a>
-                <a href="obstetrics.html">HIGH-RISK PREGNANCY CARE</a>
-                <a href="obstetrics.html">ANTENATAL (PRENATAL) CARE</a>
-                <a href="obstetrics.html">ECTOPIC PREGNANCY MANAGEMENT</a>
-                <a href="obstetrics.html">NORMAL DELIVERY</a>
-                <a href="obstetrics.html">PAINLESS / EPIDURAL DELIVERY</a>
-                <a href="obstetrics.html">CESAREAN SECTION (C-SECTION)</a>
-                <a href="obstetrics.html">POSTNATAL CARE</a>
-                <a href="obstetrics.html">FETAL GROWTH & HEALTH MONITORING</a>
-                <a href="obstetrics.html">FETAL ULTRASOUND SCANS</a>
-                <a href="obstetrics.html">PREGNANCY COMPLICATION MANAGEMENT</a>
-                <a href="obstetrics.html">POST-DELIVERY RECOVERY SUPPORT</a>
-                <a href="obstetrics.html">24/7 EMERGENCY OBSTETRIC CARE</a>
-                <a href="obstetrics.html">VBAC (VAGINAL BIRTH AFTER CESAREAN)</a>
-                <a href="obstetrics.html">PAINLESS DELIVERY (WATER BIRTHING / EPIDURAL ANALGESIA)</a>
-                <a href="obstetrics.html">ADVANCED FETAL DOPPLER & ANOMALY SCANS</a>
-              </div>
-
-            </div>
-
-            <div class="sub-dropdown">
-
-              <button class="sub-btn">
+              <a href="neonatology.html" class="sub-btn">
                 Neonatology ▸
-              </button>
+              </a>
               <div class="sub-content">
                 <a href="neonatology.html">Level IV / Level III NICU</a>
 
@@ -172,9 +177,9 @@
 
             <div class="sub-dropdown">
 
-              <button class="sub-btn">
+              <a href="pediatrics.html" class="sub-btn">
                 Pediatrics ▸
-              </button>
+              </a>
 
               <div class="sub-content">
 
@@ -190,11 +195,8 @@
     General Pediatric Consultation
   </a>
 
-  <a href="pediatrics.html">
-    Vaccination & Immunization Programs
-  </a>
-
   
+
 
   <a href="pediatrics.html">
     Pediatric Nutrition & Diet Counseling
